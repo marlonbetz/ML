@@ -86,7 +86,18 @@ where $p(w_{t+j}\mid w_{t})$ is again defined as a softmax
 \log p(w_{t+j}\mid w_{t}) = \frac{\exp(v_{w_{t}}^\top v'_{w_{t+j}}))}{\sum_{w_i \in V} \exp(h^\top v'_{w_i})}
 \label{eq:skipgram_softmax_prob}
 \end{equation}
-where $v_w_i$ is an input vector and $v'_w_i$ an output vector representation of a word $w_i$ and $h^\top$ the transpose of the sum of the output vectors of the words in the context. Again, the calculation of the softmax here includes summing over all contexts in the corpus, which computationally is expensive. Further research largely concentrated on finding a way to define $p$ as a memory- and time-friendly approximation of the true softmax.
+where $v_w_i$ is an input vector and $v'_w_i$ an output vector representation of a word $w_i$ and $h^\top$ the transpose of the sum of the output vectors of the words in the context. Again, the calculation of the softmax here includes summing over all contexts in the corpus, which computationally is expensive. Further research largely concentrated on finding a way to define $p$ as a memory- and time-friendly approximation of the true softmax probability. A first solution was given by using a hierarchical softmax classifier \cite{morin2005hierarchical} nstead. Here, the classifier layer is a binary tree with the actual words as leaves. At every node, the network learns to either follow the left or the right branch with a certain probability as in Eq. \ref{eq:skipgram_softmax_prob} that is equal to the sum of the child elements of the respective  branch, but is actually computed as the product of $h^\top$ and the output vector of the word at node $n$ pulled through a logistic sigmoid:
+
+\begin{equation}
+p(right|n,c) = \sigma(h^\top v'_n) 
+\label{eq:hierarchicalsoftmax_nodeprob}
+\end{equation}
+
+This means  in order to calculate the softmax probability of word, we only have to follow the path down to the word leaf instead of summing over all vocabulary entries. For binary trees, this means we only have to pass at most $\log_2(\mid V\mid)$ nodes to calculate the probability of a word, which is a huge performance boost over the traditional softmax classifier.
+
+
+
+
 
 \section{Evaluation}
 \subsection{Data}

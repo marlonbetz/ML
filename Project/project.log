@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.29)  6 JUL 2016 21:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.29)  6 JUL 2016 23:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -785,6 +785,28 @@ l.89 where $v_w_i$ is an input vector and $v'_w_
                                                 i$ an output vector represen...
 I treat `x_1_2' essentially like `x_1{}_2'.
 
+./project.tex:89: Undefined control sequence.
+\b@morin2005hierarchical ->\astroncite 
+                                       {Morin and Bengio}{2005}
+l.89 ...ax classifier \cite{morin2005hierarchical}
+                                                   nstead. Here, the classif...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./project.tex:89: Undefined control sequence.
+\b@morin2005hierarchical ->\astroncite 
+                                       {Morin and Bengio}{2005}
+l.89 ...ax classifier \cite{morin2005hierarchical}
+                                                   nstead. Here, the classif...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 [6 <./word2vec.png>] (./project.bbl
 ./project.bbl:3: Undefined control sequence.
 <argument> \protect \astroncite 
@@ -819,6 +841,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+[7]
 ./project.bbl:20: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {dos Santos and Zadrozny}{2014}
@@ -863,7 +886,6 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[7]
 ./project.bbl:43: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Kondrak}{2000}
@@ -910,8 +932,8 @@ and I'll forget about whatever was undefined.
 
 ./project.bbl:69: Undefined control sequence.
 <argument> \protect \astroncite 
-                                {Pennington et~al.}{2014}
-l.69 ...ington et~al.}{2014}]{pennington2014glove}
+                                {Morin and Bengio}{2005}
+l.69 ... and Bengio}{2005}]{morin2005hierarchical}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -921,8 +943,8 @@ and I'll forget about whatever was undefined.
 
 ./project.bbl:74: Undefined control sequence.
 <argument> \protect \astroncite 
-                                {Rama}{2016}
-l.74 ...t\astroncite{Rama}{2016}]{rama2016siamese}
+                                {Pennington et~al.}{2014}
+l.74 ...ington et~al.}{2014}]{pennington2014glove}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -930,10 +952,21 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.bbl:80: Undefined control sequence.
+./project.bbl:79: Undefined control sequence.
+<argument> \protect \astroncite 
+                                {Rama}{2016}
+l.79 ...t\astroncite{Rama}{2016}]{rama2016siamese}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./project.bbl:85: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Zhang et~al.}{2015}
-l.80 ...e{Zhang et~al.}{2015}]{zhang2015character}
+l.85 ...e{Zhang et~al.}{2015}]{zhang2015character}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -941,33 +974,34 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-) [8] (./project.aux) ) 
+[8]) [9] (./project.aux) ) 
 Here is how much of TeX's memory you used:
- 2417 strings out of 493089
- 34196 string characters out of 6134842
- 100015 words of memory out of 5000000
- 5867 multiletter control sequences out of 15000+600000
+ 2419 strings out of 493089
+ 34252 string characters out of 6134842
+ 100050 words of memory out of 5000000
+ 5869 multiletter control sequences out of 15000+600000
  11698 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,6n,26p,1708b,223s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.p
-fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on project.pdf (8 pages, 251639 bytes).
+</usr/local/texlive/2015/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.p
+fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pf
+b>
+Output written on project.pdf (9 pages, 254615 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
- 63 compressed objects within 1 object stream
+ 95 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

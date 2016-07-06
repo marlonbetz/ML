@@ -66,6 +66,11 @@ Mikolov, T., Sutskever, I., Chen, K., Corrado, G.~S., and Dean, J. (2013b).
 \newblock In {\em Advances in neural information processing systems}, pages
   3111--3119.
 
+\bibitem[\protect\astroncite{Morin and Bengio}{2005}]{morin2005hierarchical}
+Morin, F. and Bengio, Y. (2005).
+\newblock Hierarchical probabilistic neural network language model.
+\newblock In {\em Aistats}, volume~5, pages 246--252. Citeseer.
+
 \bibitem[\protect\astroncite{Pennington et~al.}{2014}]{pennington2014glove}
 Pennington, J., Socher, R., and Manning, C.~D. (2014).
 \newblock Glove: Global vectors for word representation.
