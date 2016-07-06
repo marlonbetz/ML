@@ -1,0 +1,57 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\astroncite{dos Santos and Zadrozny}{2014}]{dos2014learning}
+dos Santos, C.~N. and Zadrozny, B. (2014).
+\newblock Learning character-level representations for part-of-speech tagging.
+\newblock In {\em ICML}, pages 1818--1826.
+
+\bibitem[\protect\astroncite{J{\"a}ger}{2014}]{jager2014phylogenetic}
+J{\"a}ger, G. (2014).
+\newblock Phylogenetic inference from word lists using weighted alignment with
+  empirically determined weights.
+\newblock In {\em Quantifying Language Dynamics}, pages 155--204. Brill.
+
+\bibitem[\protect\astroncite{Kim et~al.}{2015}]{kim2015character}
+Kim, Y., Jernite, Y., Sontag, D., and Rush, A.~M. (2015).
+\newblock Character-aware neural language models.
+\newblock {\em arXiv preprint arXiv:1508.06615}.
+
+\bibitem[\protect\astroncite{Kiros et~al.}{2015}]{kiros2015skip}
+Kiros, R., Zhu, Y., Salakhutdinov, R.~R., Zemel, R., Urtasun, R., Torralba, A.,
+  and Fidler, S. (2015).
+\newblock Skip-thought vectors.
+\newblock In {\em Advances in neural information processing systems}, pages
+  3294--3302.
+
+\bibitem[\protect\astroncite{Kondrak}{2000}]{kondrak2000new}
+Kondrak, G. (2000).
+\newblock A new algorithm for the alignment of phonetic sequences.
+\newblock In {\em Proceedings of the 1st North American chapter of the
+  Association for Computational Linguistics conference}, pages 288--295.
+  Association for Computational Linguistics.
+
+\bibitem[\protect\astroncite{Mikolov et~al.}{2013}]{mikolov2013distributed}
+Mikolov, T., Sutskever, I., Chen, K., Corrado, G.~S., and Dean, J. (2013).
+\newblock Distributed representations of words and phrases and their
+  compositionality.
+\newblock In {\em Advances in neural information processing systems}, pages
+  3111--3119.
+
+\bibitem[\protect\astroncite{Pennington et~al.}{2014}]{pennington2014glove}
+Pennington, J., Socher, R., and Manning, C.~D. (2014).
+\newblock Glove: Global vectors for word representation.
+\newblock In {\em EMNLP}, volume~14, pages 1532--43.
+
+\bibitem[\protect\astroncite{Rama}{2016}]{rama2016siamese}
+Rama, T. (2016).
+\newblock Siamese convolutional networks based on phonetic features for cognate
+  identification.
+\newblock {\em arXiv preprint arXiv:1605.05172}.
+
+\bibitem[\protect\astroncite{Zhang et~al.}{2015}]{zhang2015character}
+Zhang, X., Zhao, J., and LeCun, Y. (2015).
+\newblock Character-level convolutional networks for text classification.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  649--657.
+
+\end{thebibliography}

@@ -1,0 +1,53 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+ \usepackage{cite}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+
+
+
+
+\title{Cross-Linguistic Phoneme Embeddings for Computational Historical and Typological Linguistics}
+\author{Marlon Betz}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+
+\section{Introduction}
+Embeddings nowadays build the backbone of every Deep Learning NLP architecture. Due to their capacity to encode a vast amount of latent semantic and syntactic information without the need of previous manual construction, they gave rise to the contemporary Deep Learning boom, i.e. deep neural networks that can capture hidden features in data sets and by that have allowed for huge performance gains in numerous NLP fields. \\While embeddings are currently being used for several linguistic units such as characters\cite{kim2015character,dos2014learning,zhang2015character}, words \cite{mikolov2013distributed,pennington2014glove} or entire sentences \cite{kiros2015skip}, proper phonemes have been largely been excluded from this trend, although there are some data that would indeed allow for it and research areas where they could be of great use, especially in the fields of Computational Typological and Historical Linguistics, which the current deep learning boom has hardly touched yet. There, even though it is clear that some phonemes share more common features and such form natural classes, they are often treated as pure symbols that share a common distance between each other. Even phoneme representation models that do incorporate phonological features are often hand-crafted \cite{kondrak2000new,rama2016siamese} or include task-specific information that inherently suffer from restricted generalization abilities when used for other tasks \cite{jager2014phylogenetic}. Moreover, those methods usually reduce the number of possible phonemes to a minimum, getting rid of important information such as secondary or co-articulations. \\
+In this paper, I will first a discuss a theoretical motivation for using data-driven phoneme embeddings instead of plain symbolic representations or hand-crafted feature encodings. I will then shortly take a look on related research. A big part of this paper will then review several embedding models. I will then discuss intrinsic evaluation methods for the embeddings and use those to compare the performances of the previously described models. This is then followed by a discussion of several use cases that could be interesting for those interested in data-driven approaches to Typological and Historical Linguistics. Finally, I will recapitulate the benefits and drawbacks of phoneme embeddings in a final resume.
+\section{Theoretical and Practical Motivation}
+\section{Related Research}
+\section{Embedding Models}
+\subsection{Count-based Embedding Models}
+\subsubsection{Latent Semantic Analysis}
+\subsubsection{GloVe}
+\subsubsection{SPPMI}
+\subsubsection{SPPMI-SVD}
+\subsection{Neural Embedding Models}
+\subsubsection{Word2Vec}
+\section{Evaluation}
+\subsection{Data}
+\subsection{Evaluation Methods}
+\subsection{Results}
+\section{Use Cases}
+\subsection{Phonemic String Comparison}
+\subsection{Modeling Sound Change}
+\subsection{Phoneme Inventory Clustering}
+\section{Resume}
+
+
+\bibliographystyle{apa}
+\bibliography{references} 
+
+
+\end{document}  
