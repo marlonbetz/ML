@@ -86,7 +86,7 @@ where $p(w_{t+j}\mid w_{t})$ is again defined as a softmax
 \log p(w_{t+j}\mid w_{t}) = \frac{\exp(v_{w_{t}}^\top v'_{w_{t+j}}))}{\sum_{w_i \in V} \exp(h^\top v'_{w_i})}
 \label{eq:skipgram_softmax_prob}
 \end{equation}
-where $v_w_i$ is an input vector and $v'_w_i$ an output vector representation of a word $w_i$. Again, the calculation of the softmax here includes summing over all contexts in the corpus, which computationally is expensive. Further research largely concentrated on finding a way to define $p$ as a memory- and time-friendly approximation of the true softmax.
+where $v_w_i$ is an input vector and $v'_w_i$ an output vector representation of a word $w_i$ and $h^\top$ the transpose of the sum of the output vectors of the words in the context. Again, the calculation of the softmax here includes summing over all contexts in the corpus, which computationally is expensive. Further research largely concentrated on finding a way to define $p$ as a memory- and time-friendly approximation of the true softmax.
 
 \section{Evaluation}
 \subsection{Data}

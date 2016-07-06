@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.29)  6 JUL 2016 20:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.29)  6 JUL 2016 21:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -785,7 +785,7 @@ l.89 where $v_w_i$ is an input vector and $v'_w_
                                                 i$ an output vector represen...
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-(./project.bbl
+[6 <./word2vec.png>] (./project.bbl
 ./project.bbl:3: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Bengio et~al.}{2003}
@@ -797,7 +797,6 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[6 <./word2vec.png>]
 ./project.bbl:8: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Chen et~al.}{2015}
@@ -864,6 +863,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+[7]
 ./project.bbl:43: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Kondrak}{2000}
@@ -875,7 +875,6 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[7]
 ./project.bbl:50: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Ling et~al.}{2015}
@@ -965,7 +964,7 @@ mr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on project.pdf (8 pages, 251574 bytes).
+Output written on project.pdf (8 pages, 251639 bytes).
 PDF statistics:
  92 PDF objects out of 1000 (max. 8388607)
  63 compressed objects within 1 object stream
