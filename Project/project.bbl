@@ -1,5 +1,22 @@
 \begin{thebibliography}{}
 
+\bibitem[\protect\astroncite{Bengio et~al.}{2003}]{bengio2003neural}
+Bengio, Y., Ducharme, R., Vincent, P., and Jauvin, C. (2003).
+\newblock A neural probabilistic language model.
+\newblock {\em journal of machine learning research}, 3(Feb):1137--1155.
+
+\bibitem[\protect\astroncite{Chen et~al.}{2015}]{chen2015joint}
+Chen, X., Xu, L., Liu, Z., Sun, M., and Luan, H. (2015).
+\newblock Joint learning of character and word embeddings.
+\newblock In {\em Proceedings of IJCAI}, pages 1236--1242.
+
+\bibitem[\protect\astroncite{Collobert and Weston}{2008}]{collobert2008unified}
+Collobert, R. and Weston, J. (2008).
+\newblock A unified architecture for natural language processing: Deep neural
+  networks with multitask learning.
+\newblock In {\em Proceedings of the 25th international conference on Machine
+  learning}, pages 160--167. ACM.
+
 \bibitem[\protect\astroncite{dos Santos and Zadrozny}{2014}]{dos2014learning}
 dos Santos, C.~N. and Zadrozny, B. (2014).
 \newblock Learning character-level representations for part-of-speech tagging.
@@ -30,8 +47,20 @@ Kondrak, G. (2000).
   Association for Computational Linguistics conference}, pages 288--295.
   Association for Computational Linguistics.
 
-\bibitem[\protect\astroncite{Mikolov et~al.}{2013}]{mikolov2013distributed}
-Mikolov, T., Sutskever, I., Chen, K., Corrado, G.~S., and Dean, J. (2013).
+\bibitem[\protect\astroncite{Ling et~al.}{2015}]{ling2015finding}
+Ling, W., Lu{\'\i}s, T., Marujo, L., Astudillo, R.~F., Amir, S., Dyer, C.,
+  Black, A.~W., and Trancoso, I. (2015).
+\newblock Finding function in form: Compositional character models for open
+  vocabulary word representation.
+\newblock {\em arXiv preprint arXiv:1508.02096}.
+
+\bibitem[\protect\astroncite{Mikolov et~al.}{2013a}]{mikolov2013efficient}
+Mikolov, T., Chen, K., Corrado, G., and Dean, J. (2013a).
+\newblock Efficient estimation of word representations in vector space.
+\newblock {\em arXiv preprint arXiv:1301.3781}.
+
+\bibitem[\protect\astroncite{Mikolov et~al.}{2013b}]{mikolov2013distributed}
+Mikolov, T., Sutskever, I., Chen, K., Corrado, G.~S., and Dean, J. (2013b).
 \newblock Distributed representations of words and phrases and their
   compositionality.
 \newblock In {\em Advances in neural information processing systems}, pages

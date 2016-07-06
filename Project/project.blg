@@ -3,44 +3,46 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: project.aux
 The style file: apa.bst
 Database file #1: references.bib
-You've used 9 entries,
+Warning--I didn't find a database entry for "bengio2003neural."
+You've used 14 entries,
             1940 wiz_defined-function locations,
-            523 strings with 5322 characters,
-and the built_in function-call counts, 4713 in all, are:
-= -- 484
-> -- 159
-< -- 12
-+ -- 56
-- -- 54
-* -- 350
-:= -- 718
-add.period$ -- 29
-call.type$ -- 9
-change.case$ -- 72
-chr.to.int$ -- 9
-cite$ -- 9
-duplicate$ -- 223
-empty$ -- 347
-format.name$ -- 65
-if$ -- 1010
-int.to.chr$ -- 1
+            551 strings with 6406 characters,
+and the built_in function-call counts, 7251 in all, are:
+= -- 730
+> -- 289
+< -- 15
++ -- 107
+- -- 100
+* -- 570
+:= -- 1137
+add.period$ -- 45
+call.type$ -- 14
+change.case$ -- 120
+chr.to.int$ -- 13
+cite$ -- 14
+duplicate$ -- 319
+empty$ -- 506
+format.name$ -- 118
+if$ -- 1515
+int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 9
-newline$ -- 48
-num.names$ -- 27
-pop$ -- 93
+missing$ -- 14
+newline$ -- 73
+num.names$ -- 42
+pop$ -- 145
 preamble$ -- 1
-purify$ -- 72
+purify$ -- 120
 quote$ -- 0
-skip$ -- 185
+skip$ -- 260
 stack$ -- 0
-substring$ -- 360
-swap$ -- 90
-text.length$ -- 8
+substring$ -- 527
+swap$ -- 120
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 54
+type$ -- 84
 warning$ -- 0
-while$ -- 39
+while$ -- 57
 width$ -- 0
-write$ -- 120
+write$ -- 184
+(There was 1 warning)
