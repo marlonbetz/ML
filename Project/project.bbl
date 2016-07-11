@@ -1,14 +1,34 @@
 \begin{thebibliography}{}
 
-\bibitem[\protect\astroncite{Bengio et~al.}{2003}]{bengio2003neural}
-Bengio, Y., Ducharme, R., Vincent, P., and Jauvin, C. (2003).
+\bibitem[\protect\astroncite{Bengio et~al.}{2003a}]{bengio2003neural}
+Bengio, Y., Ducharme, R., Vincent, P., and Jauvin, C. (2003a).
 \newblock A neural probabilistic language model.
 \newblock {\em journal of machine learning research}, 3(Feb):1137--1155.
 
-\bibitem[\protect\astroncite{Chen et~al.}{2015}]{chen2015joint}
-Chen, X., Xu, L., Liu, Z., Sun, M., and Luan, H. (2015).
+\bibitem[\protect\astroncite{Bengio and Sen{\'e}cal}{2008}]{bengio2008adaptive}
+Bengio, Y. and Sen{\'e}cal, J.-S. (2008).
+\newblock Adaptive importance sampling to accelerate training of a neural
+  probabilistic language model.
+\newblock {\em IEEE Transactions on Neural Networks}, 19(4):713--722.
+
+\bibitem[\protect\astroncite{Bengio et~al.}{2003b}]{bengio2003quick}
+Bengio, Y., Sen{\'e}cal, J.-S., et~al. (2003b).
+\newblock Quick training of probabilistic neural nets by importance sampling.
+\newblock In {\em AISTATS}.
+
+\bibitem[\protect\astroncite{Chen et~al.}{2015a}]{chen2015strategies}
+Chen, W., Grangier, D., and Auli, M. (2015a).
+\newblock Strategies for training large vocabulary neural language models.
+\newblock {\em arXiv preprint arXiv:1512.04906}.
+
+\bibitem[\protect\astroncite{Chen et~al.}{2015b}]{chen2015joint}
+Chen, X., Xu, L., Liu, Z., Sun, M., and Luan, H. (2015b).
 \newblock Joint learning of character and word embeddings.
 \newblock In {\em Proceedings of IJCAI}, pages 1236--1242.
+
+\bibitem[\protect\astroncite{Cho et~al.}{2015}]{cho2015using}
+Cho, S. J.~K., Memisevic, R., and Bengio, Y. (2015).
+\newblock On using very large target vocabulary for neural machine translation.
 
 \bibitem[\protect\astroncite{Collobert and Weston}{2008}]{collobert2008unified}
 Collobert, R. and Weston, J. (2008).
@@ -21,6 +41,30 @@ Collobert, R. and Weston, J. (2008).
 dos Santos, C.~N. and Zadrozny, B. (2014).
 \newblock Learning character-level representations for part-of-speech tagging.
 \newblock In {\em ICML}, pages 1818--1826.
+
+\bibitem[\protect\astroncite{Dryer and Haspelmath}{2013}]{wals}
+Dryer, M.~S. and Haspelmath, M., editors (2013).
+\newblock {\em WALS Online}.
+\newblock Max Planck Institute for Evolutionary Anthropology, Leipzig.
+
+\bibitem[\protect\astroncite{Goldberg and Levy}{2014}]{goldberg2014word2vec}
+Goldberg, Y. and Levy, O. (2014).
+\newblock word2vec explained: deriving mikolov et al.'s negative-sampling
+  word-embedding method.
+\newblock {\em arXiv preprint arXiv:1402.3722}.
+
+\bibitem[\protect\astroncite{Gutmann and
+  Hyv{\"a}rinen}{2010}]{gutmann2010noise}
+Gutmann, M. and Hyv{\"a}rinen, A. (2010).
+\newblock Noise-contrastive estimation: A new estimation principle for
+  unnormalized statistical models.
+\newblock In {\em AISTATS}, volume~1, page~6.
+
+\bibitem[\protect\astroncite{Hochreiter and
+  Schmidhuber}{1997}]{hochreiter1997long}
+Hochreiter, S. and Schmidhuber, J. (1997).
+\newblock Long short-term memory.
+\newblock {\em Neural computation}, 9(8):1735--1780.
 
 \bibitem[\protect\astroncite{J{\"a}ger}{2014}]{jager2014phylogenetic}
 J{\"a}ger, G. (2014).
@@ -47,12 +91,22 @@ Kondrak, G. (2000).
   Association for Computational Linguistics conference}, pages 288--295.
   Association for Computational Linguistics.
 
+\bibitem[\protect\astroncite{Lewis et~al.}{2015}]{lewis2015ethnologue}
+Lewis, M.~P., Simons, G.~F., and Fennig, C.~D. (2015).
+\newblock Ethnologue: Languages of the world. dallas, texas: Sil international.
+  online version.
+
 \bibitem[\protect\astroncite{Ling et~al.}{2015}]{ling2015finding}
 Ling, W., Lu{\'\i}s, T., Marujo, L., Astudillo, R.~F., Amir, S., Dyer, C.,
   Black, A.~W., and Trancoso, I. (2015).
 \newblock Finding function in form: Compositional character models for open
   vocabulary word representation.
 \newblock {\em arXiv preprint arXiv:1508.02096}.
+
+\bibitem[\protect\astroncite{Liu}{2008}]{liu2008monte}
+Liu, J.~S. (2008).
+\newblock {\em Monte Carlo strategies in scientific computing}.
+\newblock Springer Science \& Business Media.
 
 \bibitem[\protect\astroncite{Mikolov et~al.}{2013a}]{mikolov2013efficient}
 Mikolov, T., Chen, K., Corrado, G., and Dean, J. (2013a).
@@ -65,6 +119,17 @@ Mikolov, T., Sutskever, I., Chen, K., Corrado, G.~S., and Dean, J. (2013b).
   compositionality.
 \newblock In {\em Advances in neural information processing systems}, pages
   3111--3119.
+
+\bibitem[\protect\astroncite{Mnih and Teh}{2012}]{mnih2012fast}
+Mnih, A. and Teh, Y.~W. (2012).
+\newblock A fast and simple algorithm for training neural probabilistic
+  language models.
+\newblock {\em arXiv preprint arXiv:1206.6426}.
+
+\bibitem[\protect\astroncite{Moran et~al.}{2014}]{phoible}
+Moran, S., McCloy, D., and Wright, R., editors (2014).
+\newblock {\em PHOIBLE Online}.
+\newblock Max Planck Institute for Evolutionary Anthropology, Leipzig.
 
 \bibitem[\protect\astroncite{Morin and Bengio}{2005}]{morin2005hierarchical}
 Morin, F. and Bengio, Y. (2005).
@@ -81,6 +146,13 @@ Rama, T. (2016).
 \newblock Siamese convolutional networks based on phonetic features for cognate
   identification.
 \newblock {\em arXiv preprint arXiv:1605.05172}.
+
+\bibitem[\protect\astroncite{Tsvetkov et~al.}{2016}]{tsvetkov2016polyglot}
+Tsvetkov, Y., Sitaram, S., Faruqui, M., Lample, G., Littell, P., Mortensen, D.,
+  Black, A.~W., Levin, L., and Dyer, C. (2016).
+\newblock Polyglot neural language models: A case study in cross-lingual
+  phonetic representation learning.
+\newblock {\em arXiv preprint arXiv:1605.03832}.
 
 \bibitem[\protect\astroncite{Zhang et~al.}{2015}]{zhang2015character}
 Zhang, X., Zhao, J., and LeCun, Y. (2015).

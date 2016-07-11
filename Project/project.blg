@@ -3,44 +3,47 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: project.aux
 The style file: apa.bst
 Database file #1: references.bib
-You've used 15 entries,
+Warning--empty journal in cho2015using
+Warning--can't use both volume and number fields in gutmann2010noise
+You've used 28 entries,
             1940 wiz_defined-function locations,
-            558 strings with 6529 characters,
-and the built_in function-call counts, 7797 in all, are:
-= -- 790
-> -- 302
-< -- 18
-+ -- 111
-- -- 104
-* -- 611
-:= -- 1215
-add.period$ -- 49
-call.type$ -- 15
-change.case$ -- 127
-chr.to.int$ -- 14
-cite$ -- 15
-duplicate$ -- 346
-empty$ -- 548
-format.name$ -- 125
-if$ -- 1637
-int.to.chr$ -- 2
+            618 strings with 8558 characters,
+and the built_in function-call counts, 12508 in all, are:
+= -- 1224
+> -- 527
+< -- 27
++ -- 189
+- -- 178
+* -- 1021
+:= -- 2058
+add.period$ -- 86
+call.type$ -- 28
+change.case$ -- 225
+chr.to.int$ -- 25
+cite$ -- 30
+duplicate$ -- 534
+empty$ -- 862
+format.name$ -- 224
+if$ -- 2533
+int.to.chr$ -- 4
 int.to.str$ -- 0
-missing$ -- 15
-newline$ -- 78
-num.names$ -- 45
-pop$ -- 153
+missing$ -- 28
+newline$ -- 141
+num.names$ -- 86
+pop$ -- 259
 preamble$ -- 1
-purify$ -- 127
+purify$ -- 228
 quote$ -- 0
-skip$ -- 283
+skip$ -- 414
 stack$ -- 0
-substring$ -- 571
-swap$ -- 132
-text.length$ -- 12
+substring$ -- 787
+swap$ -- 161
+text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 90
-warning$ -- 0
-while$ -- 62
+type$ -- 162
+warning$ -- 2
+while$ -- 93
 width$ -- 0
-write$ -- 199
+write$ -- 357
+(There were 2 warnings)

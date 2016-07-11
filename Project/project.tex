@@ -13,7 +13,7 @@
 
 
 
-\title{Cross-Linguistic Phoneme Embeddings for Computational Historical and Typological Linguistics}
+\title{Cross-Linguistic Neural Phoneme Embeddings for Computational Historical and Typological Linguistics}
 \author{Marlon Betz}
 %\date{}                                           % Activate to display a given date or no date
 
@@ -29,11 +29,11 @@ In this paper, I will first a discuss a theoretical motivation for using data-dr
 \section{Related Research}
 Word embeddings have proven to be a reliable tool for several NLP tasks. However, finer grained embedding models that take care of the internal structure of a word have been shown to give similar or even improved performance over traditional word embeddings as they are able to encode morphological \cite{dos2014learning} or semantic \cite{chen2015joint} information even for out-of-vocabulary items \cite{ling2015finding}. This follows the simple idea that since a word can be split up into its respective morphemes that encode morphosyntactic and semantic information, encoding subparts of a word instead of a the whole word should allow for better generalization for unseen words without the need to compute and store vector representations for every word type. 
 \section{Embedding Models}
-\subsection{Count-based Embedding Models}
-\subsubsection{Latent Semantic Analysis}
-\subsubsection{GloVe}
-\subsubsection{SPPMI}
-\subsubsection{SPPMI-SVD}
+%\subsection{Count-based Embedding Models}
+%\subsubsection{Latent Semantic Analysis}
+%\subsubsection{GloVe}
+%\subsubsection{SPPMI}
+%\subsubsection{SPPMI-SVD}
 \subsection{Neural Embedding Models}
 \begin{figure}[t]
 \centering
@@ -93,11 +93,207 @@ p(right|n,c) = \sigma(h^\top v'_n)
 \label{eq:hierarchicalsoftmax_nodeprob}
 \end{equation}
 
-This means  in order to calculate the softmax probability of word, we only have to follow the path down to the word leaf instead of summing over all vocabulary entries. For binary trees, this means we only have to pass at most $\log_2(\mid V\mid)$ nodes to calculate the probability of a word, which is a huge performance boost over the traditional softmax classifier.
+This means  in order to calculate the softmax probability of word, we only have to follow the path down to the word leaf instead of summing over all vocabulary entries. For binary trees, this means we only have to pass at most $\log_2(\mid V\mid)$ nodes to calculate the probability of a word, which is a huge performance boost over the traditional softmax classifier. 
+
+
+Another way of approximation the softmax is using Differentiated Softmax (cf.\cite{chen2015strategies}), where the idea is that rare words should help to adjust less parameters than  more frequent words. The fully connected softmax layer becomes a sparse matrix here, where certain blocks inside of that matrix are used to predict words with a certain frequency. \cite{chen2015strategies} mention their model is fast and accurate, but has less predictive power with rare words, as they are given less parameters to be predicted.
 
 
 
+Another family of models approximate the true softmax via sampling. Here, it seems to be common to reformulate the softmax defintions from above. For instance, if we use negative log probabilities instead of raw probabilities and if we further use a more general score function $\mathcal{E}(w)$ instead of the more specific dot products of the context and word vectors and start with Eq.  \ref{eq:cbow_softmax_prob}, the loss function $J_{\theta}$ becomes 
 
+
+
+\begin{equation}
+J_\theta =\mathcal{E}(w) + \log \sum_{w_i \in V} \exp (-\mathcal{E}(w_i))
+\label{eq:negative_reinforcement_1}
+\end{equation}
+
+For back-propagating the error, we calculate the gradients of this term:
+
+\begin{equation}
+\nabla_\theta J_\theta =\nabla_\theta \mathcal{E}(w) + \nabla_\theta \log \sum_{w_i \in V} \exp (-\mathcal{E}(w_i))
+\label{eq:negative_reinforcement_2}
+\end{equation}
+
+\begin{equation}
+\nabla_\theta J_\theta =\nabla_\theta \mathcal{E}(w) +\frac{1}{\sum_{w_i \in V} \exp (-\mathcal{E}(w_i))} \nabla_\theta  \sum_{w_i \in V} \exp (-\mathcal{E}(w_i))
+\label{eq:negative_reinforcement_3}
+\end{equation}
+
+
+\begin{equation}
+\nabla_\theta J_\theta =\nabla_\theta \mathcal{E}(w) +\frac{1}{\sum_{w_i \in V} \exp (-\mathcal{E}(w_i))}  \sum_{w_i \in V}\nabla_\theta \exp (-\mathcal{E}(w_i))
+\label{eq:negative_reinforcement_4}
+\end{equation}
+
+
+
+\begin{equation}
+\nabla_\theta J_\theta =\nabla_\theta \mathcal{E}(w) +\frac{1}{\sum_{w_i \in V} \exp (-\mathcal{E}(w_i))}  \sum_{w_i \in V} \exp (-\mathcal{E}(w_i))\nabla_\theta (-\mathcal{E}(w_i))
+\label{eq:negative_reinforcement_5}
+\end{equation}
+
+which can be rewritten as 
+\begin{equation}
+\nabla_\theta J_\theta =\nabla_\theta \mathcal{E}(w) 
++\sum_{w_i \in V}  \frac{\exp (-\mathcal{E}(w_i))}{\sum_{w_i \in V} \exp (-\mathcal{E}(w_i))}  \nabla_\theta (-\mathcal{E}(w_i))
+\label{eq:negative_reinforcement_6}
+\end{equation}
+
+Here, we can replace the softmax in the second term by $P(w_i)$ and reposition the negative coefficient:
+
+\begin{equation}
+\nabla_\theta J_\theta =\nabla_\theta \mathcal{E}(w) 
+-\sum_{w_i \in V}  P(w_i)  \nabla_\theta (\mathcal{E}(w_i))\label{eq:negative_reinforcement_7}
+\end{equation}
+
+As one can see, we basically end up with a positive and a negative reinforcement term. As the negative reinforcement term is basically the gradient of $\mathbb{E}_{w_i\sim P}$, the final reformulation of the softmax is then given as in Eq. \ref{eq:final_negative_reinforcement}.
+\begin{equation}
+\nabla_\theta J_\theta =\nabla_\theta \mathcal{E}(w)  - \mathbb{E}_{w_i\sim P}[\nabla _{\theta}\mathcal{E}(w_i)] 
+\label{eq:final_negative_reinforcement}
+\end{equation}
+
+The goal of sampling-based approaches is now to approximate the negative reinforcement term $\mathbb{E}_{w_i\sim P}[\nabla _{\theta}\mathcal{E}(w_i)] $ without going over the whole vocabulary.
+Earlier models used some forms of Importance Sampling \cite{liu2008monte,bengio2003quick,bengio2008adaptive,cho2015using}, where a proposal distribution $Q$ is used to approximate $P$. Although Importance sampling seems to provide a speed-up over the standard softmax, the model suffers from divergence issues.
+Another group of sampling models does not try to estimate the probability of a word directly but uses an auxiliary loss that as a by-product produces probability estimates of correct words. Noise Contrastive Estimation (NCE, \cite{gutmann2010noise,mnih2012fast}) trains a model to differentiate between a true word $w_i$ and noise data $\tilde{w}_{ik}$, where $k$ is the number of noisy data points. As a start point, one can use a logistic regression loss that minimized the negative log-likelihood as in Eq \ref{eq:nce_1}, where $Q$ is a noise distribution:
+
+\begin{equation}
+J_{\theta}  = - \sum_{w_i \in V} [\log P(y=1|w_i,c_i) + k \mathbb{E}_{\tilde{w}_{ik}\sim Q}[\log P (y = 0|\tilde{w}_{ik},c_i)]]
+\label{eq:nce_1}
+\end{equation}
+
+Since we want to avoid summing over all words in the vocabulary to estimate $ \mathbb{E}_{\tilde{w}_{ik}\sim Q}$, we substitute it with the mean as a Monte Carlo estimate, which leaves us with the sum over all log probabilities of the $k$ noisy words:
+
+\begin{equation}
+J_{\theta}  = - \sum_{w_i \in V} [\log P(y=1|w_i,c_i) + \sum_{j=1}^{k}\log P (y = 0|\tilde{w}_{ik},c_i)]
+\label{eq:nce_2}
+\end{equation}
+
+As $w_i$ is sampled from the true Distribution $P$ while $\tilde{w}_{ik}$ comes from the noise distribution $Q$, this leaves us with a mixture model, where the probability of sampling a specific word with the corresponding label (that is, whether it comes from the true distribution in the training set or is noise) can be given as 
+
+\begin{equation}
+P(y,w|c) = \frac{1}{k+1}P(w|c)+\frac{k}{k+1}Q(w)\label{eq:nce_3}
+\end{equation}
+
+This can then be used to estimate the probability of the word to come from the true distribution:
+
+\begin{equation}
+P(y=1|w,c) = \frac{\frac{1}{k+1}P(w|c)}{\frac{1}{k+1}P(w|c)+\frac{k}{k+1}Q(w)}
+\label{eq:nce_4}
+\end{equation}
+
+which can be simplified to
+\begin{equation}
+P(y=1|w,c) = \frac{P(w|c)}{kP(w|c)+Q(w)}
+\label{eq:nce_5}
+\end{equation}
+
+Here, instead of taking the traditional softmax for  $P(w|c)$, NCE allows for a reparametrization of it: instead of summing over all probabilities in the lexicon to normalize the data, the denominator of the softmax is substituted by a parameter $Z(c)$ that is estimated by the model itself. In fact, and report equal performance while setting $Z(c)$ to 1, that is, the model learns to normalize the probabilities completely on its own. Coming from the definition of this probability in the CBOW architecture from Eq. \ref{eq:cbow_softmax_prob}, this leaves us with the probability of a word given a context as 
+
+\begin{equation}
+P(w|c) = \exp (h^{\top}v'_w)
+\label{eq:nce_6}
+\end{equation}
+
+Inserting this into Eq. \ref{eq:nce_5}, we have
+
+\begin{equation}
+P(y=1|w,c) = \frac{\exp(h^{\top}v'_w)}{\exp(h^{\top}v'_w)+kQ(w)}
+\label{eq:nce_6}
+\end{equation}
+
+which can be inserted into the logistic loss from  Eq. \ref{eq:nce_2} to yield the final NCE loss:
+
+
+\begin{equation}
+J_{\theta}  = - \sum_{w_i \in V} [\log  \frac{\exp(h^{\top}v'_{w_{i}})}{\exp(h^{\top}v'_{w_{i}})+kQ(w_i)} + \sum_{j=1}^{k}\log (1- \frac{\exp(h^{\top}v'_{\tilde{w}_{ij}})}{\exp(h^{\top}v'_{\tilde{w}_{ij}})+kQ({\tilde{w}_{ij}})})]
+\label{eq:nce_7}
+\end{equation}
+
+The probably most prominent sampling model, however, is the Negative Sampling Model (NEG). Building on NCE, it diverges from it insofar as it naively assumes that $kQ(w)=1$. This yields Eq. \ref{eq:nce_6} as 
+
+\begin{equation}
+P(y=1|w,c) = \frac{\exp(h^{\top}v'_w)}{\exp(h^{\top}v'_w)+1}
+\label{eq:neg_sampling_1}
+\end{equation}
+
+which is equal to the NCE loss as long as $k = |V|$ and Q is uniform. Eq. \ref{eq:neg_sampling_1} can then be reformulated as a logistic sigmoid:
+\begin{equation}
+P(y=1|w,c) = \frac{1}{1+\exp(-h^{\top}v'_w)}
+\label{eq:neg_sampling_2}
+\end{equation}
+
+Inserted into the logistic regression loss, this yields
+\begin{equation}
+J_{\theta}  = - \sum_{w_i \in V} [\log \frac{1}{1+\exp(-h^{\top}v'_w)} 
++ \sum_{j=1}^{k}\log (1- \frac{1}{1+\exp(-h^{\top}v'_{\tilde{w}_{ij}})})]
+\label{eq:neg_sampling_3}
+\end{equation}
+
+By simplification and substitution of the sigmoid term with $\sigma = \frac{1}{1+\exp(-x)}$, this derives the NEG loss:
+\begin{equation}
+J_{\theta}  = - \sum_{w_i \in V} [\log \sigma(h^{\top}v'_w)
++ \sum_{j=1}^{k}\log \sigma(-h^{\top}v'_{\tilde{w}_{ij}})]
+\label{eq:neg_sampling_3}
+\end{equation}
+
+For a more in-depth analysis of NEG, see \cite{goldberg2014word2vec}.
+\\\\As NEG is only equivalent to NCE when $k = |V|$ holds and $Q$ is uniform, this has a large impact on the performance of NEG when when used as a proper language model. As it cannot approximate the true softmax in practice, it gives poor performance on typical intrinsic language model evaluation tasks such as perplexity estimation, while it shows superior performance on embedding-specific evaluations such as similarity measures.
+
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=0.75\textwidth]{polyglotLM} 
+   \caption{The Polyglot Language Model. From \cite{tsvetkov2016polyglot}}
+   \label{fig:plm}
+\end{figure}
+
+\\
+One of the reasons why word2vec has become the most popular neural embedding model (and probably the most popular embedding model in general) is that it does not involve any hidden layers that would affect the training speed performance. However, with the rise of Long Short-term Memory Networks (LSTM, \cite{hochreiter1997long}), there is an increase of research on embeddings trained jointly with LSTMs to predict tokens or whole sequences \cite{chen2015joint,ling2015finding,kim2015character,dos2014learning}, while some learn them jointly with convolutional models \cite{zhang2015character}. One family of models important for our case are Polyglot Neural Language Models (PLM) \cite{tsvetkov2016polyglot}. Here, a deep model tries to predict the next phoneme given the previous phonemes, the language of the whole sequence as well as typological information from WALS \cite{wals}, PHOIBLE \cite{phoible} and Ethnologue \cite{lewis2015ethnologue} (see Fig. \ref{fig:plm}). 
+The model first embeds the whole context into a hidden local context representation $c_t$
+
+\begin{equation}
+c_t = W_{x_{x}}x_t + W_{c_{lang}}x_{lang}+b_c
+\label{eq:plm_1}
+\end{equation}
+where $x_t$ is a character embedding for character $c_t$ at position $t$, $x_{lang}$ is a one-hot vector for the respective language of the sequence and $b_c$ a bias for the character $c$. This then is fed into an LSTM to yield a global context layer $g_t$
+
+\begin{equation}
+g_t = LSTM(c_t,g_{t-1}) 
+\label{eq:plm_2}
+\end{equation}
+
+Typological language information (such as if a single segment is represented in the phoneme inventory of a given language, or if there is a minimal contrast between the segment and another one in the phoneme inventory) is first mapped into a low-dimensional space to obtain a dense representation $f_\ell$
+
+\begin{equation}
+f_\ell = \tan(W_\ell t_\ell + b_\ell) 
+\label{eq:plm_3}
+\end{equation}
+
+
+and then multiplied with the global context vector using Hadamard multiplication, yielding a gloval context-language matrix $G_t^\ell$
+\begin{equation}
+G_t^\ell = g_t \otimes f_\ell^\top 
+\label{eq:plm_4}
+\end{equation}
+
+
+The resulting matrix is then vectorized into a column vector and and output sequence is computed:
+
+\begin{equation}
+p(\phi_t = i | \phi_i,\ldots,\phi_{t-1},\ell) = softmax(W_{out}vec(G_t^\ell)+b_{out})_i 
+\label{eq:plm_5}
+\end{equation}
+
+Accordingly, the loss function here is a categorical cross-entropy $H(\phi,\hat{\phi})$ over all phonemes:
+
+\begin{equation}
+H(\phi,\hat{\phi}) = - \sum_i \hat{\phi}_i \log \phi_i
+\label{eq:plm_6}
+\end{equation}
+
+The authors report superior perplexity over a baseline LSTM model, even with the typological information left out. Also downstream experiments on loan word detection and  speech synthesis leave the PLM model superior over the baseline LSTM model.
 
 \section{Evaluation}
 \subsection{Data}
