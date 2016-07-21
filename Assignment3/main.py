@@ -134,13 +134,16 @@ y = np.zeros((len(texts), 1))
 #load embeddings
 print("loading embeddings ...")
 embeddings = dict()
+pathToEmbeddings_zipped = "glove.6B.50d.txt.zip"
 pathToEmbeddings = "glove.6B.50d.txt"
-import codecs
-for line in codecs.open(pathToEmbeddings,"r","utf-8"):
-    l = line.split()
-    key = l[0]
-    vector = np.array([float(tmp) for tmp in l[1:]])
-    embeddings[key] = vector
+from zipfile import ZipFile
+with ZipFile(pathToEmbeddings_zipped) as myzip:
+    
+    for line in myzip.open(pathToEmbeddings):
+        l = line.split()
+        key = l[0]
+        vector = np.array([float(tmp) for tmp in l[1:]])
+        embeddings[key] = vector
 for i_t in range(len(texts)):
     if i_t % 100 == 0:
         print(i_t, "/", len(texts))
