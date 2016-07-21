@@ -134,8 +134,8 @@ y = np.zeros((len(texts), 1))
 #load embeddings
 print("loading embeddings ...")
 embeddings = dict()
-pathToEmbeddings_zipped = "glove.6B.50d.txt.zip"
-pathToEmbeddings = "glove.6B.50d.txt"
+pathToEmbeddings_zipped = "glove.6B.50d_onlyCorpusData.txt.zip"
+pathToEmbeddings = "glove.6B.50d_onlyCorpusData.txt"
 from zipfile import ZipFile
 with ZipFile(pathToEmbeddings_zipped) as myzip:
     
