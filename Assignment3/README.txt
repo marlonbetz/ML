@@ -1,3 +1,12 @@
+the python file main.py should print roughtly the same results as below. Be aware that when running the script, training the convnet takes by far most of the time. 
+
+I also added a png file with plots of the performances of all models over all folds. 
+(accuracies.png).
+
+glove.6B.50d_onlyCorpusData.txt.zip contains all embeddings for the words found in the corpus. The original txt file from the glove website was simply too big for github.
+
+
+
 
 Performance of the respective models:
 
