@@ -18,6 +18,7 @@ def getListofASJPPhonemes(word):
 """
 READ CORPUS FROM ASJP DUMP
 """
+print("READ CORPUS FROM ASJP DUMP")
 pathToASJPCorpusFile = "data/dataset.tab"
 allWords = []
 for line in codecs.open(pathToASJPCorpusFile,"r","utf-8"):
@@ -45,5 +46,9 @@ for line in codecs.open(pathToASJPCorpusFile,"r","utf-8"):
 """
 EXTRACT ALL PHONEMES AND ADD WORD BOUNDARIES
 """
+print("EXTRACT ALL PHONEMES AND ADD WORD BOUNDARIES")
 allWords = [["<s>"]+getListofASJPPhonemes(word)+["</s>"] for word in allWords]
 
+from gensim.models import Word2Vec
+print("fitting model")
+Word2Vec(sentences=allWords)

@@ -1,19 +1,21 @@
 -- VERSION_4
 -- START DISKCACHE_2
 /Users/marlon/Documents/ML/git/Project/Workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/PhonemeEmbeddings/com.python.pydev.analysis/v2_indexcache
-main|1469381244000000000|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/main.py
+evaluation|1469381842000000000|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/evaluation.py
+main|1469381800000000000|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/main.py
 -- END DISKCACHE
 -- START DICTIONARY
-1
+2
+2=evaluation
 1=main
 -- END DICTIONARY
 -- START TREE 1
 8
 all|1|allWords!11@
-get|2|getListofASJPPhonemes!10@getWordMatrix!10@
+get|1|getListofASJPPhonemes!10@
 lin|1|line!11@
-nam|0|
 pat|1|pathToASJPCorpusFile!11@
+sim|1|SimilarityTestData!19@
 tba|1|tba!11@
 vec|1|vectorLinspace!10@
 wor|2|words!11@word!11@
