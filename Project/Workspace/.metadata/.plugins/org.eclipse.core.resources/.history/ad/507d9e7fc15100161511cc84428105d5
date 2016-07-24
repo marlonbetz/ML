@@ -1,0 +1,24 @@
+import numpy as np 
+import regex  
+import codecs
+
+pathToASJPCorpusFile = "data/dataset.tab"
+
+for line in codecs.open(pathToASJPCorpusFile,"r","utf-8"):
+    line = line.split("\t")
+    name = line[0]
+    words = line[10:]
+    #remove invalid characters
+    for word in words:
+        word = word.replace("%","")
+    """
+    for cells with more than one corresponding word, add that word as new entry
+    """
+    for word in words:
+        if "," in word:
+            print("found something")
+            for match in  regex.findall("(?<=,).+",word):
+                
+                print(match)
+    
+    #print(name,words)

@@ -1,0 +1,8 @@
+import numpy as np 
+import regex  
+import codecs
+
+pathToASJPCorpusFile = "data/dataset.tab"
+
+for line in codecs.open(pathToASJPCorpusFile,"r","utf-8"):
+    print(line)

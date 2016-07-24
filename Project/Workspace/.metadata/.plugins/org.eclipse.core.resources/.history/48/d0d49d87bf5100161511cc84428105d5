@@ -1,0 +1,5 @@
+import numpy as np 
+import regex  
+import codecs
+
+pathToASJPCorpusFile = "data/dataset.tab"
