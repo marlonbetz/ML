@@ -66,4 +66,4 @@ training set can still be processed as long as they can be embedded into the emb
 (you either take pretrained embeddings from giant corpora out of the box or you train domain specific embeddings 
 and train a regression from one corpus into the other one, in neural SMT systems you often see that as far as I can tell) 
 
-In terms of complexity, the log regression of course is the best model and the convnet the worst, given their respective number of parameters to estimate.
+In terms of complexity, the log regression of course is the best model and the MLPs the worst, given their respective number of parameters to estimate. But the Convnet needs much more time to converge, as the actual computation of gradients is much more complex.
