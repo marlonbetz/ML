@@ -53,7 +53,6 @@ allWords = [["<s>"]+getListofASJPPhonemes(word)+["</s>"] for word in allWords]
 """
 REDUCE COMPLEX PHONEMES TO SINGLE PHONEMES IF FREQ SMALLER THAN X
 """
-print("REDUCE COMPLEX PHONEMES TO SINGLE PHONEMES IF FREQ SMALLER THAN X")
 minCount = 20
 freq_phonemes = dict()
 for i,word in enumerate(allWords):
@@ -69,11 +68,7 @@ for i,word in enumerate(allWords):
         else:
             tmp.append(regex.findall("[pbmfv84tdszcnSZCjT5kgxNqGX7hlLwyr!ieaouE3]",phoneme))
     allWords[i] = tmp
-print(len(allWords))
-c = 0
-for word in allWords:
-    c += len(word)
-print(c)
+
 sys.exit()       
 from gensim.models import Word2Vec
 print("fitting model")

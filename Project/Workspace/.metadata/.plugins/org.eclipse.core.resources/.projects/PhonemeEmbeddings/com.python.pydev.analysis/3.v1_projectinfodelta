@@ -1,12 +1,14 @@
 INSTUPmain
 /Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/main.py
-INFOS:&&2|1|2|0&&2|3|2|0&&3|4|2|0&&3|5|2|0&&3|6|2|0&&3|7|2|0&&3|8|2|0&&3|9|2|0&&3|8|2|0&&3|5|2|0
+INFOS:&&2|1|2|0&&2|3|2|0&&3|4|2|0&&3|5|2|0&&3|6|2|0&&3|7|2|0&&3|8|2|0&&3|9|2|0&&3|8|2|0&&3|5|2|0&&3|10|2|0&&3|11|2|0
 getListofASJPPhonemes=3
 tba=9
 allWords=5
 line=6
 words=7
+freq=11
 main=2
+minCount=10
 pathToASJPCorpusFile=4
 word=8
 vectorLinspace=1
