@@ -1,8 +1,8 @@
 -- VERSION_4
 -- START DISKCACHE_2
 /Users/marlon/Documents/ML/git/Project/Workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/PhonemeEmbeddings/com.python.pydev.analysis/v2_indexcache
-evaluation|1469381842000000000|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/evaluation.py
-main|1469384842000000000|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/main.py
+evaluation|1469530090000000000|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/evaluation.py
+main|1469546183000000000|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/main.py
 -- END DISKCACHE
 -- START DICTIONARY
 2
@@ -10,14 +10,30 @@ main|1469384842000000000|/Users/marlon/Documents/ML/git/Project/Workspace/Phonem
 1=main
 -- END DICTIONARY
 -- START TREE 1
-8
+24
+acc|3|acc!11@accuracies!11@accuracies_tmp!11@
 all|1|allWords!11@
+c|1|c!11@
+cma|1|cmap!11@
+col|1|colors!11@
+con|1|contextWindowInterval!11@
+dim|1|dim_embeddingInterval!11@
+dis|1|dist!11@
+fre|1|freq_phonemes!11@
 get|1|getListofASJPPhonemes!10@
+gri|1|gridSearchPoint!11@
 lin|1|line!11@
+los|3|losses!11@loss!11@losses_tmp!11@
+min|2|minCount!11@minCountInterval!11@
+n_g|1|n_gridSearchPoints!11@
 pat|1|pathToASJPCorpusFile!11@
+pre|1|predicted!11@
 sim|1|SimilarityTestData!19@
+sum|1|sum_dist!11@
 tba|1|tba!11@
+tru|1|true!11@
 vec|1|vectorLinspace!10@
+w2v|1|w2v_model!11@
 wor|2|words!11@word!11@
 -- END TREE
 -- START TREE 2

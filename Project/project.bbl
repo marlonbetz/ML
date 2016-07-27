@@ -147,6 +147,11 @@ Rama, T. (2016).
   identification.
 \newblock {\em arXiv preprint arXiv:1605.05172}.
 
+\bibitem[\protect\astroncite{Schnabel et~al.}{2015}]{schnabel2015evaluation}
+Schnabel, T., Labutov, I., Mimno, D., and Joachims, T. (2015).
+\newblock Evaluation methods for unsupervised word embeddings.
+\newblock In {\em Proc. of EMNLP}.
+
 \bibitem[\protect\astroncite{Tsvetkov et~al.}{2016}]{tsvetkov2016polyglot}
 Tsvetkov, Y., Sitaram, S., Faruqui, M., Lample, G., Littell, P., Mortensen, D.,
   Black, A.~W., Levin, L., and Dyer, C. (2016).
