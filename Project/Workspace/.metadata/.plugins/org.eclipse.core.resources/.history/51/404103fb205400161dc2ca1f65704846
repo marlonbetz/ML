@@ -1,0 +1,14 @@
+import numpy as np 
+import pickle  
+import matplotlib.pyplot as plt
+import seaborn
+
+performances = pickle.load(open("performances.pkl","rb"))
+
+for sg in performances:
+    for dim_embedding in performances[sg]:
+        for contextWindow in performances[sg][dim_embedding]:
+            for hs in performances[sg][dim_embedding][contextWindow]:
+                if hs == 0: 
+                    for k_negativeSampling in performances[sg][dim_embedding][contextWindow][hs]:
+                        print("ACC",performances[sg][dim_embedding][contextWindow][hs]["ACCURACY"])

@@ -1,1 +1,10 @@
-DELSTRmain
+INSTUPplotEvaluation
+/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/plotEvaluation.py
+INFOS:&&3|1|2|0&&3|3|2|0&&3|4|2|0&&3|5|2|0&&3|6|2|0&&3|7|2|0&&3|6|2|0&&3|7|2|0&&3|6|2|0
+acc=7
+dim_embeddingInterval=3
+max=6
+plotEvaluation=2
+contextWindowInterval=4
+negativeSamplingInterval=5
+performances=1

@@ -155,22 +155,22 @@ Here, we can replace the softmax in the second term by $P(w_i)$ and reposition t
 -\sum_{w_i \in V}  P(w_i)  \nabla_\theta (\mathcal{E}(w_i))\label{eq:negative_reinforcement_7}
 \end{equation}
 
-As one can see, we basically end up with a positive and a negative reinforcement term. As the negative reinforcement term is basically the gradient of $\mathbb{E}_{w_i$\sim$ P}$, the final reformulation of the softmax is then given as in Eq. \ref{eq:final_negative_reinforcement}.
+As one can see, we basically end up with a positive and a negative reinforcement term. As the negative reinforcement term is basically the gradient of $\mathbb{E}_{w_i\sim P}$, the final reformulation of the softmax is then given as in Eq. \ref{eq:final_negative_reinforcement}.
 \begin{equation}
-\nabla_\theta J_\theta =\nabla_\theta \mathcal{E}(w)  - \mathbb{E}_{w_i$\sim$ P}[\nabla _{\theta}\mathcal{E}(w_i)] 
+\nabla_\theta J_\theta =\nabla_\theta \mathcal{E}(w)  - \mathbb{E}_{w_i\sim P}[\nabla _{\theta}\mathcal{E}(w_i)] 
 \label{eq:final_negative_reinforcement}
 \end{equation}
 
-The goal of sampling-based approaches is now to approximate the negative reinforcement term $\mathbb{E}_{w_i$\sim$ P}[\nabla _{\theta}\mathcal{E}(w_i)] $ without going over the whole vocabulary.
+The goal of sampling-based approaches is now to approximate the negative reinforcement term $\mathbb{E}_{w_i\sim P}[\nabla _{\theta}\mathcal{E}(w_i)] $ without going over the whole vocabulary.
 Earlier models used some forms of Importance Sampling \cite{liu2008monte,bengio2003quick,bengio2008adaptive,cho2015using}, where a proposal distribution $Q$ is used to approximate $P$. Although Importance sampling seems to provide a speed-up over the standard softmax, the model suffers from divergence issues.
 Another group of sampling models does not try to estimate the probability of a word directly but uses an auxiliary loss that as a by-product produces probability estimates of correct words. Noise Contrastive Estimation (NCE, \cite{gutmann2010noise,mnih2012fast}) trains a model to differentiate between a true word $w_i$ and noise data $\tilde{w}_{ik}$, where $k$ is the number of noisy data points. As a start point, one can use a logistic regression loss that minimized the negative log-likelihood as in Eq \ref{eq:nce_1}, where $Q$ is a noise distribution:
 
 \begin{equation}
-J_{\theta}  = - \sum_{w_i \in V} [\log P(y=1|w_i,c_i) + k \mathbb{E}_{\tilde{w}_{ik}$\sim$ Q}[\log P (y = 0|\tilde{w}_{ik},c_i)]]
+J_{\theta}  = - \sum_{w_i \in V} [\log P(y=1|w_i,c_i) + k \mathbb{E}_{\tilde{w}_{ik}\sim Q}[\log P (y = 0|\tilde{w}_{ik},c_i)]]
 \label{eq:nce_1}
 \end{equation}
 
-Since we want to avoid summing over all words in the vocabulary to estimate $ \mathbb{E}_{\tilde{w}_{ik}$\sim$ Q}$, we substitute it with the mean as a Monte Carlo estimate, which leaves us with the sum over all log probabilities of the $k$ noisy words:
+Since we want to avoid summing over all words in the vocabulary to estimate $ \mathbb{E}_{\tilde{w}_{ik}\sim Q}$, we substitute it with the mean as a Monte Carlo estimate, which leaves us with the sum over all log probabilities of the $k$ noisy words:
 
 \begin{equation}
 J_{\theta}  = - \sum_{w_i \in V} [\log P(y=1|w_i,c_i) + \sum_{j=1}^{k}\log P (y = 0|\tilde{w}_{ik},c_i)]
@@ -288,7 +288,7 @@ G_t^\ell = g_t \otimes f_\ell^\top
 \end{equation}
 
 
-The resulting matrix is then vectorized into a column vector and and output sequence is computed:
+The resulting matrix is then vectorized into a column vector and an output sequence is computed:
 
 \begin{equation}
 p(\phi_t = i | \phi_i,\ldots,\phi_{t-1},\ell) = softmax(W_{out}vec(G_t^\ell)+b_{out})_i 
@@ -332,12 +332,14 @@ Using embeddings for string comparison means that one has to embed the sequence 
 Especially for graphic data, the benefits of generative models, especially generative auto-encoders, lead to rising interest in such models. Here, a latent variable is used to approximate the expected output of a network. A quite simplistic model of sound change would be that the proto-form should contain information common to all daughter words, that is, the proto-form should be some sort of mean of all daughter words. If we now train such a model to encode and decode words and further cluster all words belonging to a certain cognate class, the centroid of such clusters should correspond to the underlying proto-form of the given words.
 \subsection{Phoneme Inventory Clustering}
 \section{Resume}
+
+\bibliographystyle{apa}
+\bibliography{references} 
 \section{Appendix}
-\subsection{Analogy Tests}
-The analogy tasks consist of 2 positive values, one negative value and a target value, as described in \ref{Intrinsic Evaluation}.
-\subsection{Consonants}
-\begin{table}
+\begin{table}[h]
+\centering
 \tiny
+\caption{Consonant analogy tests. All analogy tasks consist of 2 positive values, one negative value and a target value, as described in \ref{Intrinsic Evaluation}.}
 \begin{tabular}{ l | l | l }
 \hline \multicolumn{3}{l}{voiceless plosive $\rightarrow$ nasal via unvoiced plosive}\\  \hline
 positive & negative & target \\ \hline
@@ -419,8 +421,10 @@ g", t" & d" & k" \\
 
 
 
-\begin{table}
+\begin{table}[h]
+\centering
 \tiny
+\caption{Consonant analogy tests (continued)}
 \begin{tabular}{ l | l | l }
 \hline\multicolumn{3}{l}{unvoiced pulmonic plosive  $\rightarrow$ unvoiced aspirated plosive via unvoiced aspirated plosive }\\  \hline
 positive & negative & target \\ \hline
@@ -503,9 +507,11 @@ z, b & d & v \\
 \end{tabular}
 \end{table}
 
+\newpage
+\begin{table}[h]
+\centering
 
-\subsection{Vowels}
-\begin{table}
+\caption{Vowel analogy tests}
 \begin{tabular}{ l | l | l }
 \hline \multicolumn{3}{l}{apply \textsc{[+rounded]}}\\  \hline
 positive & negative & target \\\hline
@@ -534,10 +540,9 @@ E*, e & e* & E \\
 \end{table}
 
 \newpage
-\subsection{ASJP Phoneme tables}
-These ASJP phoneme tables with their corresponding IPA equivalents follow \cite{jager2014phylogenetic}.
-\subsubsection{Consonants}
-Glottalization is marked by a following double quote, coarticulation is indicated by a tilde \\$\sim$ (if one co-articulator) or a dollar sign \$ (if two co-articulators). \\
+\begin{table}[h]
+\centering
+\caption{ASJP consonants with their IPA equivalents. Glottalization is marked by a following double quote, coarticulation is indicated by a tilde ∼ (if one co-articulator) or a dollar sign \$ (if two co-articulators). The tables follow  \cite{jager2014phylogenetic}.}
 \begin{tabular}{ l l l }
 ASJP code symbol & Description & IPA equivalent \\p & voiceless bilabial stop and fricative & b, \textipa{B} \\
 b & voiced bilabial stop and fricative & f \\
@@ -569,22 +574,24 @@ G & voiced uvular stop & \textipa{\;q} \\
 X & voiceless and voiced uvular/pharyngeal fricatives & \textipa{X}, \textipa{K}, \textipa{\textcrh}, \textipa{Q} \\h & voiceless and voiced glottal fricative & h, \textipa{H} \\
 7 & glottal stop & \textipa{P} \\
 L & all other laterals & \textipa{\;L}, \textipa{\:l}, \textipa{L} \\
-! & clicks & \textipa{\!o}, \textipa{||}, \textipa{|}, \textipa{\textdoublebarpipe}}  \\
-\end{tabular}\
-\newpage
-\subsubsection{Vowels}
-Nasality is marked by a follow asterisk. \\
+! & clicks & \textipa{\!o}, \textipa{||}, \textipa{|}, \textipa{\textdoublebarpipe}  \\
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{ASJP vowels with their IPA equivalents. Nasality is marked by a following asterisk.}
 \begin{tabular}{ l l l }
 ASJP code symbol & Description & IPA equivalent \\
 i & high front vowel, rounded and unrounded &\textipa{I}, \textipa{I}, y, \textipa{Y}\\e & mid front vowel, rounded and unrounded & e, \textipa{\o}\\E & low front vowel, rounded and unrounded & \textipa{\ae}, \textipa{E}, \textipa{\oe}, \textipa{\OE}\\
-3 & high and mid central vowel, rounded and unrounded & \textipa{1}, \textipa{9}, \textipa{@}, \textipa{3}, \textipa{8,} \textipa{O}, \textipa{8}, \textipa{\textcloseepsilon}}\\
+3 & high and mid central vowel, rounded and unrounded & \textipa{1}, \textipa{9}, \textipa{@}, \textipa{3}, \textipa{8}, \textipa{O}, \textipa{8}, \textipa{\textcloseepsilon}\\
 a & low central vowel, unrounded & a, \textipa{5}\\
 u & high back vowel, rounded and unrounded & \textipa{W}, u\\
 o & mid and low back vowel, rounded and unrounded & \textipa{7}, \textipa{2}, \textipa{A}, o, \textipa{O}, \textipa{6} \\
 \end{tabular}
+\end{table}
 
-\bibliographystyle{apa}
-\bibliography{references} 
+
 
 
 \end{document}  

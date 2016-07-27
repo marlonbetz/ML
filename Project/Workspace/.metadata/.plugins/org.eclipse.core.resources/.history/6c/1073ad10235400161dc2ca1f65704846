@@ -1,0 +1,22 @@
+import numpy as np 
+import pickle  
+import matplotlib.pyplot as plt
+import seaborn
+from pandas import DataFrame
+performances = pickle.load(open("performances.pkl","rb"))
+
+sg = 0
+hs = 0
+# dim_embedding vs 
+max = 0
+for dim_embedding in performances[sg]:
+    for contextWindow in performances[sg][dim_embedding]:
+        for k_negativeSampling in performances[sg][dim_embedding][contextWindow][hs]:
+            acc = np.mean(performances[sg][dim_embedding][contextWindow][hs][k_negativeSampling]["ACCURACY"])
+            #print("ACC",acc)
+            if acc > max :
+                print(sg,dim_embedding,contextWindow,hs,k_negativeSampling)
+                print(acc)
+                max = acc
+print(max)
+print(performances[0][400][5][0][8]["ACCURACY"])
