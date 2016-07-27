@@ -1,0 +1,231 @@
+import numpy as np 
+import regex  
+import codecs
+import sys
+from scipy.spatial.distance import cosine
+from sklearn.neighbors import KNeighborsClassifier
+import evaluation
+import pickle
+
+def vectorLinspace(start,stop,num=50):
+    assert len(start) == len(stop)
+    assert num > 0
+    return np.array([np.linspace(start[dim],stop[dim],num) for dim in range(len(start))]).transpose()
+
+def getListofASJPPhonemes(word):
+    phonemes_alone="pbmfv84tdszcnSZCjT5kgxNqGX7hlLwyr!ieaouE3"
+    phonemeSearchRegex = "["+phonemes_alone+"][\"\*]?(?!["+phonemes_alone+"]~|["+phonemes_alone+"]{2}\$)|["+phonemes_alone+"]{2}?~|["+phonemes_alone+"]{3}?\$"
+    return regex.findall(phonemeSearchRegex, word)
+
+
+
+"""
+READ CORPUS FROM ASJP DUMP
+"""
+print("READ CORPUS FROM ASJP DUMP")
+pathToASJPCorpusFile = "data/dataset.tab"
+allWords = []
+for i,line in enumerate(codecs.open(pathToASJPCorpusFile,"r","utf-8")):
+    if i > 0:
+        line = line.split("\t")
+        if "PROTO" not in line[0] and "ARTIFICIAL" not in line[2]:
+            words = line[10:]
+            #remove invalid characters
+            for word in words:
+                word = word.replace("%","")
+            """
+            for cells with more than one corresponding word, add that word as new entry
+            """
+            tba = []
+            for i_w,word in enumerate(words):
+                if "," in word:
+                    for match in  regex.findall("(?<=,).+",word):          
+                        tba.append(match)
+                    #reduce entry to first occurence of seperator
+                    words[i_w] = word[:word.index(",")]
+            words.extend(tba)
+            allWords.extend(words)
+   
+"""
+EXTRACT ALL PHONEMES AND ADD WORD BOUNDARIES AND GET RID OF EMPTY STRINGS
+"""
+print("EXTRACT ALL PHONEMES AND ADD WORD BOUNDARIES AND GET RID OF EMPTY STRINGS")
+allWords = [["<s>"]+getListofASJPPhonemes(word)+["</s>"] for word in allWords if len(word) > 0]
+
+"""
+COUNT PHONEMES
+"""
+print("COUNT PHONEMES")
+freq_phonemes = dict()
+for i,word in enumerate(allWords):
+    for phoneme in word:
+        if phoneme not in freq_phonemes:
+            freq_phonemes[phoneme] = 0
+        freq_phonemes[phoneme] += 1
+"""
+REDUCE COMPLEX PHONEMES TO SINGLE PHONEMES IF FREQ SMALLER THAN X
+"""
+
+#hyperparameters to evaluate
+#influence questionable
+minCountInterval =[
+                   1,
+                   5,10,15, 20,30,40,50
+                    ]
+dim_embeddingInterval = [2,5,
+                         10,20,50,100,150,200,300,400,500,750,1000
+                         ]
+contextWindowInterval = [1,2,
+                         3,4,5,6,7,8,9,10
+                         ]
+
+negativeSamplingInterval = list(range(1,21))
+
+skipgram = [0,1]
+hierarchical_softmax = [0,1]
+n_ensemble = 1
+n_gridSearchPoints = len(dim_embeddingInterval)#*len(contextWindowInterval)
+import matplotlib.pyplot as plt
+
+cmap = plt.get_cmap('jet')
+colors = cmap(np.linspace(0, 1, n_gridSearchPoints))
+gridSearchPoint = 0
+
+#dict that store performance
+#CBOW/SKIPGRAM --> DIM_EMBEDDING --> CONTEXT_WINDOW --> HS/NEGATIVE_SAMPLING --> K_NEGATIVE --> ACCURACY / LOSS
+#                                                                           |--> ACCURACY / LOSS
+performances = dict()
+from gensim.models import Word2Vec
+
+for sg in skipgram:
+    performances[sg] = dict
+    for dim_embedding in dim_embeddingInterval:
+        performances[sg][dim_embedding] = dict()
+        for contextWindow  in contextWindowInterval:
+            performances[sg][dim_embedding][contextWindow] = dict()
+            for hs in hierarchical_softmax:
+                performances[sg][dim_embedding][contextWindow][hs] = dict()
+                if hs == 0:       
+                    for k_negativeSampling in negativeSamplingInterval:
+                        performances[sg][dim_embedding][contextWindow][hs][k_negativeSampling] = dict()
+                        #performances[sg][dim_embedding][contextWindow][hs][k_negativeSampling]["ACCURACY"] = dict()
+                        #performances[sg][dim_embedding][contextWindow][hs][k_negativeSampling]["LOSS"] = dict()
+                        
+                        #ensemble
+                        accuracies_tmp = []
+                        losses_tmp = []
+                        for c_tmp in range(n_ensemble):
+                            print(sg,"sg",
+                                  dim_embedding,"dim_embedding",
+                                  contextWindow,"contextWindow",
+                                  hs,"hs",
+                                  k_negativeSampling,"k_negativeSampling",
+                                  c_tmp,"c_tmp")
+ 
+                            print("fitting model")
+                            w2v_model = Word2Vec(sentences=allWords,
+                                                 sg = sg,
+                                                 size=dim_embedding,
+                                                 window=contextWindow,
+                                                 hs=hs,
+                                                 negative=k_negativeSampling,
+                                                 min_count=1
+                                                 )
+                            """
+                            EVALUATION
+                            """
+                            print("EVALUATION")
+                            c = 0
+                            sum_dist  =0
+                            for test in evaluation.SimilarityTestData:
+                                predicted = [s for (s,dist) in w2v_model.most_similar(positive=test["positive"], negative=test["negative"],topn=20)]
+                                true = test["true"][0]
+                                if true in predicted:
+                                    c+=1
+                                dist = cosine(w2v_model[predicted[0]],w2v_model[true])
+                    #             print("positive",test["positive"],
+                    #                   "negative",test["negative"],
+                    #                   "true",test["true"],
+                    #                   "predicted",w2v_model.most_similar(positive=test["positive"], negative=test["negative"],topn=1),
+                    #                   "distance to true label",dist)
+                                sum_dist += dist
+                            acc = c/len(evaluation.SimilarityTestData)
+                            loss = sum_dist/len(evaluation.SimilarityTestData)
+                            print("acc",acc)
+                            print("loss",loss)
+                            accuracies_tmp.append(acc)
+                            losses_tmp.append(loss)
+                else:
+                    #performances[sg][dim_embedding][contextWindow][hs]["ACCURACY"] = dict()
+                    #performances[sg][dim_embedding][contextWindow][hs]["LOSS"] = dict()
+                    
+                                      
+                    
+        
+
+for dim_embedding in dim_embeddingInterval:
+    print("dim_embedding",dim_embedding)
+    accuracies = []
+    losses = []
+    for contextWindow  in contextWindowInterval:
+        print("contextWindow",contextWindow)
+        minCount = 1
+        accuracies_tmp = []
+        losses_tmp = []
+        
+        for k_negativeSampling in negativeSamplingInterval:
+            
+
+            #take mean performance of ensemble
+            for c_tmp in range(1):
+                print(c_tmp,"dim_embedding",dim_embedding,"contextWindow",contextWindow)
+                
+                from gensim.models import Word2Vec
+                print("fitting model")
+                w2v_model = Word2Vec(sentences=allWords,
+                                     size=dim_embedding,
+                                     min_count=1,
+                                     window=contextWindow,
+                                     negative=k_negativeSampling)
+                """
+                EVALUATION
+                NOT YET IMPLEMENTED:
+                If any phoneme in the evaluation set is not found directly in the training set due to rare occurrence,
+                it is split up into its atomic phonemes which are then summed up.
+                """
+                print("EVALUATION")
+                c = 0
+                sum_dist  =0
+                for test in evaluation.SimilarityTestData:
+                    predicted = [s for (s,dist) in w2v_model.most_similar(positive=test["positive"], negative=test["negative"],topn=20)]
+                    true = test["true"][0]
+                    if true in predicted:
+                        c+=1
+                    dist = cosine(w2v_model[predicted[0]],w2v_model[true])
+        #             print("positive",test["positive"],
+        #                   "negative",test["negative"],
+        #                   "true",test["true"],
+        #                   "predicted",w2v_model.most_similar(positive=test["positive"], negative=test["negative"],topn=1),
+        #                   "distance to true label",dist)
+                    sum_dist += dist
+                acc = c/len(evaluation.SimilarityTestData)
+                loss = sum_dist/len(evaluation.SimilarityTestData)
+                print("acc",acc)
+                print("loss",loss)
+                accuracies_tmp.append(acc)
+                losses_tmp.append(loss)
+        accuracies.append(np.array(np.mean(accuracies_tmp)))
+        losses.append(np.array(np.mean(losses_tmp)))
+    
+    plt.subplot(1,2,1)
+    plt.plot(contextWindowInterval,accuracies,color=colors[gridSearchPoint],label="dim "+ str(dim_embedding))
+    plt.subplot(1,2,2)
+
+    plt.plot(contextWindowInterval,losses,color=colors[gridSearchPoint],label="dim "+ str(dim_embedding))
+    gridSearchPoint += 1
+
+plt.subplot(1,2,1)
+plt.legend()
+plt.subplot(1,2,2)
+plt.legend()
+plt.show()

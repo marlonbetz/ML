@@ -6,7 +6,8 @@
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{epstopdf}
- \usepackage{cite}
+\usepackage{cite}
+\usepackage{tipa}
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 
 
@@ -45,7 +46,9 @@ Word embeddings have proven to be a reliable tool for several NLP tasks. However
 \caption{The neural language model as proposed in \cite{bengio2003neural}.}
 \label{fig:bengio2006network}
 \end{figure}
-Models that make use of  cooccurrence count matrix factorizations usually suffer from the need of storing huge amounts of data into working memory. Neural networks with hidden layers, on the other hand, have been proven to be able to approximate any given hidden function while they still allow for online or mini-batch training. This is a huge improvement over models that only work with whole data batches, as much less working memory has to be used here. \cite{bengio2003neural} pioneered as the first to introduce Neural Language Models in general. Here, a network with two hidden layers is proposed, where a first non-linear hidden layer with locally shared weights gives embeddings of single words in the given context window, while the next layer is a concatenation of the single word embeddings and another non-linear activation function and gives a context embedding. The last layer than is a softmax classifier that predicts the next word (cf. Figure \ref{fig:bengio2006network}). 
+Models that make use of  cooccurrence count matrix factorizations usually suffer from the need of storing huge amounts of data into working memory. Neural networks with hidden layers, on the other hand, have been proven to be able to approximate any given hidden function while they still allow for online or mini-batch training, which is a huge improvement over models that only work with whole data batches. Moreover they allow for fine-grained objective functions, where additional data can be introduced into the network to enhance the amount of information stored in the embeddings.
+\subsubsection{Neural Language Models}
+ \cite{bengio2003neural} pioneered as the first to introduce Neural Language Models in general. Here, a network with two hidden layers is proposed, where a first non-linear hidden layer with locally shared weights gives embeddings of single words in the given context window, while the next layer is a concatenation of the single word embeddings and another non-linear activation function and gives a context embedding. The last layer than is a softmax classifier that predicts the next word (cf. Figure \ref{fig:bengio2006network}). 
 It later became clear that this model had two major drawbacks:
 \begin{itemize}  
 \item The softmax classifier needs to compute the probability of all word types in the vocabulary. This is a major flaw also of following models (see below).
@@ -152,22 +155,22 @@ Here, we can replace the softmax in the second term by $P(w_i)$ and reposition t
 -\sum_{w_i \in V}  P(w_i)  \nabla_\theta (\mathcal{E}(w_i))\label{eq:negative_reinforcement_7}
 \end{equation}
 
-As one can see, we basically end up with a positive and a negative reinforcement term. As the negative reinforcement term is basically the gradient of $\mathbb{E}_{w_i\sim P}$, the final reformulation of the softmax is then given as in Eq. \ref{eq:final_negative_reinforcement}.
+As one can see, we basically end up with a positive and a negative reinforcement term. As the negative reinforcement term is basically the gradient of $\mathbb{E}_{w_i$\sim$ P}$, the final reformulation of the softmax is then given as in Eq. \ref{eq:final_negative_reinforcement}.
 \begin{equation}
-\nabla_\theta J_\theta =\nabla_\theta \mathcal{E}(w)  - \mathbb{E}_{w_i\sim P}[\nabla _{\theta}\mathcal{E}(w_i)] 
+\nabla_\theta J_\theta =\nabla_\theta \mathcal{E}(w)  - \mathbb{E}_{w_i$\sim$ P}[\nabla _{\theta}\mathcal{E}(w_i)] 
 \label{eq:final_negative_reinforcement}
 \end{equation}
 
-The goal of sampling-based approaches is now to approximate the negative reinforcement term $\mathbb{E}_{w_i\sim P}[\nabla _{\theta}\mathcal{E}(w_i)] $ without going over the whole vocabulary.
+The goal of sampling-based approaches is now to approximate the negative reinforcement term $\mathbb{E}_{w_i$\sim$ P}[\nabla _{\theta}\mathcal{E}(w_i)] $ without going over the whole vocabulary.
 Earlier models used some forms of Importance Sampling \cite{liu2008monte,bengio2003quick,bengio2008adaptive,cho2015using}, where a proposal distribution $Q$ is used to approximate $P$. Although Importance sampling seems to provide a speed-up over the standard softmax, the model suffers from divergence issues.
 Another group of sampling models does not try to estimate the probability of a word directly but uses an auxiliary loss that as a by-product produces probability estimates of correct words. Noise Contrastive Estimation (NCE, \cite{gutmann2010noise,mnih2012fast}) trains a model to differentiate between a true word $w_i$ and noise data $\tilde{w}_{ik}$, where $k$ is the number of noisy data points. As a start point, one can use a logistic regression loss that minimized the negative log-likelihood as in Eq \ref{eq:nce_1}, where $Q$ is a noise distribution:
 
 \begin{equation}
-J_{\theta}  = - \sum_{w_i \in V} [\log P(y=1|w_i,c_i) + k \mathbb{E}_{\tilde{w}_{ik}\sim Q}[\log P (y = 0|\tilde{w}_{ik},c_i)]]
+J_{\theta}  = - \sum_{w_i \in V} [\log P(y=1|w_i,c_i) + k \mathbb{E}_{\tilde{w}_{ik}$\sim$ Q}[\log P (y = 0|\tilde{w}_{ik},c_i)]]
 \label{eq:nce_1}
 \end{equation}
 
-Since we want to avoid summing over all words in the vocabulary to estimate $ \mathbb{E}_{\tilde{w}_{ik}\sim Q}$, we substitute it with the mean as a Monte Carlo estimate, which leaves us with the sum over all log probabilities of the $k$ noisy words:
+Since we want to avoid summing over all words in the vocabulary to estimate $ \mathbb{E}_{\tilde{w}_{ik}$\sim$ Q}$, we substitute it with the mean as a Monte Carlo estimate, which leaves us with the sum over all log probabilities of the $k$ noisy words:
 
 \begin{equation}
 J_{\theta}  = - \sum_{w_i \in V} [\log P(y=1|w_i,c_i) + \sum_{j=1}^{k}\log P (y = 0|\tilde{w}_{ik},c_i)]
@@ -253,7 +256,9 @@ For a more in-depth analysis of NEG, see \cite{goldberg2014word2vec}.
    \label{fig:plm}
 \end{figure}
 
-\\
+
+\subsubsection{Polyglot Neural Language Models}
+
 One of the reasons why word2vec has become the most popular neural embedding model (and probably the most popular embedding model in general) is that it does not involve any hidden layers that would affect the training speed performance. However, with the rise of Long Short-term Memory Networks (LSTM, \cite{hochreiter1997long}), there is an increase of research on embeddings trained jointly with LSTMs to predict tokens or whole sequences \cite{chen2015joint,ling2015finding,kim2015character,dos2014learning}, while some learn them jointly with convolutional models \cite{zhang2015character}. One family of models important for our case are Polyglot Neural Language Models (PLM) \cite{tsvetkov2016polyglot}. Here, a deep model tries to predict the next phoneme given the previous phonemes, the language of the whole sequence as well as typological information from WALS \cite{wals}, PHOIBLE \cite{phoible} and Ethnologue \cite{lewis2015ethnologue} (see Fig. \ref{fig:plm}). 
 The model first embeds the whole context into a hidden local context representation $c_t$
 
@@ -301,9 +306,11 @@ The authors report superior perplexity over a baseline LSTM model, even with the
 
 \section{Evaluation}
 \subsection{Data}
-For this paper, the data provided by the Automatic Similarity Judgement Program (ASJP,) will serve as a training corpus. ASJP provides wordlists of roughly 7200 languages, where each word is given as a string of phonemes. This vast amount of different phoneme inventories will allow for the unbiased comparison of phonemes over language boundaries. However, ASJP does not make use of IPA, but a simplified phonemic alphabet that is based on ASCII-characters. This makes it possible to incorporate data where no detailed IPA description is given, but might also reduce the quality of the resulting embedding space, as latent features that might be encoded in more specific IPA descriptions are merged. 
-\subsection{Evaluation Methods}
-\subsubsection{Intrinsic Evaluation}
+For this paper, the data provided by the Automatic Similarity Judgement Program (ASJP,) will serve as a training corpus. ASJP provides wordlists of roughly 7200 languages, where each word is given as a string of phonemes. This vast amount of different phoneme inventories will allow for the unbiased comparison of phonemes over language boundaries. However, ASJP does not make use of IPA, but a simplified phonemic alphabet that is based on ASCII-characters. This makes it possible to incorporate data where no detailed IPA description is given, but might also reduce the quality of the resulting embedding space, as latent features that might be encoded in more specific IPA descriptions are merged. An overview of the ASJP phonemes and their IPA counterparts are given in the appendix.
+\subsection{Intrinsic Evaluation}
+\label{Intrinsic Evaluation}
+
+Embeddings are commonly evaluated using \textit{intrinsic} and \textit{extrinsic} tests.
 Intrinsic evaluation methods allow for the direct comparison of different models of embedding algorithms. Here the underlying assumption is that the embedding space itself should encode certain information. For word embeddings, this usually accumulates in relatedness, analogy, categorization or selectional preference tests \cite{schnabel2015evaluation}. They all have in common that the predicted outcome given a certain model is compared to a gold standard. The problem in our case is that for phoneme embeddings, there is hardly any pre-defined gold standard available, especially not for ASJP data. For this reason I will restrict the intrinsic evaluation part to analogy tests of the sort of those made popular by \cite{mikolov2013distributed}. I hand-crafted analogy tables where each line is of the form 
 
 \begin{equation}
@@ -313,13 +320,10 @@ v(phoneme_1) + v(phoneme_2) -  v(phoneme_3) \approx v(phoneme_4)
 where $v(phoneme_1)$ is the vector corresponding to $phoneme_1$ and $v(phoneme_2) - v(phoneme_3)$ can be seen as the latent phonological information available in $phoneme_2$ but not in $phoneme_3$,  while $v(phoneme_1) + v(phoneme_2) -  v(phoneme_3) $ is then this latent phonological information added to $phoneme_1$, which should be close to the vector corresponding to $phoneme_4$. For example, in
 
 \begin{equation}
-v(i) + v(u*) -  v(u) \approx v(i*)
+v(\textbf{/i/} ) + v(\textbf{/u*/} ) -  v(\textbf{/u/} ) \approx v(\textbf{/i*/} )
 \end{equation}
-$v(u*) -  v(u)$ describes a latent feature that should correspond to \textsc{[+nasalized]}, which is then added to the phoneme \textbf{/i/} to yield a nasalized \textbf{/i*/}. The latent features should correspond to accepted phonological distinctive features such as \textsc{[voice]}, \textsc{[labial]} or \textsc{[aspirated]}. The full list of analogy tasks can be found in the appendix. 
+$v(\textbf{/u*/} ) -  v(\textbf{/u/} )$ describes a latent feature that should correspond to \textsc{[+nasalized]}, which is then added to the phoneme \textbf{/i/} to yield a nasalized \textbf{/i*/}. The latent features should correspond to accepted phonological distinctive features such as \textsc{[voice]}, \textsc{[labial]} or \textsc{[aspirated]}. For this task it is important that the target phoneme should only differ in one phonological feature from the source phoneme, to allow for reThe full list of analogy tasks can be found in the appendix. 
 Here accuracy serves as a test metric as the target phoneme embedding should be the closest embedding to the predicted point in the embedding space.
-
-\subsection{Results}
-\section{Use Cases}
 \subsection{Phonemic String Comparison}
 An often found sub-task in Computational Historical Linguistics are string comparisons. For instance, when trying find cognates, the basic assumption is that words that are etymologically related should show similar phonemic shape. The standard way here is using symbolic string distances such as the normalized Levenshtein distance. However, this assumes that phonemes are equidistant to each other. Weighted string comparisons, either hand-crafted of learned, try to account for the fact that some phonemes are closer to each other than to others. 
 Using embeddings for string comparison means that one has to embed the sequence of phoneme embeddings of all words to be compared into some common latent space. Such word embeddings would then be close to each other if the words share similar phonological information and hence would inherently allow for weighted comparisons. 
@@ -328,7 +332,256 @@ Using embeddings for string comparison means that one has to embed the sequence 
 Especially for graphic data, the benefits of generative models, especially generative auto-encoders, lead to rising interest in such models. Here, a latent variable is used to approximate the expected output of a network. A quite simplistic model of sound change would be that the proto-form should contain information common to all daughter words, that is, the proto-form should be some sort of mean of all daughter words. If we now train such a model to encode and decode words and further cluster all words belonging to a certain cognate class, the centroid of such clusters should correspond to the underlying proto-form of the given words.
 \subsection{Phoneme Inventory Clustering}
 \section{Resume}
+\section{Appendix}
+\subsection{Analogy Tests}
+The analogy tasks consist of 2 positive values, one negative value and a target value, as described in \ref{Intrinsic Evaluation}.
+\subsection{Consonants}
+\begin{table}
+\tiny
+\begin{tabular}{ l | l | l }
+\hline \multicolumn{3}{l}{voiceless plosive $\rightarrow$ nasal via unvoiced plosive}\\  \hline
+positive & negative & target \\ \hline
+p, n & t & m \\
+t, m & p & n \\
+k, n & t & N \\ 
+ \hline \multicolumn{3}{l}{voiced plosive $\rightarrow$ nasal via voiced plosive}\\  \hline
+b, n & d & m \\
+d, m & b & n \\
+g, n & d & N \\
+ \hline \multicolumn{3}{l}{plain voiced plosive $\rightarrow$ plain nasal via plain unvoiced plosive}\\  \hline
+b, n & t & m \\
+d, m & p & n \\
+g, n & t & N \\
+ \hline \multicolumn{3}{l}{plain unvoiced plosive $\rightarrow$ plain voiced plosive via plain voiced plosive}\\  \hline
+p, d & t & b \\
+t, b & p & d \\
+k, d & t & g \\
+ \hline \multicolumn{3}{l}{plain voiced plosive $\rightarrow$ plain unvoiced plosive via plain unvoiced plosive}\\  \hline
+b, t & d & p \\
+d, p & b & t \\
+g, t & d & k \\
+ \hline \multicolumn{3}{l}{labialized voiced plosive $\rightarrow$  labialized nasal via labialized unvoiced plosive}\\  \hline
+bw$\sim$, nw$\sim$ & tw$\sim$ & mw$\sim$ \\
+dw$\sim$, mw$\sim$ & pw$\sim$ & nw$\sim$ \\
+gw$\sim$, nw$\sim$ & tw$\sim$ & Nw$\sim$ \\
+ \hline \multicolumn{3}{l}{labialized unvoiced plosive $\rightarrow$ labialized voiced plosive via labialized voiced plosive}\\  \hline
+pw$\sim$, dw$\sim$ & tw$\sim$ & bw$\sim$ \\
+tw$\sim$, bw$\sim$ & pw$\sim$ & dw$\sim$ \\
+kw$\sim$, dw$\sim$ & tw$\sim$ & gw$\sim$ \\
+ \hline \multicolumn{3}{l}{labialized voiced plosive $\rightarrow$ labialized unvoiced plosive via labialized unvoiced plosive}\\  \hline
+bw$\sim$, tw$\sim$ & dw$\sim$ & pw$\sim$ \\
+dw$\sim$, pw$\sim$ & bw$\sim$ & tw$\sim$ \\
+gw$\sim$, tw$\sim$ & dw$\sim$ & kw$\sim$ \\
+ \hline \multicolumn{3}{l}{palazalized voiced plosive $\rightarrow$  palazalized nasal via palazalized unvoiced plosive}\\  \hline
+by$\sim$, ny$\sim$ & ty$\sim$ & my$\sim$ \\
+dy$\sim$, my$\sim$ & py$\sim$ & ny$\sim$ \\
+gy$\sim$, ny$\sim$ & ty$\sim$ & Ny$\sim$ \\
+ \hline \multicolumn{3}{l}{palazalized unvoiced plosive $\rightarrow$ palazalized voiced plosive via palazalized voiced plosive}\\  \hline
+py$\sim$, dy$\sim$ & ty$\sim$ & by$\sim$ \\
+ty$\sim$, by$\sim$ & py$\sim$ & dy$\sim$ \\
+ky$\sim$, dy$\sim$ & ty$\sim$ & gy$\sim$ \\
+ \hline \multicolumn{3}{l}{palazalized voiced plosive $\rightarrow$ palazalized unvoiced plosive via palazalized unvoiced plosive}\\  \hline
+by$\sim$, ty$\sim$ & dy$\sim$ & py$\sim$ \\
+dy$\sim$, py$\sim$ & by$\sim$ & ty$\sim$ \\
+gy$\sim$, ty$\sim$ & dy$\sim$ & ky$\sim$ \\
+ \hline \multicolumn{3}{l}{aspirated voiced plosive $\rightarrow$  aspirated nasal via aspirated unvoiced plosive}\\  \hline
+bh$\sim$, nh$\sim$ & th$\sim$ & mh$\sim$ \\
+dh$\sim$, mh$\sim$ & ph$\sim$ & nh$\sim$ \\
+gh$\sim$, nh$\sim$ & th$\sim$ & Nh$\sim$ \\
+ \hline \multicolumn{3}{l}{aspirated unvoiced plosive $\rightarrow$ aspirated voiced plosive via aspirated voiced plosive}\\  \hline
+ph$\sim$, dh$\sim$ & th$\sim$ & bh$\sim$ \\
+th$\sim$, bh$\sim$ & ph$\sim$ & dh$\sim$ \\
+kh$\sim$, dh$\sim$ & th$\sim$ & gh$\sim$ \\
 
+ \hline \multicolumn{3}{l}{aspirated voiced plosive $\rightarrow$ aspirated unvoiced plosive via aspirated unvoiced plosive    }\\  \hline
+bh$\sim$, th$\sim$ & dh$\sim$ & ph$\sim$ \\
+dh$\sim$, ph$\sim$ & bh$\sim$ & th$\sim$ \\
+gh$\sim$, th$\sim$ & dh$\sim$ & kh$\sim$ \\
+
+ \hline \multicolumn{3}{l}{glottalized voiced plosive $\rightarrow$  glottalized nasal via glottalized unvoiced plosive }\\  \hline
+b", n" & t" & m" \\
+d", m" & p" & n" \\
+g", n" & t" & N" \\
+
+ \hline \multicolumn{3}{l}{glottalized unvoiced plosive $\rightarrow$ glottalized voiced plosive via glottalized voiced plosive   }\\  \hline
+p", d" & t" & b" \\
+t", b" & p" & d" \\
+k", d" & t" & g" \\
+
+ \hline \multicolumn{3}{l}{glottalized voiced plosive $\rightarrow$ glottalized unvoiced plosive via glottalized unvoiced plosive   }\\  \hline
+b", t" & d" & p" \\
+d", p" & b" & t" \\
+g", t" & d" & k" \\
+
+
+\end{tabular}
+\end{table}
+
+
+
+\begin{table}
+\tiny
+\begin{tabular}{ l | l | l }
+\hline\multicolumn{3}{l}{unvoiced pulmonic plosive  $\rightarrow$ unvoiced aspirated plosive via unvoiced aspirated plosive }\\  \hline
+positive & negative & target \\ \hline
+
+p, th$\sim$ & t & ph$\sim$ \\
+t, ph$\sim$ & p & th$\sim$ \\
+k, th$\sim$ & t & kh$\sim$ \\
+
+\hline \multicolumn{3}{l}{voiced pulmonic plosive  $\rightarrow$ voiced aspirated plosive via voiced aspirated plosive  }\\  \hline
+
+b, dh$\sim$ & d & bh$\sim$ \\
+d, bh$\sim$ & b & dh$\sim$ \\
+g, dh$\sim$ & d & gh$\sim$ \\
+
+\hline \multicolumn{3}{l}{unvoiced plain plosive  $\rightarrow$ unvoiced palatalized plosive via unvoiced palatalized plosive  }\\  \hline
+
+p, ty$\sim$ & t & py$\sim$ \\
+t, py$\sim$ & p & ty$\sim$ \\
+k, ty$\sim$ & t & ky$\sim$ \\
+
+
+\hline \multicolumn{3}{l}{voiced plain plosive  $\rightarrow$ voiced palatalized plosive via voiced palatalized plosive }\\  \hline
+
+b, dy$\sim$ & d & by$\sim$ \\
+d, by$\sim$ & b & dy$\sim$ \\
+g, dy$\sim$ & d & gy$\sim$ \\
+
+\hline \multicolumn{3}{l}{unvoiced plain plosive  $\rightarrow$ unvoiced labialized plosive via unvoiced labialized plosive }\\  \hline
+
+p, t" & t & p" \\
+t, p" & p & t" \\
+k, t" & t & k" \\
+
+\hline \multicolumn{3}{l}{voiced plain plosive  $\rightarrow$ voiced labialized plosive via voiced labialized plosive      }\\  \hline
+
+b, d" & d & b" \\
+d, b" & b & d" \\
+g, d" & d & g" \\
+
+\hline \multicolumn{3}{l}{unvoiced pulmonic plosive  $\rightarrow$ unvoiced glottalized plosive via unvoiced glottalized plosive  }\\  \hline
+
+p, t" & t & p" \\
+t, p" & p & t" \\
+k, t" & t & k" \\
+
+\hline \multicolumn{3}{l}{check voiced pulmonic plosive  $\rightarrow$ voiced glottalized plosive via voiced glottalized plosive}\\  \hline
+
+b, d" & d & b" \\
+d, b" & b & d" \\
+g, d" & d & g" \\
+
+\hline \multicolumn{3}{l}{POA transitions for unvoiced plosives}\\  \hline
+p, d & b & t \\
+t, b & d & p \\
+k, d & g & t \\
+
+\hline \multicolumn{3}{l}{POA transitions for voiced plosives}\\  \hline
+
+b, t & p & d \\
+d, p & t & b \\
+g, t & k & d \\
+
+\hline \multicolumn{3}{l}{POA transitions for  nasals}\\  \hline
+
+m, d & b & n \\
+n, b & d & m \\
+N, d & g & n \\
+
+\hline \multicolumn{3}{l}{POA transitions for unvoiced fricatives}\\  \hline
+
+f, t & p & s \\
+s, p & t & f \\
+x, t & k & s \\
+X, k & q & x \\
+
+\hline \multicolumn{3}{l}{POA transitions for voiced fricatives}\\  \hline
+
+v, d & b & z \\
+z, b & d & v \\
+\end{tabular}
+\end{table}
+
+
+\subsection{Vowels}
+\begin{table}
+\begin{tabular}{ l | l | l }
+\hline \multicolumn{3}{l}{apply \textsc{[+rounded]}}\\  \hline
+positive & negative & target \\\hline
+i, o & e & u \\
+e, u & i & o \\
+\hline \multicolumn{3}{l}{apply \textsc{[+high]}}\\  \hline
+i, o & u & o \\
+e, u & o & u \\
+\hline \multicolumn{3}{l}{apply \textsc{[+nasal]}}\\  \hline
+i, u* & u & i* \\
+e, o* & o & e* \\
+u, i* & i & u* \\
+o, e* & e & o* \\
+a, o* & o & a* \\
+E, e* & e & E* \\
+3, E* & E & 3* \\
+\hline \multicolumn{3}{l}{apply \textsc{[-nasal]}}\\  \hline
+i*, u & u* & i \\
+e*, o & o* & e \\
+u*, i & i* & u \\
+o*, e & e* & o \\
+a*, o & o* & a \\
+E*, e & e* & E \\
+3*, E & E* & 3 \\
+\end{tabular}
+\end{table}
+
+\newpage
+\subsection{ASJP Phoneme tables}
+These ASJP phoneme tables with their corresponding IPA equivalents follow \cite{jager2014phylogenetic}.
+\subsubsection{Consonants}
+Glottalization is marked by a following double quote, coarticulation is indicated by a tilde \\$\sim$ (if one co-articulator) or a dollar sign \$ (if two co-articulators). \\
+\begin{tabular}{ l l l }
+ASJP code symbol & Description & IPA equivalent \\p & voiceless bilabial stop and fricative & b, \textipa{B} \\
+b & voiced bilabial stop and fricative & f \\
+f & voiceless labiodental fricative & v \\v & voiced labiodental fricative & m \\
+m & bilabial nasal & m \\
+w & voiced bilabial-velar approximant & w \\
+8 & voicedless and voiced dental fricative & \textipa{T}, \textipa{D} \\
+4 & dental nasal & \textipa{\|[n} \\
+t & voiceless alvolar stop & t \\
+d & voiced alveolar stop & d \\
+s & voiceless alveolar fricative & s \\
+z & voiced alveolar fricative & z \\
+c & voicless and voiced alveolar affricate & \textipa{\t{ts}}, \textipa{\t{dz}}  \\
+n & alvolar nasal & n \\
+r & rhotics & r, \textipa{R}, \textipa{\:r}, \textipa{\;R} \\l & voiced alveolar lateral approximant & l \\
+S & voiceless post-alveolar fricative & \textipa{S} \\
+Z & voiced post-alveolar fricative & \textipa{Z} \\
+C & voiceless palato-alveolar affricate & \textipa{\t{tS}} \\
+j & voiced palato-alveolar affricate & \textipa{\t{dZ}} \\
+T & voicless and voiced palatal stop & c, \textipa{\textbardotlessj}  \\
+5 & palatal nasal & \textipa{\textltailn}  \\
+y & palatal approximant & j \\
+k & voiceless velar stop & k \\
+g & voiced velar stop & g \\
+x & voiceless and voiced velar fricative & x, \textipa{G} \\
+N & velar nasal & \textipa{N} \\
+q & voiceless uvular stop & q \\
+G & voiced uvular stop & \textipa{\;q} \\
+X & voiceless and voiced uvular/pharyngeal fricatives & \textipa{X}, \textipa{K}, \textipa{\textcrh}, \textipa{Q} \\h & voiceless and voiced glottal fricative & h, \textipa{H} \\
+7 & glottal stop & \textipa{P} \\
+L & all other laterals & \textipa{\;L}, \textipa{\:l}, \textipa{L} \\
+! & clicks & \textipa{\!o}, \textipa{||}, \textipa{|}, \textipa{\textdoublebarpipe}}  \\
+\end{tabular}\
+\newpage
+\subsubsection{Vowels}
+Nasality is marked by a follow asterisk. \\
+\begin{tabular}{ l l l }
+ASJP code symbol & Description & IPA equivalent \\
+i & high front vowel, rounded and unrounded &\textipa{I}, \textipa{I}, y, \textipa{Y}\\e & mid front vowel, rounded and unrounded & e, \textipa{\o}\\E & low front vowel, rounded and unrounded & \textipa{\ae}, \textipa{E}, \textipa{\oe}, \textipa{\OE}\\
+3 & high and mid central vowel, rounded and unrounded & \textipa{1}, \textipa{9}, \textipa{@}, \textipa{3}, \textipa{8,} \textipa{O}, \textipa{8}, \textipa{\textcloseepsilon}}\\
+a & low central vowel, unrounded & a, \textipa{5}\\
+u & high back vowel, rounded and unrounded & \textipa{W}, u\\
+o & mid and low back vowel, rounded and unrounded & \textipa{7}, \textipa{2}, \textipa{A}, o, \textipa{O}, \textipa{6} \\
+\end{tabular}
 
 \bibliographystyle{apa}
 \bibliography{references} 
