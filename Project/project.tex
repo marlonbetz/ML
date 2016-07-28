@@ -8,6 +8,7 @@
 \usepackage{epstopdf}
 \usepackage{cite}
 \usepackage{tipa}
+\usepackage{subcaption}
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 
 
@@ -311,7 +312,7 @@ For this paper, the data provided by the Automatic Similarity Judgement Program 
 \label{Intrinsic Evaluation}
 
 Embeddings are commonly evaluated using \textit{intrinsic} and \textit{extrinsic} tests.
-Intrinsic evaluation methods allow for the direct comparison of different models of embedding algorithms. Here the underlying assumption is that the embedding space itself should encode certain information. For word embeddings, this usually accumulates in relatedness, analogy, categorization or selectional preference tests \cite{schnabel2015evaluation}. They all have in common that the predicted outcome given a certain model is compared to a gold standard. The problem in our case is that for phoneme embeddings, there is hardly any pre-defined gold standard available, especially not for ASJP data. For this reason I will restrict the intrinsic evaluation part to analogy tests of the sort of those made popular by \cite{mikolov2013distributed}. I hand-crafted analogy tables where each line is of the form 
+Intrinsic evaluation methods allow for the direct comparison of different models of embedding algorithms. Here the underlying assumption is that the embedding space itself should encode certain information. For word embeddings, this usually accumulates in relatedness, analogy, categorization or selectional preference tests \cite{schnabel2015evaluation}. They all have in common that the predicted outcome given a certain model is compared to a gold standard. The problem in our case is that for phoneme embeddings, there is hardly any pre-defined gold standard available, especially not for ASJP data. For this reason I will restrict the intrinsic evaluation part to analogy tests of the sort of those made popular by \cite{mikolov2013distributed}. I hand-crafted an analogy table of 108 analogy tasks where each line is of the form 
 
 \begin{equation}
 v(phoneme_1) + v(phoneme_2) -  v(phoneme_3) \approx v(phoneme_4)
@@ -322,8 +323,37 @@ where $v(phoneme_1)$ is the vector corresponding to $phoneme_1$ and $v(phoneme_2
 \begin{equation}
 v(\textbf{/i/} ) + v(\textbf{/u*/} ) -  v(\textbf{/u/} ) \approx v(\textbf{/i*/} )
 \end{equation}
-$v(\textbf{/u*/} ) -  v(\textbf{/u/} )$ describes a latent feature that should correspond to \textsc{[+nasalized]}, which is then added to the phoneme \textbf{/i/} to yield a nasalized \textbf{/i*/}. The latent features should correspond to accepted phonological distinctive features such as \textsc{[voice]}, \textsc{[labial]} or \textsc{[aspirated]}. For this task it is important that the target phoneme should only differ in one phonological feature from the source phoneme, to allow for reThe full list of analogy tasks can be found in the appendix. 
-Here accuracy serves as a test metric as the target phoneme embedding should be the closest embedding to the predicted point in the embedding space.
+$v(\textbf{/u*/} ) -  v(\textbf{/u/} )$ describes a latent feature that should correspond to \textsc{[+nasalized]}, which is then added to the phoneme \textbf{/i/} to yield a nasalized \textbf{/i*/}. The latent features should correspond to accepted phonological distinctive features such as \textsc{[voice]}, \textsc{[labial]} or \textsc{[aspirated]}. For this task it is important that the target phoneme should only differ in one phonological feature from the source phoneme. The full list of analogy tasks can be found in the appendix. Here, accuracy serves as a test metric as the target phoneme embedding should be the closest embedding to the predicted point in the embedding space.
+To compare the performance of the different embedding models, an extensive grid search over several hyperparameters was performed:
+\begin{itemize}
+\item Model architecture: CBOW, Skip-gram
+\item Classifier: Softmax, negative sampling
+\item Embedding dimensions: $[2, 5,10, 20, 50, 100, 150, 200, 400 ]$
+\item Context window size: $[1,2,3,4,5,8]$
+\item Number of negative samples: $[1, ..., 21]$
+\end{itemize}
+For each hyperparameter setting, an ensemble of three models was trained simultaneously. Each model iterated five times over the corpus.
+
+\begin{figure}[h] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=\textwidth]{4models_comparison_meanMax} 
+   \caption{Mean (top) and maximal (bottom) accuracy of the for models evaluated with regard to the number of embedding dimensions (left) and context window size (right) over all other hyperparameters.}
+   \label{fig:4models_comparison}
+\end{figure}
+
+
+
+
+
+\begin{figure}[h] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=0.8\textwidth]{acc_k_neg_vs_windowSize} 
+   \caption{Mean and maximal accuracies of the skip-gram model with regard to the window size and number of negative samples over all other parameters.}
+   \label{fig:acc_k_neg_vs_windowSize}
+\end{figure}
+
+Figure \ref{fig:4models_comparison} shows how CBOW clearly yields better results than skip-gram once the number of embedding dimensions increases. ,while for skip-gram, hierarchical softmax further outperforms negative sampling with regard to mean accuracy. It can further be seen that 50 dimensions might already be enough for good accuracy and that more dimensions might even decrease performance at least for the negative sampling model, while a context window of 2 phonemes seems to maximize accuracy. Figure \ref{fig:acc_k_neg_vs_windowSize} further suggests that for negative sampling, the performance should not change too much with more than 10 negative samples.
+
 \subsection{Phonemic String Comparison}
 An often found sub-task in Computational Historical Linguistics are string comparisons. For instance, when trying find cognates, the basic assumption is that words that are etymologically related should show similar phonemic shape. The standard way here is using symbolic string distances such as the normalized Levenshtein distance. However, this assumes that phonemes are equidistant to each other. Weighted string comparisons, either hand-crafted of learned, try to account for the fact that some phonemes are closer to each other than to others. 
 Using embeddings for string comparison means that one has to embed the sequence of phoneme embeddings of all words to be compared into some common latent space. Such word embeddings would then be close to each other if the words share similar phonological information and hence would inherently allow for weighted comparisons. 
@@ -544,9 +574,11 @@ E*, e & e* & E \\
 \centering
 \caption{ASJP consonants with their IPA equivalents. Glottalization is marked by a following double quote, coarticulation is indicated by a tilde ∼ (if one co-articulator) or a dollar sign \$ (if two co-articulators). The tables follow  \cite{jager2014phylogenetic}.}
 \begin{tabular}{ l l l }
-ASJP code symbol & Description & IPA equivalent \\p & voiceless bilabial stop and fricative & b, \textipa{B} \\
+ASJP code symbol & Description & IPA equivalent \\
+p & voiceless bilabial stop and fricative & b, \textipa{B} \\
 b & voiced bilabial stop and fricative & f \\
-f & voiceless labiodental fricative & v \\v & voiced labiodental fricative & m \\
+f & voiceless labiodental fricative & v \\
+v & voiced labiodental fricative & m \\
 m & bilabial nasal & m \\
 w & voiced bilabial-velar approximant & w \\
 8 & voicedless and voiced dental fricative & \textipa{T}, \textipa{D} \\
@@ -557,7 +589,8 @@ s & voiceless alveolar fricative & s \\
 z & voiced alveolar fricative & z \\
 c & voicless and voiced alveolar affricate & \textipa{\t{ts}}, \textipa{\t{dz}}  \\
 n & alvolar nasal & n \\
-r & rhotics & r, \textipa{R}, \textipa{\:r}, \textipa{\;R} \\l & voiced alveolar lateral approximant & l \\
+r & rhotics & r, \textipa{R}, \textipa{\:r}, \textipa{\;R} \\
+l & voiced alveolar lateral approximant & l \\
 S & voiceless post-alveolar fricative & \textipa{S} \\
 Z & voiced post-alveolar fricative & \textipa{Z} \\
 C & voiceless palato-alveolar affricate & \textipa{\t{tS}} \\
@@ -571,7 +604,8 @@ x & voiceless and voiced velar fricative & x, \textipa{G} \\
 N & velar nasal & \textipa{N} \\
 q & voiceless uvular stop & q \\
 G & voiced uvular stop & \textipa{\;q} \\
-X & voiceless and voiced uvular/pharyngeal fricatives & \textipa{X}, \textipa{K}, \textipa{\textcrh}, \textipa{Q} \\h & voiceless and voiced glottal fricative & h, \textipa{H} \\
+X & voiceless and voiced uvular/pharyngeal fricatives & \textipa{X}, \textipa{K}, \textipa{\textcrh}, \textipa{Q} \\
+h & voiceless and voiced glottal fricative & h, \textipa{H} \\
 7 & glottal stop & \textipa{P} \\
 L & all other laterals & \textipa{\;L}, \textipa{\:l}, \textipa{L} \\
 ! & clicks & \textipa{\!o}, \textipa{||}, \textipa{|}, \textipa{\textdoublebarpipe}  \\
@@ -583,7 +617,9 @@ L & all other laterals & \textipa{\;L}, \textipa{\:l}, \textipa{L} \\
 \caption{ASJP vowels with their IPA equivalents. Nasality is marked by a following asterisk.}
 \begin{tabular}{ l l l }
 ASJP code symbol & Description & IPA equivalent \\
-i & high front vowel, rounded and unrounded &\textipa{I}, \textipa{I}, y, \textipa{Y}\\e & mid front vowel, rounded and unrounded & e, \textipa{\o}\\E & low front vowel, rounded and unrounded & \textipa{\ae}, \textipa{E}, \textipa{\oe}, \textipa{\OE}\\
+i & high front vowel, rounded and unrounded &\textipa{I}, \textipa{I}, y, \textipa{Y}\\
+e & mid front vowel, rounded and unrounded & e, \textipa{\o}\\
+E & low front vowel, rounded and unrounded & \textipa{\ae}, \textipa{E}, \textipa{\oe}, \textipa{\OE}\\
 3 & high and mid central vowel, rounded and unrounded & \textipa{1}, \textipa{9}, \textipa{@}, \textipa{3}, \textipa{8}, \textipa{O}, \textipa{8}, \textipa{\textcloseepsilon}\\
 a & low central vowel, unrounded & a, \textipa{5}\\
 u & high back vowel, rounded and unrounded & \textipa{W}, u\\

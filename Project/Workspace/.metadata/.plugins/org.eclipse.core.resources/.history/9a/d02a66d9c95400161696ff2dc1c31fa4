@@ -1,0 +1,267 @@
+import numpy as np 
+import pickle  
+import matplotlib.pyplot as plt
+import seaborn
+from pandas import DataFrame
+performances = pickle.load(open("performances.pkl", "rb"))
+
+dim_embeddingInterval = [2, 5,
+                         10, 20, 50, 100, 150, 200, 400
+                         ]
+contextWindowInterval = [1, 2,
+                         3, 4, 5, 8
+                         ]
+
+negativeSamplingInterval = list(range(1, 21))
+
+# #get max
+# max = 0
+# for sg in performances:
+#     for dim_embedding in performances[sg]:
+#         for contextWindow in performances[sg][dim_embedding]:
+#             for hs in performances[sg][dim_embedding][contextWindow]:
+#                 if hs == 0:
+#                     for k_negative in performances[sg][dim_embedding][contextWindow][hs]:
+#                         acc = np.mean(performances[sg][dim_embedding][contextWindow][hs][k_negative]["ACCURACY"])
+#                         if acc > max :
+#                             print(sg,dim_embedding,contextWindow,hs,k_negative)
+#                             print(acc)  
+#                             max = acc               
+#                 else:
+#                     acc = np.mean(performances[sg][dim_embedding][contextWindow][hs]["ACCURACY"])
+#                     if acc > max :
+#                         print(sg,dim_embedding,contextWindow,hs)
+#                         print(acc)
+#                         max = acc
+# 
+#                       
+
+def getMax(performances): 
+    max = 0
+    max_param = 0
+    for sg in performances:
+        for dim_embedding in performances[sg]:
+            for contextWindow in performances[sg][dim_embedding]:
+                for hs in performances[sg][dim_embedding][contextWindow]:
+                    if hs == 0:
+                        for k_negative in performances[sg][dim_embedding][contextWindow][hs]:
+                            acc = np.mean(performances[sg][dim_embedding][contextWindow][hs][k_negative]["ACCURACY"])
+                            if acc > max :
+                               # print(sg,dim_embedding,contextWindow,hs,k_negative)
+                                # print(acc)  
+                                max = acc  
+                                max_param = (sg, dim_embedding, contextWindow, hs, k_negative)
+                    else:
+                        acc = np.mean(performances[sg][dim_embedding][contextWindow][hs]["ACCURACY"])
+                        if acc > max :
+                            # print(sg,dim_embedding,contextWindow,hs)
+                            # print(acc)
+                            max = acc
+                            max_param = (sg, dim_embedding, contextWindow, hs)
+    return (max, max_param)
+
+
+def max_negative_hs(performances):
+    
+    max_hs = 0
+    max_neg = 0
+    max_hs_param = 0
+    max_neg_param = 0
+    for sg in performances:
+        for dim_embedding in performances[sg]:
+            for contextWindow in performances[sg][dim_embedding]:
+                for hs in performances[sg][dim_embedding][contextWindow]:
+                    if hs == 0:
+                        for k_negative in performances[sg][dim_embedding][contextWindow][hs]:
+                            acc = np.mean(performances[sg][dim_embedding][contextWindow][hs][k_negative]["ACCURACY"])
+                            if acc > max_neg :
+                               # print(sg,dim_embedding,contextWindow,hs,k_negative)
+                                # print(acc)  
+                                max_neg = acc  
+                                max_neg_param = (sg, dim_embedding, contextWindow, hs, k_negative)
+                    else:
+                        acc = np.mean(performances[sg][dim_embedding][contextWindow][hs]["ACCURACY"])
+                        if acc > max_hs :
+                            # print(sg,dim_embedding,contextWindow,hs)
+                            # print(acc)
+                            max_hs = acc
+                            max_hs_param = (sg, dim_embedding, contextWindow, hs)
+    return (max_neg, max_neg_param, max_hs, max_hs_param)
+
+
+def plot_k_neg_vs_windowSize(performances):
+    accs = dict()
+    for sg in performances:
+        for dim_embedding in performances[sg]:
+            for contextWindow in performances[sg][dim_embedding]:
+                for hs in performances[sg][dim_embedding][contextWindow]:
+                    if hs == 0:
+                        for k_negative in performances[sg][dim_embedding][contextWindow][hs]:
+                            acc = np.mean(performances[sg][dim_embedding][contextWindow][hs][k_negative]["ACCURACY"])
+                            if (k_negative, contextWindow)not in accs:
+                                accs[(k_negative, contextWindow)] = []
+                            accs[(k_negative, contextWindow)].append(acc)
+    acc_means = np.zeros((len(negativeSamplingInterval), len(contextWindowInterval)))
+    for key in accs:
+        acc_means[negativeSamplingInterval.index(key[0]), contextWindowInterval.index(key[1])] = np.mean(accs[key])
+    df = DataFrame(acc_means, columns=contextWindowInterval, index=negativeSamplingInterval)
+    for window in df:
+        plt.plot(df[window], label=window)
+    plt.legend(loc=4, frameon=True, title="window size").get_frame().set_color("white")
+    plt.xlabel(r"$k_{negative}$")
+    plt.ylabel("mean accuracy")
+    plt.show()
+
+def plot_cbow_vs_sg_via_dim(performances, key):
+    vals = dict()
+    for sg in performances:
+        for dim_embedding in performances[sg]:
+            tmp = []
+            for contextWindow in performances[sg][dim_embedding]:
+                for hs in performances[sg][dim_embedding][contextWindow]:
+                    if hs == 0:
+                        for k_negative in performances[sg][dim_embedding][contextWindow][hs]:
+                            val = np.mean(performances[sg][dim_embedding][contextWindow][hs][k_negative][key])                                
+                            tmp.append(val)
+                    else:
+                        val = np.mean(performances[sg][dim_embedding][contextWindow][hs][key])                                
+                        tmp.append(val)
+            vals[(sg, dim_embedding)] = tmp
+    val_means = np.zeros((2, len(dim_embeddingInterval)))
+    for k in vals:
+        val_means[k[0], dim_embeddingInterval.index(k[1])] = np.mean(vals[k])
+    df = DataFrame(val_means.transpose(), columns=["CBOW", "SG"], index=dim_embeddingInterval)
+    for model in df:
+        plt.plot(df[model], label=model)
+    plt.legend(loc=4, frameon=True, title="Model").get_frame().set_color("white")
+    plt.xlabel("embedding dimensions")
+    plt.ylabel("mean " + str(key).lower())
+    plt.show()
+    
+def plot_cbow_vs_sg_via_window(performances, key):
+    vals = dict()
+    for sg in performances:
+        for dim_embedding in performances[sg]:
+            for contextWindow in performances[sg][dim_embedding]:
+                for hs in performances[sg][dim_embedding][contextWindow]:
+                    if hs == 0:
+                        for k_negative in performances[sg][dim_embedding][contextWindow][hs]:
+                            val = np.mean(performances[sg][dim_embedding][contextWindow][hs][k_negative][key])                                
+                            if (hs, contextWindow) not in vals:
+                                vals[(hs, contextWindow)] = []
+                            vals[(hs, contextWindow)].append(val)
+                    else:
+                        val = np.mean(performances[sg][dim_embedding][contextWindow][hs][key])                                
+                        if (hs, contextWindow) not in vals:
+                            vals[(hs, contextWindow)] = []
+                        vals[(hs, contextWindow)].append(val)              
+    val_means = np.zeros((2, len(dim_embeddingInterval)))
+    for k in vals:
+        val_means[k[0], dim_embeddingInterval.index(k[1])] = np.mean(vals[k])
+    df = DataFrame(val_means.transpose(), columns=["CBOW", "SG"], index=dim_embeddingInterval)
+    for model in df:
+        plt.plot(df[model], label=model)
+    plt.legend(loc=4, frameon=True, title="Architecture").get_frame().set_color("white")
+    plt.xlabel("embedding dimensions")
+    plt.ylabel("mean " + str(key).lower())
+    plt.show()
+        
+def plot_hs_vs_negative_via_dim(performances,key):
+    vals = dict()
+    for sg in performances:
+        for dim_embedding in performances[sg]:
+            for contextWindow in performances[sg][dim_embedding]:
+                for hs in performances[sg][dim_embedding][contextWindow]:
+                    
+                    if hs == 0:
+                        
+                        for k_negative in performances[sg][dim_embedding][contextWindow][hs]:
+                            val = np.mean(performances[sg][dim_embedding][contextWindow][hs][k_negative][key]) 
+                            if (hs, dim_embedding) not in vals:
+                                vals[(hs, dim_embedding)] = []
+                            vals[(hs, dim_embedding)].append(val)                              
+                    else:
+                        val = np.mean(performances[sg][dim_embedding][contextWindow][hs][key])
+                        if (hs, dim_embedding) not in vals:
+                            vals[(hs, dim_embedding)] = []
+                        vals[(hs, dim_embedding)].append(val)                      
+    val_means = np.zeros((2, len(dim_embeddingInterval)))
+    for k in vals:
+        val_means[k[0], dim_embeddingInterval.index(k[1])] = np.mean(vals[k])
+    df = DataFrame(val_means.transpose(), columns=["HS", "NEG"], index=dim_embeddingInterval)
+    for model in df:
+        plt.plot(df[model], label=model)
+    plt.legend(loc=4, frameon=True, title="Model").get_frame().set_color("white")
+    plt.xlabel("embedding dimensions")
+    plt.ylabel("mean " + str(key).lower())
+    plt.show()    
+    
+def plot_hs_vs_negative_via_window(performances,key):
+    vals = dict()
+    for sg in performances:
+        for dim_embedding in performances[sg]:
+            for contextWindow in performances[sg][dim_embedding]:
+                for hs in performances[sg][dim_embedding][contextWindow]:
+                    
+                    if hs == 0:
+                        
+                        for k_negative in performances[sg][dim_embedding][contextWindow][hs]:
+                            val = np.mean(performances[sg][dim_embedding][contextWindow][hs][k_negative][key]) 
+                            if (hs, contextWindow) not in vals:
+                                vals[(hs, contextWindow)] = []
+                            vals[(hs, contextWindow)].append(val)                              
+                    else:
+                        val = np.mean(performances[sg][dim_embedding][contextWindow][hs][key])
+                        if (hs, contextWindow) not in vals:
+                            vals[(hs, contextWindow)] = []
+                        vals[(hs, contextWindow)].append(val)                      
+    val_means = np.zeros((2, len(contextWindowInterval)))
+    for k in vals:
+        val_means[k[0], contextWindowInterval.index(k[1])] = np.mean(vals[k])
+    df = DataFrame(val_means.transpose(), columns=["HS", "NEG"], index=contextWindowInterval)
+    for model in df:
+        plt.plot(df[model], label=model)
+    plt.legend(loc=4, frameon=True, title="Model").get_frame().set_color("white")
+    plt.xlabel("context window size")
+    plt.ylabel("mean " + str(key).lower())
+    plt.show()    
+plot_hs_vs_negative_via_window(performances, "ACCURACY")
+
+"""
+
+max 
+
+
+hs vs negative
+
+k_negative
+
+context window
+
+dim_embedding
+
+skipgram vs cbow
+
+----
+
+which analogies went well/bad?
+"""
+
+# sg = 0
+# hs = 0
+# max = 0
+# dim_embedding = 200
+# # context window vs  k_negative
+# df = DataFrame(np.zeros((len(contextWindowInterval),len(negativeSamplingInterval))),
+#                columns = negativeSamplingInterval,
+#                index = contextWindowInterval)
+# for contextWindow in performances[sg][dim_embedding]:
+#     for k_negativeSampling in performances[sg][dim_embedding][contextWindow][hs]:
+#         acc = np.mean(performances[sg][dim_embedding][contextWindow][hs][k_negativeSampling]["ACCURACY"])
+#         print(contextWindow,k_negativeSampling)
+#         print("ACC",acc)
+#         df[k_negativeSampling][contextWindow] = acc
+#  
+# seaborn.heatmap(df, annot=True)
+# plt.show()
+# #     

@@ -2,24 +2,28 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="isRegEx"/>
-		<item value="cont" key="selection"/>
+		<item value="x" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="x"/>
+			<item value="h~"/>
+			<item value="aspirated"/>
+			<item value="y~"/>
+			<item value="w~"/>
 			<item value="cont"/>
 			<item value="dim"/>
 			<item value="context"/>
-			<item value="dim_embedding"/>
-			<item value="y~"/>
-			<item value="acc"/>
-			<item value="h~"/>
-			<item value="\t"/>
 		</list>
 		<list key="replacehistory">
-			<item value="w~"/>
+			<item value="\\&quot;"/>
+			<item value="glottalized"/>
+			<item value="h~"/>
 			<item value="y~"/>
+			<item value="\&quot;"/>
+			<item value="w~"/>
 			<item value="    "/>
 		</list>
 	</section>
@@ -27,7 +31,7 @@
 		<item value="265" key="DIALOG_WIDTH"/>
 		<item value="1|.SF NS Text|11.0|0|COCOA|1|.SFNSText-Regular" key="DIALOG_FONT_NAME"/>
 		<item value="399" key="DIALOG_HEIGHT"/>
-		<item value="588" key="DIALOG_X_ORIGIN"/>
-		<item value="184" key="DIALOG_Y_ORIGIN"/>
+		<item value="303" key="DIALOG_X_ORIGIN"/>
+		<item value="275" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

@@ -2,8 +2,8 @@
 -- START DISKCACHE_2
 /Users/marlon/Documents/ML/git/Project/Workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/PhonemeEmbeddings/com.python.pydev.analysis/v2_indexcache
 evaluation|1469620228000000000|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/evaluation.py
-plotEvaluation|1469643049000000000|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/plotEvaluation.py
-main|1469623871000000000|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/main.py
+plotEvaluation|1469714437000000000|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/plotEvaluation.py
+main|1469663439000000000|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/main.py
 -- END DISKCACHE
 -- START DICTIONARY
 3
@@ -12,32 +12,29 @@ main|1469623871000000000|/Users/marlon/Documents/ML/git/Project/Workspace/Phonem
 1=main
 -- END DICTIONARY
 -- START TREE 1
-33
+30
 acc|3|acc!11@acc!19@accuracies_tmp!11@
 all|1|allWords!11@
 c|1|c!11@
 cma|1|cmap!11@
 col|1|colors!11@
 con|2|contextWindowInterval!19@contextWindowInterval!11@
-df|1|df!19@
-dim|3|dim_embeddingInterval!11@dim_embeddingInterval!19@dim_embedding!19@
+dim|2|dim_embeddingInterval!11@dim_embeddingInterval!19@
 dis|1|dist!11@
 fre|1|freq_phonemes!11@
-get|1|getListofASJPPhonemes!10@
+get|2|getListofASJPPhonemes!10@getMax!18@
 gri|1|gridSearchPoint!11@
 hie|1|hierarchical_softmax!11@
-hs|1|hs!19@
 lin|1|line!11@
 los|2|loss!11@losses_tmp!11@
-max|1|max!19@
-min|0|
+max|3|max_param!19@max_negative_hs!18@max!19@
 n_e|1|n_ensemble!11@
 n_g|1|n_gridSearchPoints!11@
 neg|2|negativeSamplingInterval!11@negativeSamplingInterval!19@
 pat|1|pathToASJPCorpusFile!11@
 per|2|performances!11@performances!19@
+plo|5|plot_k_neg_vs_windowSize!18@plot_cbow_vs_sg_via_window!18@plot_hs_vs_negative_via_window!18@plot_cbow_vs_sg_via_dim!18@plot_hs_vs_negative_via_dim!18@
 pre|1|predicted!11@
-sg|1|sg!19@
 sim|1|SimilarityTestData!27@
 ski|1|skipgram!11@
 sum|1|sum_dist!11@

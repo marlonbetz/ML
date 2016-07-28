@@ -83,7 +83,7 @@ negativeSamplingInterval = list(range(1,21))
 
 skipgram = [0,1]
 hierarchical_softmax = [0,1]
-n_ensemble = 1
+n_ensemble = 3
 n_gridSearchPoints = len(dim_embeddingInterval)#*len(contextWindowInterval)
 import matplotlib.pyplot as plt
 
