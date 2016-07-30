@@ -2,29 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="isRegEx"/>
-		<item value="x" key="selection"/>
+		<item value="&quot;apply_voice&quot;" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="x"/>
-			<item value="h~"/>
-			<item value="aspirated"/>
-			<item value="y~"/>
-			<item value="w~"/>
-			<item value="cont"/>
-			<item value="dim"/>
-			<item value="context"/>
+			<item value="&quot;voice&quot;"/>
+			<item value="voice"/>
+			<item value="complex"/>
+			<item value="coarticulated"/>
+			<item value="coar"/>
+			<item value="coart"/>
+			<item value="matplo"/>
+			<item value="mat"/>
 		</list>
 		<list key="replacehistory">
-			<item value="\\&quot;"/>
-			<item value="glottalized"/>
-			<item value="h~"/>
-			<item value="y~"/>
-			<item value="\&quot;"/>
-			<item value="w~"/>
-			<item value="    "/>
+			<item value="&quot;apply_voice&quot;"/>
+			<item value="complex"/>
+			<item value="&quot;apply_nasal"/>
+			<item value="apply_nasal"/>
+			<item value="labialized"/>
+			<item value="palatalized"/>
+			<item value="voice"/>
+			<item value="vowel"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

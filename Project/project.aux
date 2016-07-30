@@ -85,24 +85,27 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Data}{13}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Intrinsic Evaluation}{13}}
 \newlabel{Intrinsic Evaluation}{{5.2}{13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Phonemic String Comparison}{14}}
+\citation{rama2016siamese,jager2014phylogenetic}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Mean (top) and maximal (bottom) accuracy of the for models evaluated with regard to the number of embedding dimensions (left) and context window size (right) over all other hyperparameters.\relax }}{15}}
+\newlabel{fig:4models_comparison}{{4}{15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Mean accuracies of the four models tested, over the number of embedding dimensions (left) and the context window size (right)\relax }}{16}}
+\newlabel{fig:4models_comparison_meanValues}{{5}{16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Phonemic String Comparison}{16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Modeling Sound Change}{16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Proto-Form Reconstruction}{16}}
 \bibstyle{apa}
 \bibdata{references}
 \bibcite{bengio2003neural}{\astroncite {Bengio et\nobreakspace  {}al.}{2003a}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Mean (top) and maximal (bottom) accuracy of the for models evaluated with regard to the number of embedding dimensions (left) and context window size (right) over all other hyperparameters.\relax }}{15}}
-\newlabel{fig:4models_comparison}{{4}{15}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Modeling Sound Change}{15}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Proto-Form Reconstruction}{15}}
 \bibcite{bengio2008adaptive}{\astroncite {Bengio and Sen{\'e}cal}{2008}}
 \bibcite{bengio2003quick}{\astroncite {Bengio et\nobreakspace  {}al.}{2003b}}
 \bibcite{chen2015strategies}{\astroncite {Chen et\nobreakspace  {}al.}{2015a}}
 \bibcite{chen2015joint}{\astroncite {Chen et\nobreakspace  {}al.}{2015b}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Mean and maximal accuracies of the skip-gram model with regard to the window size and number of negative samples over all other parameters.\relax }}{17}}
+\newlabel{fig:acc_k_neg_vs_windowSize}{{6}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Phoneme Inventory Clustering}{17}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Resume}{17}}
 \bibcite{cho2015using}{\astroncite {Cho et\nobreakspace  {}al.}{2015}}
 \bibcite{collobert2008unified}{\astroncite {Collobert and Weston}{2008}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Mean and maximal accuracies of the skip-gram model with regard to the window size and number of negative samples over all other parameters.\relax }}{16}}
-\newlabel{fig:acc_k_neg_vs_windowSize}{{5}{16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Phoneme Inventory Clustering}{16}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Resume}{16}}
 \bibcite{dos2014learning}{\astroncite {dos Santos and Zadrozny}{2014}}
 \bibcite{wals}{\astroncite {Dryer and Haspelmath}{2013}}
 \bibcite{goldberg2014word2vec}{\astroncite {Goldberg and Levy}{2014}}
@@ -125,11 +128,19 @@
 \bibcite{schnabel2015evaluation}{\astroncite {Schnabel et\nobreakspace  {}al.}{2015}}
 \bibcite{tsvetkov2016polyglot}{\astroncite {Tsvetkov et\nobreakspace  {}al.}{2016}}
 \bibcite{zhang2015character}{\astroncite {Zhang et\nobreakspace  {}al.}{2015}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Appendix}{18}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Appendix}{19}}
 \citation{jager2014phylogenetic}
 \citation{jager2014phylogenetic}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Consonant analogy tests. All analogy tasks consist of 2 positive values, one negative value and a target value, as described in 5.2\hbox {}.\relax }}{19}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Consonant analogy tests (continued)\relax }}{20}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Vowel analogy tests\relax }}{21}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces ASJP consonants with their IPA equivalents. Glottalization is marked by a following double quote, coarticulation is indicated by a tilde ∼ (if one co-articulator) or a dollar sign \$ (if two co-articulators). The tables follow \cite  {jager2014phylogenetic}.\relax }}{22}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces ASJP vowels with their IPA equivalents. Nasality is marked by a following asterisk.\relax }}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Mean accuracies for analogies with an analogy threshold of 1. The baseline model does not seem to be able to capture the compositionality of the latent features too well. (top left) Accuracy is best for plosives across plain pulmonic as well as more complex articulations, while fricatives perform much worse. (top right) Plain pulmonic consonant phonemes yield acceptable performance, while glottalized phonemes at least yield reasonable results. Among complex articulations, which all perform disasterously, labialized phonemes yield best results, while aspirated and palatalized phonemes perform even worse. (bottom left) Adding voice works better than removing it or adding nasality. (bottom right) Vowel analogies work far better than consonant analogies. This should be due to the small number of possible vowel phonemes.\relax }}{20}}
+\newlabel{fig:detailed_evaluation_consonants_topn1}{{7}{20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Mean accuracies for consonant analogies with an analogy threshold of 20. Here, the model is expected to yield better results, as wrong predictions are not as penalizing. (left) Accuracy is reasonable for plosives across plain pulmonic as well as more complex articulations. For fricatives, the accuracy is higher, but fricatives were only evaluated for plain pulmonic articulation. (middle) Plain pulmonic consonant phonemes nearly yield optimal accuracy, while glottalized phonemes still yield good results. Among complex articulations, labialized phonemes yield best results, while aspirated and palatalized phonemes perform far under average. (right) Removing voice yields better results than adding it. Applying nasality to plosives even performs better.\relax }}{21}}
+\newlabel{fig:detailed_evaluation_consonants}{{8}{21}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Mean accuracies for analogies with an analogy threshold of 1 on the pooled consonant phonemes. Here, the model is also expected to yield better results, the number of latent features should be reduced. (left) Accuracy is doubled compared with the unpooled phonemes. (middle) Adding voice works quite well, while removing it still yields acceptable performance. Applying nasality again works quite bad. (right) Vowel analogy tasks seem to work reasonably well.\relax }}{21}}
+\newlabel{fig:detailed_evaluation_topn1_poooled}{{9}{21}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Frequency plotted against mean accuracy in log space. It is clearly visible how the bad performance of the complex phonemes is due to their underrepresentation in the corpus.\relax }}{22}}
+\newlabel{fig:freq_acc_correlation_logspace}{{10}{22}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Consonant analogy tests. All analogy tasks consist of 2 positive values, one negative value and a target value, as described in 5.2\hbox {}.\relax }}{23}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Consonant analogy tests (continued)\relax }}{24}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Vowel analogy tests\relax }}{25}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces ASJP consonants with their IPA equivalents. Glottalization is marked by a following double quote, coarticulation is indicated by a tilde ∼ (if one co-articulator) or a dollar sign \$ (if two co-articulators). The tables follow \cite  {jager2014phylogenetic}.\relax }}{26}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces ASJP vowels with their IPA equivalents. Nasality is marked by a following asterisk.\relax }}{27}}

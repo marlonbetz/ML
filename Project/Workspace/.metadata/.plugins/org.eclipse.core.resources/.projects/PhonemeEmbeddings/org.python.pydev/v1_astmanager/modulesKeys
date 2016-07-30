@@ -1,4 +1,7 @@
 MODULES_MANAGER_V2
+correlation_frq_acc|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/correlation_frq_acc.py
+evaluate_pooledPhonemes|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/evaluate_pooledPhonemes.py
 evaluation|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/evaluation.py
 main|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/main.py
 plotEvaluation|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/plotEvaluation.py
+specificEvaluation|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/specificEvaluation.py

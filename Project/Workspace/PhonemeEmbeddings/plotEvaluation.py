@@ -116,7 +116,8 @@ def plot_k_neg_vs_windowSize(performances,max=False):
         plt.ylabel("max accuracy")
     else:
         plt.ylabel("mean accuracy")
-    ()
+    return df
+
 
 def plot_cbow_vs_sg_via_dim(performances, key,max=False):
     vals = dict()
@@ -148,7 +149,8 @@ def plot_cbow_vs_sg_via_dim(performances, key,max=False):
         plt.ylabel("max " + str(key).lower())
     else:
         plt.ylabel("mean " + str(key).lower())
-    ()
+    return df
+
     
 def plot_cbow_vs_sg_via_window(performances, key,max=False):
     vals = dict()
@@ -182,6 +184,7 @@ def plot_cbow_vs_sg_via_window(performances, key,max=False):
         plt.ylabel("max " + str(key).lower())
     else:
         plt.ylabel("mean " + str(key).lower())
+    return df
     
         
 def plot_hs_vs_negative_via_dim(performances,key,max=False):
@@ -218,6 +221,7 @@ def plot_hs_vs_negative_via_dim(performances,key,max=False):
         plt.ylabel("max " + str(key).lower())
     else:
         plt.ylabel("mean " + str(key).lower())
+    return df
     
     
 def plot_hs_vs_negative_via_window(performances,key,max=False):
@@ -254,6 +258,8 @@ def plot_hs_vs_negative_via_window(performances,key,max=False):
         plt.ylabel("max " + str(key).lower())
     else:
         plt.ylabel("mean " + str(key).lower())
+    return df
+
     
 def plot_sg_cbow_hs_neg_via_dim(performances,key,max=False):
     vals = dict()
@@ -297,7 +303,8 @@ def plot_sg_cbow_hs_neg_via_dim(performances,key,max=False):
         plt.ylabel("max " + str(key).lower())
     else:
         plt.ylabel("mean " + str(key).lower())
-        
+    return df
+
 def plot_sg_cbow_hs_neg_via_window(performances,key,max=False):
     vals = dict()
     for sg in performances:
@@ -340,15 +347,31 @@ def plot_sg_cbow_hs_neg_via_window(performances,key,max=False):
         plt.ylabel("max " + str(key).lower())
     else:
         plt.ylabel("mean " + str(key).lower())
-plt.subplot(2,2,1)
-plot_sg_cbow_hs_neg_via_dim(performances,key="LOSS",max=False)
-plt.subplot(2,2,2)
-plot_sg_cbow_hs_neg_via_window(performances,key="LOSS",max=False)
-plt.subplot(2,2,3)
-plot_sg_cbow_hs_neg_via_dim(performances,key="LOSS",max=True)
-plt.subplot(2,2,4)
-plot_sg_cbow_hs_neg_via_window(performances,key="LOSS",max=True)
-plt.show()
+    return df
+# plt.subplot(2,2,1)
+# plot_sg_cbow_hs_neg_via_dim(performances,key="LOSS",max=False)
+# plt.subplot(2,2,2)
+# plot_sg_cbow_hs_neg_via_window(performances,key="LOSS",max=False)
+# plt.subplot(2,2,3)
+# plot_sg_cbow_hs_neg_via_dim(performances,key="LOSS",max=True)
+# plt.subplot(2,2,4)
+# plot_sg_cbow_hs_neg_via_window(performances,key="LOSS",max=True)
+# plt.show()
+
+# df = plot_sg_cbow_hs_neg_via_dim(performances,"ACCURACY")
+# df2 = plot_sg_cbow_hs_neg_via_window(performances,"ACCURACY")
+# plt.clf()
+# plt.subplot(1,2,1)
+# seaborn.heatmap(df,annot=True)
+# plt.subplot(1,2,2)
+# seaborn.heatmap(df2,annot=True)
+# 
+# plt.show()
+
+
+print(getMax(performances))
+
+
 """
 
 max 

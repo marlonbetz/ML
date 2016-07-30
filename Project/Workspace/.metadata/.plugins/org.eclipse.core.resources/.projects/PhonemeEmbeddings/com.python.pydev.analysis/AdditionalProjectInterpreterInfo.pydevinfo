@@ -1,48 +1,67 @@
 -- VERSION_4
 -- START DISKCACHE_2
 /Users/marlon/Documents/ML/git/Project/Workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/PhonemeEmbeddings/com.python.pydev.analysis/v2_indexcache
-evaluation|1469620228000000000|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/evaluation.py
-plotEvaluation|1469714437000000000|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/plotEvaluation.py
-main|1469663439000000000|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/main.py
+evaluation|1469885670000000000|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/evaluation.py
+correlation_frq_acc|1469899379000000000|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/correlation_frq_acc.py
+specificEvaluation|1469905712000000000|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/specificEvaluation.py
+plotEvaluation|1469803602000000000|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/plotEvaluation.py
+main|1469803671000000000|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/main.py
+evaluate_pooledPhonemes|1469905741000000000|/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/evaluate_pooledPhonemes.py
 -- END DISKCACHE
 -- START DICTIONARY
-3
-3=evaluation
+6
+3=correlation_frq_acc
+6=evaluation
+4=specificEvaluation
 2=plotEvaluation
 1=main
+5=evaluate_pooledPhonemes
 -- END DICTIONARY
 -- START TREE 1
-30
+43
 acc|3|acc!11@acc!19@accuracies_tmp!11@
-all|1|allWords!11@
+all|3|allWords!27@allWords!11@allTags!35@
 c|1|c!11@
 cma|1|cmap!11@
 col|1|colors!11@
 con|2|contextWindowInterval!19@contextWindowInterval!11@
+df|3|df!35@df!43@df!27@
 dim|2|dim_embeddingInterval!11@dim_embeddingInterval!19@
 dis|1|dist!11@
-fre|1|freq_phonemes!11@
-get|2|getListofASJPPhonemes!10@getMax!18@
+fna|1|fname!35@
+fre|2|freq!27@freq_phonemes!11@
+get|5|getListofASJPPhonemes!34@getListofASJPPhonemes!10@getListofASJPPhonemes!26@getListofASJPPhonemes!42@getMax!18@
 gri|1|gridSearchPoint!11@
 hie|1|hierarchical_softmax!11@
-lin|1|line!11@
+lin|2|line!27@line!11@
+lm|1|lm!27@
 los|2|loss!11@losses_tmp!11@
 max|3|max_param!19@max_negative_hs!18@max!19@
 n_e|1|n_ensemble!11@
 n_g|1|n_gridSearchPoints!11@
 neg|2|negativeSamplingInterval!11@negativeSamplingInterval!19@
-pat|1|pathToASJPCorpusFile!11@
+pat|2|pathToASJPCorpusFile!27@pathToASJPCorpusFile!11@
 per|2|performances!11@performances!19@
-plo|5|plot_k_neg_vs_windowSize!18@plot_cbow_vs_sg_via_window!18@plot_hs_vs_negative_via_window!18@plot_cbow_vs_sg_via_dim!18@plot_hs_vs_negative_via_dim!18@
+pic|2|picklePerformance!34@picklePerformance!42@
+pla|0|
+plo|7|plot_k_neg_vs_windowSize!18@plot_cbow_vs_sg_via_window!18@plot_hs_vs_negative_via_window!18@plot_cbow_vs_sg_via_dim!18@plot_sg_cbow_hs_neg_via_window!18@plot_hs_vs_negative_via_dim!18@plot_sg_cbow_hs_neg_via_dim!18@
 pre|1|predicted!11@
-sim|1|SimilarityTestData!27@
+sim|1|SimilarityTestData!51@
 ski|1|skipgram!11@
 sum|1|sum_dist!11@
-tba|1|tba!11@
+tag|1|tags!27@
+tba|2|tba!11@tba!27@
+tmp|0|
 tru|1|true!11@
-vec|1|vectorLinspace!10@
+vec|3|vectorLinspace!10@vectorLinspace!34@vectorLinspace!42@
 w2v|1|w2v_model!11@
-wor|2|words!11@word!11@
+wor|4|word!27@words!11@words!27@word!11@
+x|1|x!27@
+x1|2|x1!35@x1!43@
+x2|2|x2!35@x2!43@
+x3|2|x3!43@x3!35@
+x4|1|x4!35@
+y|1|y!27@
 -- END TREE
 -- START TREE 2
 0

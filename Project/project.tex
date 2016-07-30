@@ -323,7 +323,7 @@ where $v(phoneme_1)$ is the vector corresponding to $phoneme_1$ and $v(phoneme_2
 \begin{equation}
 v(\textbf{/i/} ) + v(\textbf{/u*/} ) -  v(\textbf{/u/} ) \approx v(\textbf{/i*/} )
 \end{equation}
-$v(\textbf{/u*/} ) -  v(\textbf{/u/} )$ describes a latent feature that should correspond to \textsc{[+nasalized]}, which is then added to the phoneme \textbf{/i/} to yield a nasalized \textbf{/i*/}. The latent features should correspond to accepted phonological distinctive features such as \textsc{[voice]}, \textsc{[labial]} or \textsc{[aspirated]}. For this task it is important that the target phoneme should only differ in one phonological feature from the source phoneme. The full list of analogy tasks can be found in the appendix. Here, accuracy serves as a test metric as the target phoneme embedding should be the closest embedding to the predicted point in the embedding space.
+$v(\textbf{/u*/} ) -  v(\textbf{/u/} )$ describes a latent feature that should correspond to \textsc{[+nasalized]}, which is then added to the phoneme \textbf{/i/} to yield a nasalized \textbf{/i*/}. The latent features should correspond to accepted phonological distinctive features such as \textsc{[voice]}, \textsc{[labial]} or \textsc{[aspirated]}. For this task it is important that the target phoneme should only differ in one phonological feature from the source phoneme to allow for a detailed evaluation of the generalization abilities of the model in the latent feature space. Most tests concentrate on plosives and vowels, as they should appear most frequently in the data. The full list of analogy tasks can be found in the appendix. Here, accuracy serves as a test metric as the target phoneme embedding should be the at most $n$ -closest embedding to the predicted point in the embedding space. The parameter $n$ here serves as a threshold to allow for the fact that a prediction should still be good if the target phoneme is at least close to the predicted phoneme.
 To compare the performance of the different embedding models, an extensive grid search over several hyperparameters was performed:
 \begin{itemize}
 \item Model architecture: CBOW, Skip-gram
@@ -332,7 +332,7 @@ To compare the performance of the different embedding models, an extensive grid 
 \item Context window size: $[1,2,3,4,5,8]$
 \item Number of negative samples: $[1, ..., 21]$
 \end{itemize}
-For each hyperparameter setting, an ensemble of three models was trained simultaneously. Each model iterated five times over the corpus.
+An analogy task is thought to be  For each hyperparameter setting, an ensemble of three models was trained simultaneously. Each model iterated five times over the corpus, which consists of all words from the ASJP corpus given the language they belong to is neither artificial nor reconstructed. Every word is moreover bracketed by word boundary tokens.
 
 \begin{figure}[h] %  figure placement: here, top, bottom, or page
    \centering
@@ -342,7 +342,12 @@ For each hyperparameter setting, an ensemble of three models was trained simulta
 \end{figure}
 
 
-
+\begin{figure}[h] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=\textwidth]{4models_comparison_meanValues} 
+   \caption{Mean accuracies of the four models tested, over the number of embedding dimensions (left) and the context window size (right)}
+   \label{fig:4models_comparison_meanValues}
+\end{figure}
 
 
 \begin{figure}[h] %  figure placement: here, top, bottom, or page
@@ -352,7 +357,42 @@ For each hyperparameter setting, an ensemble of three models was trained simulta
    \label{fig:acc_k_neg_vs_windowSize}
 \end{figure}
 
-Figure \ref{fig:4models_comparison} shows how CBOW clearly yields better results than skip-gram once the number of embedding dimensions increases. ,while for skip-gram, hierarchical softmax further outperforms negative sampling with regard to mean accuracy. It can further be seen that 50 dimensions might already be enough for good accuracy and that more dimensions might even decrease performance at least for the negative sampling model, while a context window of 2 phonemes seems to maximize accuracy. Figure \ref{fig:acc_k_neg_vs_windowSize} further suggests that for negative sampling, the performance should not change too much with more than 10 negative samples.
+\begin{figure}[h] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=\textwidth]{detailed_evaluation_topn1} 
+   \caption{Mean accuracies for analogies with an analogy threshold of 1. The baseline model does not seem to be able to capture the compositionality of the latent features too well. (top left) Accuracy is best for plosives across plain pulmonic as well as more complex articulations, while fricatives perform much worse. (top right) Plain pulmonic consonant phonemes yield acceptable performance, while glottalized phonemes at least yield reasonable results. Among complex articulations, which all perform disasterously,  labialized phonemes yield best results, while aspirated and palatalized phonemes perform even worse. (bottom left) Adding voice works better than removing it or adding nasality. (bottom right) Vowel analogies work far better than consonant analogies. This should be due to the small number of possible vowel phonemes.}
+   \label{fig:detailed_evaluation_consonants_topn1}
+\end{figure}
+
+\begin{figure}[h] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=\textwidth]{detailed_evaluation_topn20} 
+   \caption{Mean accuracies for consonant analogies with an analogy threshold of 20. Here, the model is expected to yield better results, as wrong predictions are not as penalizing. (left) Accuracy is reasonable for plosives across plain pulmonic as well as more complex articulations. For fricatives, the accuracy is higher, but fricatives were only evaluated for plain pulmonic articulation. (middle) Plain pulmonic consonant phonemes nearly yield optimal accuracy, while glottalized phonemes still yield good results. Among complex articulations,  labialized phonemes yield best results, while aspirated and palatalized phonemes perform far under average. (right) Removing voice yields better results than adding it.  Applying nasality to plosives even performs better.}
+   \label{fig:detailed_evaluation_consonants}
+\end{figure}
+
+\begin{figure}[h] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=\textwidth]{detailed_evaluation_topn1_poooled} 
+   \caption{Mean accuracies for analogies with an analogy threshold of 1 on the pooled consonant phonemes. Here, the model is also expected to yield better results, the number of latent features should be reduced. (left) Accuracy is doubled compared with the unpooled phonemes. (middle) Adding voice works quite well, while removing it still yields acceptable performance. Applying nasality again works quite bad. (right) Vowel analogy tasks seem to work reasonably well.}
+   \label{fig:detailed_evaluation_topn1_poooled}
+\end{figure}
+
+\begin{figure}[h] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=0.5\textwidth]{freq_acc_correlation_logspace_topn1} 
+   \caption{Frequency plotted against mean accuracy in log space. It is clearly visible how the bad performance of the complex phonemes is due to their underrepresentation in the corpus.}
+   \label{fig:freq_acc_correlation_logspace}
+\end{figure}
+
+
+
+Figure \ref{fig:4models_comparison} and \ref{4models_comparison_meanValues} shows how CBOW clearly yields better results than skip-gram once the number of embedding dimensions increases. Hierarchical softmax further outperforms negative sampling with regard to mean accuracy slightly in the case of CBOW and severely in the case of Skip-gram. It can further be seen that 50 dimensions might already be enough for good accuracy and that more dimensions might even decrease performance at least for the negative sampling model, while a context window of 2 phonemes seems to maximize accuracy for all models.. Figure \ref{fig:acc_k_neg_vs_windowSize} further suggests that for negative sampling, the performance should not change too much with more than 10 negative samples.
+
+The poor results with an analogy threshold $n = 1$  might suggest that the model is weak. However, in order to check if the model at least learns to cluster related phonemes together, another grid search was performed with an analogy threshold $n = 20$ that allows for less accurate predictions still to be valid. The model indeed seems to learn to capture latent phonological features, even though the compositional quality of the learned features seems far from perfect and shows big variance. 
+
+For a more detailed evaluation, an ensemble of 10 models (CBOW with hierarchical softmax, 100 embedding dimensions, context window of 2 phonemes) was trained on the corpus (Figure \ref{fig:detailed_evaluation_consonants}). Analogy tasks with a threshold of 1 yield reasonable results for vowels, while for consonants the model's accuracy is far worse. The performance for complex phonemes is even worse. This might be connected to an underrepresentation of those complex phonemes in the corpus, which does not let the model generalize well.
+In fact, the quality of the phoneme embeddings is correlated with their frequency in the corpus (Pearson correlation 0.9, Spearman correlation 0.9, Figure \ref{freq_acc_correlation_logspace_topn1}). This leads to the question if one should not indeed follow the example of others \cite{rama2016siamese,jager2014phylogenetic} and pool coarticulations and non-pulmonic phonemes with the plain pulmonic ones to allow for at least reasonable analogy performance over the whole corpus. 
 
 \subsection{Phonemic String Comparison}
 An often found sub-task in Computational Historical Linguistics are string comparisons. For instance, when trying find cognates, the basic assumption is that words that are etymologically related should show similar phonemic shape. The standard way here is using symbolic string distances such as the normalized Levenshtein distance. However, this assumes that phonemes are equidistant to each other. Weighted string comparisons, either hand-crafted of learned, try to account for the fact that some phonemes are closer to each other than to others. 
@@ -548,8 +588,8 @@ positive & negative & target \\\hline
 i, o & e & u \\
 e, u & i & o \\
 \hline \multicolumn{3}{l}{apply \textsc{[+high]}}\\  \hline
-i, o & u & o \\
-e, u & o & u \\
+i, o & u & e \\
+e, u & o & i \\
 \hline \multicolumn{3}{l}{apply \textsc{[+nasal]}}\\  \hline
 i, u* & u & i* \\
 e, o* & o & e* \\
