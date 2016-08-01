@@ -73,8 +73,9 @@ def picklePerformance(pathToASJPCorpusFile,fname,topn):
     n_ensemble  =10
     sg = 0
     hs = 1
-    dim_embedding = 100
-    window = 2
+    dim_embedding = 150
+    window =1
+    negative = 0
     mean_acc_all = []
     
     tags = set()
@@ -93,6 +94,7 @@ def picklePerformance(pathToASJPCorpusFile,fname,topn):
                              sg = sg,
                              size=dim_embedding,
                              window=window,
+                             negative=negative,
                              hs=hs,
                              min_count=1
                              )
@@ -150,7 +152,7 @@ def picklePerformance(pathToASJPCorpusFile,fname,topn):
     df = DataFrame(mean_acc,columns=tags)
     pickle.dump(df,open(fname,"wb"))
 
-fname = "mean_acc.pkl"
+fname = "mean_acc_topn1.pkl"
 #picklePerformance("data/dataset.tab", fname=fname, topn=1)
 import matplotlib.pyplot as plt
 import seaborn
@@ -182,12 +184,12 @@ x3 = ["apply [+nasal]","apply [+voice]","remove [+voice]"]
 x4 = ["vowel","transfer [rounded]","transfer [high]","[+nasalized]","[-nasalized]"]
 
 #x = [tag for tag in df.columns if tag not in {"apply_nasalized","remove_nasalized","vowel","height","rounded"}]
-plt.subplot(1,3,1)
+plt.subplot(2,2,1)
 seaborn.barplot(data=df,order=sorted(x1,key=lambda x: df[x].mean()),color="red")
-plt.subplot(1,3,2)
+plt.subplot(2,2,2)
 seaborn.barplot(data=df,order=sorted(x2,key=lambda x: df[x].mean()),color="red")
-plt.subplot(1,3,3)
+plt.subplot(2,2,3)
 seaborn.barplot(data=df,order=sorted(x3,key=lambda x: df[x].mean()),color="red")
-# plt.subplot(2,2,4)
-# seaborn.barplot(data=df,order=sorted(x4,key=lambda x: df[x].mean()),color="red")
+plt.subplot(2,2,4)
+seaborn.barplot(data=df,order=sorted(x4,key=lambda x: df[x].mean()),color="red")
 plt.show()

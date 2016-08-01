@@ -1,0 +1,8 @@
+import numpy as np 
+from keras.models import Model
+from keras.layers import LSTM,Dense,Embedding,Input
+
+n_symbols = 1000
+dim_embedding = 10
+input_length = 10
+input = Input((input_length,))

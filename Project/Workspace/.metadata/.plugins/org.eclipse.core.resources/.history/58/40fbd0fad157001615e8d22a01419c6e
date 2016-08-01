@@ -1,0 +1,24 @@
+import codecs 
+import numpy as np
+from pandas import DataFrame
+phoneme_embeddings = dict()
+for line in codecs.open("lang_embeddings_plm.csv","r"):
+    line = line.split(",")
+    key= line[0][1:-1]
+    emb = line[1:]
+    emb[-1] = emb[-1][:-1]
+    emb = np.array([float(e) for e in emb])
+    phoneme_embeddings[key] = emb
+
+
+phoneme_embeddings = DataFrame(phoneme_embeddings,columns=phoneme_embeddings.keys())
+print(phoneme_embeddings.columns)
+from sklearn.manifold import TSNE
+
+m = TSNE()
+phoneme_embeddings_tsne = m.fit_transform(phoneme_embeddings.transpose())
+print(len(phoneme_embeddings_tsne))
+import matplotlib.pyplot as plt
+for p,emb in zip(phoneme_embeddings.columns, phoneme_embeddings_tsne):
+    plt.annotate(p,(emb[0],emb[1]))
+plt.show()

@@ -1,0 +1,6 @@
+import codecs 
+
+for line in codecs.open("phoneme_embeddings_plm.csv","r"):
+    line = line.split(",")
+    key= line[0][1:-1]
+    print(key)

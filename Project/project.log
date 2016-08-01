@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.29)  30 JUL 2016 21:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.29)  1 AUG 2016 15:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -706,7 +706,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<word2vec.png, id=23, 915.42pt x 550.055pt>
+<word2vec.png, id=24, 915.42pt x 550.055pt>
 File: word2vec.png Graphic file (type png)
  <use word2vec.png>
 Package pdftex.def Info: word2vec.png used on input line 67.
@@ -756,7 +756,6 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[5 <./bengio2006network.png>]
 ./project.tex:72: Undefined control sequence.
 \b@mikolov2013efficient ->\astroncite 
                                       {Mikolov et\nobreakspace {}al.}{2013a}
@@ -845,7 +844,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[6 <./word2vec.png>]
+[5 <./bengio2006network.png>] [6 <./word2vec.png>]
 ./project.tex:97: Double subscript.
 l.97 where $v_w_
                 i$ is an input vector and $v'_w_i$ an output vector represen...
@@ -1413,93 +1412,85 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[13] <4models_comparison_meanMax.png, id=67, 699.5736pt x 517.4532pt>
-File: 4models_comparison_meanMax.png Graphic file (type png)
+[13] <4models_comparison_meanAccLossTopn1.png, id=67, 876.6351pt x 629.4717pt>
+File: 4models_comparison_meanAccLossTopn1.png Graphic file (type png)
 
-<use 4models_comparison_meanMax.png>
-Package pdftex.def Info: 4models_comparison_meanMax.png used on input line 339.
-
-(pdftex.def)             Requested size: 430.00462pt x 318.06206pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<4models_comparison_meanValues.png, id=68, 1300.86pt x 780.516pt>
-File: 4models_comparison_meanValues.png Graphic file (type png)
-
-<use 4models_comparison_meanValues.png>
-Package pdftex.def Info: 4models_comparison_meanValues.png used on input line 3
-47.
-(pdftex.def)             Requested size: 430.00462pt x 257.99982pt.
+<use 4models_comparison_meanAccLossTopn1.png>
+Package pdftex.def Info: 4models_comparison_meanAccLossTopn1.png used on input 
+line 340.
+(pdftex.def)             Requested size: 430.00462pt x 308.76079pt.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<acc_k_neg_vs_windowSize.png, id=69, 698.8509pt x 333.1647pt>
+<4models_comparison_topn1_heatmap.png, id=68, 758.835pt x 538.4115pt>
+File: 4models_comparison_topn1_heatmap.png Graphic file (type png)
+
+<use 4models_comparison_topn1_heatmap.png>
+Package pdftex.def Info: 4models_comparison_topn1_heatmap.png used on input lin
+e 358.
+(pdftex.def)             Requested size: 430.00462pt x 305.10677pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<acc_k_neg_vs_windowSize.png, id=69, 578.16pt x 397.485pt>
 File: acc_k_neg_vs_windowSize.png Graphic file (type png)
 
 <use acc_k_neg_vs_windowSize.png>
-Package pdftex.def Info: acc_k_neg_vs_windowSize.png used on input line 355.
-(pdftex.def)             Requested size: 344.005pt x 163.99942pt.
+Package pdftex.def Info: acc_k_neg_vs_windowSize.png used on input line 366.
+(pdftex.def)             Requested size: 344.005pt x 236.50348pt.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<detailed_evaluation_topn1.png, id=70, 940.2327pt x 668.4975pt>
+<detailed_evaluation_topn1.png, id=70, 898.3161pt x 646.0938pt>
 File: detailed_evaluation_topn1.png Graphic file (type png)
 
 <use detailed_evaluation_topn1.png>
-Package pdftex.def Info: detailed_evaluation_topn1.png used on input line 362.
-(pdftex.def)             Requested size: 430.00462pt x 305.72751pt.
+Package pdftex.def Info: detailed_evaluation_topn1.png used on input line 373.
+(pdftex.def)             Requested size: 430.00462pt x 309.26381pt.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 <detailed_evaluation_topn20.png, id=71, 1124.5212pt x 247.1634pt>
 File: detailed_evaluation_topn20.png Graphic file (type png)
 
 <use detailed_evaluation_topn20.png>
-Package pdftex.def Info: detailed_evaluation_topn20.png used on input line 369.
+Package pdftex.def Info: detailed_evaluation_topn20.png used on input line 380.
 
 (pdftex.def)             Requested size: 430.00462pt x 94.5114pt.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 <detailed_evaluation_topn1_poooled.png, id=72, 1292.9103pt x 292.6935pt>
 File: detailed_evaluation_topn1_poooled.png Graphic file (type png)
 
 <use detailed_evaluation_topn1_poooled.png>
 Package pdftex.def Info: detailed_evaluation_topn1_poooled.png used on input li
-ne 376.
+ne 387.
 (pdftex.def)             Requested size: 430.00462pt x 97.34392pt.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 <freq_acc_correlation_logspace_topn1.png, id=73, 578.16pt x 433.62pt>
 File: freq_acc_correlation_logspace_topn1.png Graphic file (type png)
 
 <use freq_acc_correlation_logspace_topn1.png>
 Package pdftex.def Info: freq_acc_correlation_logspace_topn1.png used on input 
-line 383.
+line 394.
 (pdftex.def)             Requested size: 215.0023pt x 161.25072pt.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Reference `4models_comparison_meanValues' on page 14 undefined o
-n input line 390.
-
-
-LaTeX Warning: Reference `freq_acc_correlation_logspace_topn1' on page 14 undef
-ined on input line 395.
-
-./project.tex:395: Undefined control sequence.
+./project.tex:405: Undefined control sequence.
 \b@rama2016siamese ->\astroncite 
                                  {Rama}{2016}
-l.395 ...te{rama2016siamese,jager2014phylogenetic}
+l.405 ...te{rama2016siamese,jager2014phylogenetic}
                                                    and pool coarticulations ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1507,10 +1498,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:395: Undefined control sequence.
+./project.tex:405: Undefined control sequence.
 \b@rama2016siamese ->\astroncite 
                                  {Rama}{2016}
-l.395 ...te{rama2016siamese,jager2014phylogenetic}
+l.405 ...te{rama2016siamese,jager2014phylogenetic}
                                                    and pool coarticulations ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1518,10 +1509,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:395: Undefined control sequence.
+./project.tex:405: Undefined control sequence.
 \b@jager2014phylogenetic ->\astroncite 
                                        {J{\"a}ger}{2014}
-l.395 ...te{rama2016siamese,jager2014phylogenetic}
+l.405 ...te{rama2016siamese,jager2014phylogenetic}
                                                    and pool coarticulations ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1529,10 +1520,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:395: Undefined control sequence.
+./project.tex:405: Undefined control sequence.
 \b@jager2014phylogenetic ->\astroncite 
                                        {J{\"a}ger}{2014}
-l.395 ...te{rama2016siamese,jager2014phylogenetic}
+l.405 ...te{rama2016siamese,jager2014phylogenetic}
                                                    and pool coarticulations ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1540,8 +1531,12 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[14] [15 <./4models_comparison_meanMax.png>] [16 <./4models_comparison_meanValu
-es.png>] (./project.bbl
+
+LaTeX Warning: Reference `detailed_evaluation_topn20' on page 14 undefined on i
+nput line 408.
+
+[14] [15 <./4models_comparison_meanAccLossTopn1.png>] [16 <./4models_comparison
+_topn1_heatmap.png>] (./project.bbl
 ./project.bbl:3: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Bengio et~al.}{2003a}
@@ -1575,6 +1570,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+[17 <./acc_k_neg_vs_windowSize.png>]
 ./project.bbl:19: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Chen et~al.}{2015a}
@@ -1597,7 +1593,6 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[17 <./acc_k_neg_vs_windowSize.png>]
 ./project.bbl:29: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Cho et~al.}{2015}
@@ -1609,6 +1604,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+[18 <./detailed_evaluation_topn1.png>]
 ./project.bbl:33: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Collobert and Weston}{2008}
@@ -1631,6 +1627,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+[19 <./detailed_evaluation_topn20.png> <./detailed_evaluation_topn1_poooled.png
+>]
 ./project.bbl:45: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Dryer and Haspelmath}{2013}
@@ -1719,6 +1717,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+[20 <./freq_acc_correlation_logspace_topn1.png>]
 ./project.bbl:94: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Lewis et~al.}{2015}
@@ -1741,7 +1740,6 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[18]
 ./project.bbl:106: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Liu}{2008}
@@ -1863,24 +1861,24 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-)
+[21])
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[19]
+[22]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 Missing character: There is no â in font cmr10!
 Missing character: There is no ˆ in font cmr10!
 Missing character: There is no ¼ in font cmr10!
-./project.tex:615: Undefined control sequence.
+./project.tex:632: Undefined control sequence.
 \b@jager2014phylogenetic ->\astroncite 
                                        {J{\"a}ger}{2014}
-l.615 ...es follow  \cite{jager2014phylogenetic}.}
+l.632 ...es follow  \cite{jager2014phylogenetic}.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1888,10 +1886,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:615: Undefined control sequence.
+./project.tex:632: Undefined control sequence.
 \b@jager2014phylogenetic ->\astroncite 
                                        {J{\"a}ger}{2014}
-l.615 ...es follow  \cite{jager2014phylogenetic}.}
+l.632 ...es follow  \cite{jager2014phylogenetic}.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1902,10 +1900,10 @@ and I'll forget about whatever was undefined.
 Missing character: There is no â in font cmr10!
 Missing character: There is no ˆ in font cmr10!
 Missing character: There is no ¼ in font cmr10!
-./project.tex:615: Undefined control sequence.
+./project.tex:632: Undefined control sequence.
 \b@jager2014phylogenetic ->\astroncite 
                                        {J{\"a}ger}{2014}
-l.615 ...es follow  \cite{jager2014phylogenetic}.}
+l.632 ...es follow  \cite{jager2014phylogenetic}.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1913,10 +1911,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:615: Undefined control sequence.
+./project.tex:632: Undefined control sequence.
 \b@jager2014phylogenetic ->\astroncite 
                                        {J{\"a}ger}{2014}
-l.615 ...es follow  \cite{jager2014phylogenetic}.}
+l.632 ...es follow  \cite{jager2014phylogenetic}.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1925,7 +1923,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (0.98665pt too wide) in paragraph at lines 616--653
+Overfull \hbox (0.98665pt too wide) in paragraph at lines 633--670
  [][] 
  []
 
@@ -1933,16 +1931,14 @@ Overfull \hbox (0.98665pt too wide) in paragraph at lines 616--653
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (34.1712pt too wide) in paragraph at lines 658--668
+Overfull \hbox (34.1712pt too wide) in paragraph at lines 675--685
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[20 <./detailed_evaluation_topn1.png>] [21 <./detailed_evaluation_topn20.png> <
-./detailed_evaluation_topn1_poooled.png>] [22 <./freq_acc_correlation_logspace_
-topn1.png>] [23] [24] [25] [26] [27] (./project.aux)
+[23] [24] [25] [26] [27] (./project.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1951,10 +1947,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4644 strings out of 493089
- 68289 string characters out of 6134842
- 165496 words of memory out of 5000000
- 8056 multiletter control sequences out of 15000+600000
+ 4643 strings out of 493089
+ 68335 string characters out of 6134842
+ 161496 words of memory out of 5000000
+ 8055 multiletter control sequences out of 15000+600000
  13758 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,12n,40p,1708b,301s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1976,7 +1972,7 @@ e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 5/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/
 2015/texmf-dist/fonts/type1/public/tipa/tipa10.pfb>
-Output written on project.pdf (27 pages, 756292 bytes).
+Output written on project.pdf (27 pages, 757583 bytes).
 PDF statistics:
  185 PDF objects out of 1000 (max. 8388607)
  116 compressed objects within 2 object streams

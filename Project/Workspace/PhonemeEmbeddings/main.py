@@ -83,7 +83,8 @@ negativeSamplingInterval = list(range(1,21))
 
 skipgram = [0,1]
 hierarchical_softmax = [0,1]
-n_ensemble = 3
+n_ensemble = 1
+topn = 1
 n_gridSearchPoints = len(dim_embeddingInterval)#*len(contextWindowInterval)
 import matplotlib.pyplot as plt
 
@@ -135,7 +136,7 @@ for sg in skipgram:
                             c = 0
                             sum_dist  =0
                             for test in evaluation.SimilarityTestData:
-                                predicted = [s for (s,dist) in w2v_model.most_similar(positive=test["positive"], negative=test["negative"],topn=20)]
+                                predicted = [s for (s,dist) in w2v_model.most_similar(positive=test["positive"], negative=test["negative"],topn=topn)]
                                 true = test["true"][0]
                                 if true in predicted:
                                     c+=1
@@ -182,7 +183,7 @@ for sg in skipgram:
                         c = 0
                         sum_dist  =0
                         for test in evaluation.SimilarityTestData:
-                            predicted = [s for (s,dist) in w2v_model.most_similar(positive=test["positive"], negative=test["negative"],topn=20)]
+                            predicted = [s for (s,dist) in w2v_model.most_similar(positive=test["positive"], negative=test["negative"],topn=topn)]
                             true = test["true"][0]
                             if true in predicted:
                                 c+=1
@@ -203,4 +204,4 @@ for sg in skipgram:
                     performances[sg][dim_embedding][contextWindow][hs]["LOSS"]=losses_tmp
 
 print("pickling ...")
-pickle.dump(performances,open("performances.pkl","wb"))         
+pickle.dump(performances,open("performances_topn1.pkl","wb"))         

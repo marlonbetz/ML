@@ -3,7 +3,7 @@ import pickle
 import matplotlib.pyplot as plt
 import seaborn
 from pandas import DataFrame
-performances = pickle.load(open("performances.pkl", "rb"))
+performances = pickle.load(open("performances_topn1.pkl", "rb"))
 
 dim_embeddingInterval = [2, 5,
                          10, 20, 50, 100, 150, 200, 400
@@ -349,14 +349,21 @@ def plot_sg_cbow_hs_neg_via_window(performances,key,max=False):
         plt.ylabel("mean " + str(key).lower())
     return df
 # plt.subplot(2,2,1)
-# plot_sg_cbow_hs_neg_via_dim(performances,key="LOSS",max=False)
+# plot_sg_cbow_hs_neg_via_dim(performances,key="ACCURACY",max=False)
 # plt.subplot(2,2,2)
-# plot_sg_cbow_hs_neg_via_window(performances,key="LOSS",max=False)
+# plot_sg_cbow_hs_neg_via_window(performances,key="ACCURACY",max=False)
 # plt.subplot(2,2,3)
-# plot_sg_cbow_hs_neg_via_dim(performances,key="LOSS",max=True)
+# plot_sg_cbow_hs_neg_via_dim(performances,key="LOSS",max=False)
+# plt.ylabel("mean distance")
 # plt.subplot(2,2,4)
-# plot_sg_cbow_hs_neg_via_window(performances,key="LOSS",max=True)
+# plot_sg_cbow_hs_neg_via_window(performances,key="LOSS",max=False)
+# plt.ylabel("mean error")
 # plt.show()
+
+plot_k_neg_vs_windowSize(performances, max=False)
+plt.show()
+
+
 
 # df = plot_sg_cbow_hs_neg_via_dim(performances,"ACCURACY")
 # df2 = plot_sg_cbow_hs_neg_via_window(performances,"ACCURACY")
@@ -365,7 +372,6 @@ def plot_sg_cbow_hs_neg_via_window(performances,key,max=False):
 # seaborn.heatmap(df,annot=True)
 # plt.subplot(1,2,2)
 # seaborn.heatmap(df2,annot=True)
-# 
 # plt.show()
 
 

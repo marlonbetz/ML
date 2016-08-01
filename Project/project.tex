@@ -334,74 +334,91 @@ To compare the performance of the different embedding models, an extensive grid 
 \end{itemize}
 An analogy task is thought to be  For each hyperparameter setting, an ensemble of three models was trained simultaneously. Each model iterated five times over the corpus, which consists of all words from the ASJP corpus given the language they belong to is neither artificial nor reconstructed. Every word is moreover bracketed by word boundary tokens.
 
-\begin{figure}[h] %  figure placement: here, top, bottom, or page
+
+\begin{figure}[h!] %  figure placement: here, top, bottom, or page
    \centering
-   \includegraphics[width=\textwidth]{4models_comparison_meanMax} 
-   \caption{Mean (top) and maximal (bottom) accuracy of the for models evaluated with regard to the number of embedding dimensions (left) and context window size (right) over all other hyperparameters.}
-   \label{fig:4models_comparison}
+   \includegraphics[width=\textwidth]{4models_comparison_meanAccLossTopn1} 
+   \caption{Comparison of the four word2vec models evaluated. (top left) Both CBOW Models perform better than the skip-gram models over all numbers of embedding dimension. (bottom left) Mean distance between the predicted vector and the target with regard to embedding dimensions. Here, negative sampling yields less error than hierarchical softmax. (top right) Mean accuracy for the models with regard to the context window size. The models perform worse the bigger the context is. (bottom right) Mean distance between the predicted vector and the target with regard to context window size. Again, bigger contexts lead to worse predictions. }
+   \label{fig:4models_comparison_meanAccLossTopn1}
 \end{figure}
 
 
-\begin{figure}[h] %  figure placement: here, top, bottom, or page
+
+%
+%\begin{figure}[h] %  figure placement: here, top, bottom, or page
+%   \centering
+%   \includegraphics[width=\textwidth]{4models_comparison_meanMax} 
+%   \caption{Mean (top) and maximal (bottom) accuracy of the for models evaluated with regard to the number of embedding dimensions (left) and context window size (right) over all other hyperparameters.}
+%   \label{fig:4models_comparison}
+%\end{figure}
+%
+%
+\begin{figure}[h!] %  figure placement: here, top, bottom, or page
    \centering
-   \includegraphics[width=\textwidth]{4models_comparison_meanValues} 
+   \includegraphics[width=\textwidth]{4models_comparison_topn1_heatmap} 
    \caption{Mean accuracies of the four models tested, over the number of embedding dimensions (left) and the context window size (right)}
-   \label{fig:4models_comparison_meanValues}
+   \label{fig:4models_comparison_topn1_heatmap}
 \end{figure}
-
-
-\begin{figure}[h] %  figure placement: here, top, bottom, or page
+%
+%
+\begin{figure}[h!] %  figure placement: here, top, bottom, or page
    \centering
    \includegraphics[width=0.8\textwidth]{acc_k_neg_vs_windowSize} 
    \caption{Mean and maximal accuracies of the skip-gram model with regard to the window size and number of negative samples over all other parameters.}
    \label{fig:acc_k_neg_vs_windowSize}
 \end{figure}
 
-\begin{figure}[h] %  figure placement: here, top, bottom, or page
+\begin{figure}[h!] %  figure placement: here, top, bottom, or page
    \centering
    \includegraphics[width=\textwidth]{detailed_evaluation_topn1} 
-   \caption{Mean accuracies for analogies with an analogy threshold of 1. The baseline model does not seem to be able to capture the compositionality of the latent features too well. (top left) Accuracy is best for plosives across plain pulmonic as well as more complex articulations, while fricatives perform much worse. (top right) Plain pulmonic consonant phonemes yield acceptable performance, while glottalized phonemes at least yield reasonable results. Among complex articulations, which all perform disasterously,  labialized phonemes yield best results, while aspirated and palatalized phonemes perform even worse. (bottom left) Adding voice works better than removing it or adding nasality. (bottom right) Vowel analogies work far better than consonant analogies. This should be due to the small number of possible vowel phonemes.}
+   \caption{Mean accuracies for analogies with an analogy threshold of 1. The baseline model does not seem to be able to capture the compositionality of the latent features too well. (top left) Accuracy is best for plosives across plain pulmonic as well as more complex articulations, while fricatives perform worse. (top right) Glottalized and Plain pulmonic consonant phonemes yield best performance. Among complex articulations, which all perform bad,  labialized phonemes yield best results, while aspirated and palatalized phonemes perform even worse. (bottom left) Adding voice works better than removing it or adding nasality. (bottom right) Vowel analogies work far better than consonant analogies. This should be due to the small number of possible vowel phonemes.}
    \label{fig:detailed_evaluation_consonants_topn1}
 \end{figure}
 
-\begin{figure}[h] %  figure placement: here, top, bottom, or page
+\begin{figure}[h!] %  figure placement: here, top, bottom, or page
    \centering
    \includegraphics[width=\textwidth]{detailed_evaluation_topn20} 
    \caption{Mean accuracies for consonant analogies with an analogy threshold of 20. Here, the model is expected to yield better results, as wrong predictions are not as penalizing. (left) Accuracy is reasonable for plosives across plain pulmonic as well as more complex articulations. For fricatives, the accuracy is higher, but fricatives were only evaluated for plain pulmonic articulation. (middle) Plain pulmonic consonant phonemes nearly yield optimal accuracy, while glottalized phonemes still yield good results. Among complex articulations,  labialized phonemes yield best results, while aspirated and palatalized phonemes perform far under average. (right) Removing voice yields better results than adding it.  Applying nasality to plosives even performs better.}
    \label{fig:detailed_evaluation_consonants}
 \end{figure}
 
-\begin{figure}[h] %  figure placement: here, top, bottom, or page
+\begin{figure}[h!] %  figure placement: here, top, bottom, or page
    \centering
    \includegraphics[width=\textwidth]{detailed_evaluation_topn1_poooled} 
    \caption{Mean accuracies for analogies with an analogy threshold of 1 on the pooled consonant phonemes. Here, the model is also expected to yield better results, the number of latent features should be reduced. (left) Accuracy is doubled compared with the unpooled phonemes. (middle) Adding voice works quite well, while removing it still yields acceptable performance. Applying nasality again works quite bad. (right) Vowel analogy tasks seem to work reasonably well.}
    \label{fig:detailed_evaluation_topn1_poooled}
 \end{figure}
 
-\begin{figure}[h] %  figure placement: here, top, bottom, or page
+\begin{figure}[h!] %  figure placement: here, top, bottom, or page
    \centering
    \includegraphics[width=0.5\textwidth]{freq_acc_correlation_logspace_topn1} 
    \caption{Frequency plotted against mean accuracy in log space. It is clearly visible how the bad performance of the complex phonemes is due to their underrepresentation in the corpus.}
-   \label{fig:freq_acc_correlation_logspace}
+   \label{fig:freq_acc_correlation_logspace_topn1}
 \end{figure}
 
 
 
-Figure \ref{fig:4models_comparison} and \ref{4models_comparison_meanValues} shows how CBOW clearly yields better results than skip-gram once the number of embedding dimensions increases. Hierarchical softmax further outperforms negative sampling with regard to mean accuracy slightly in the case of CBOW and severely in the case of Skip-gram. It can further be seen that 50 dimensions might already be enough for good accuracy and that more dimensions might even decrease performance at least for the negative sampling model, while a context window of 2 phonemes seems to maximize accuracy for all models.. Figure \ref{fig:acc_k_neg_vs_windowSize} further suggests that for negative sampling, the performance should not change too much with more than 10 negative samples.
 
-The poor results with an analogy threshold $n = 1$  might suggest that the model is weak. However, in order to check if the model at least learns to cluster related phonemes together, another grid search was performed with an analogy threshold $n = 20$ that allows for less accurate predictions still to be valid. The model indeed seems to learn to capture latent phonological features, even though the compositional quality of the learned features seems far from perfect and shows big variance. 
+Figure \ref{fig:4models_comparison_meanAccLossTopn1} and \ref{fig:4models_comparison_topn1_heatmap}  show that the models have severe problems to capture the compositional structure of the phonemes. However, in order to check if the model at least learns to cluster related phonemes together, another grid search was performed with an analogy threshold $n = 20$ that allows for less accurate predictions still to be valid. The model indeed seems to learn to capture latent phonological features, even though the compositional quality of the learned features seems to be quite bad. 
 
 For a more detailed evaluation, an ensemble of 10 models (CBOW with hierarchical softmax, 100 embedding dimensions, context window of 2 phonemes) was trained on the corpus (Figure \ref{fig:detailed_evaluation_consonants}). Analogy tasks with a threshold of 1 yield reasonable results for vowels, while for consonants the model's accuracy is far worse. The performance for complex phonemes is even worse. This might be connected to an underrepresentation of those complex phonemes in the corpus, which does not let the model generalize well.
-In fact, the quality of the phoneme embeddings is correlated with their frequency in the corpus (Pearson correlation 0.9, Spearman correlation 0.9, Figure \ref{freq_acc_correlation_logspace_topn1}). This leads to the question if one should not indeed follow the example of others \cite{rama2016siamese,jager2014phylogenetic} and pool coarticulations and non-pulmonic phonemes with the plain pulmonic ones to allow for at least reasonable analogy performance over the whole corpus. 
+In fact, the quality of the phoneme embeddings is correlated with their frequency in the corpus (Pearson correlation 0.9, Spearman correlation 0.9, Figure \ref{fig:freq_acc_correlation_logspace_topn1}). This leads to the question if one should not indeed follow the example of others \cite{rama2016siamese,jager2014phylogenetic} and pool coarticulations and non-pulmonic phonemes with the plain pulmonic ones to allow for at least reasonable analogy performance over the whole corpus. Indeed, pooling complex articulations together with plain consonants produces better results (Figure \ref{fig:detailed_evaluation_topn1_poooled}), although they are still quite improvable. 
 
-\subsection{Phonemic String Comparison}
-An often found sub-task in Computational Historical Linguistics are string comparisons. For instance, when trying find cognates, the basic assumption is that words that are etymologically related should show similar phonemic shape. The standard way here is using symbolic string distances such as the normalized Levenshtein distance. However, this assumes that phonemes are equidistant to each other. Weighted string comparisons, either hand-crafted of learned, try to account for the fact that some phonemes are closer to each other than to others. 
-Using embeddings for string comparison means that one has to embed the sequence of phoneme embeddings of all words to be compared into some common latent space. Such word embeddings would then be close to each other if the words share similar phonological information and hence would inherently allow for weighted comparisons. 
-\subsection{Modeling Sound Change}
-\subsection{Proto-Form Reconstruction}
-Especially for graphic data, the benefits of generative models, especially generative auto-encoders, lead to rising interest in such models. Here, a latent variable is used to approximate the expected output of a network. A quite simplistic model of sound change would be that the proto-form should contain information common to all daughter words, that is, the proto-form should be some sort of mean of all daughter words. If we now train such a model to encode and decode words and further cluster all words belonging to a certain cognate class, the centroid of such clusters should correspond to the underlying proto-form of the given words.
+\subsection{Discussion}
+Simple visual inspection shows that the model learn to cluster phonemes for certain phonological features. However, the analogy tests have shown that the models have problems with encoding the compositional information expected for phonemes. Predictions are often near to the expected phoneme, though, as Figure \ref{detailed_evaluation_topn20} might suggest. This is probably caused by the size of the training data that is too small, as the correlation between the frequency of a phoneme class and mean accuracy of analogy tests in its respective domain might suggest. Getting rid of complex articulations and pooling the respective consonants with plain ones indeed improves the analogy test performance. Vowel phonemes, given their relative small type size over the whole corpus, perform much better than consonants, which could be a further indicator that the number of data is simply not enough. 
+
+Another factor is the quality of the data itself. Sometimes a given phoneme is simply wrong (e.g. all words in the Ukrainian word list have final /o/ where they should have /a/) or only stems are given when whole words are expected, which clearly worsens the models' ability to learn the distinction between phonemes that rather occur initially or finally (e.g. the Italian word list has \textit{bere} for "to drink" but \textit{ved} for "to see", which even stands against the phonotactics of the language). In general, a lot of latent information is lost with the deliberate merger of voiced and unvoiced phonemes for lots of phoneme classes in the data set. 
+
+Another final reason for the mediocre performance might finally be that in general phonemes might behave differently than words with regards to their compositionality in the latent feature space. The models indeed learn to cluster phonemes with regard to certain phonological features only using the context of the respective phonemes, but the question leaves open if the context of a phoneme is enough to clearly identify a phoneme beyond language boundaries.
+%\subsection{Phonemic String Comparison}
+%An often found sub-task in Computational Historical Linguistics are string comparisons. For instance, when trying find cognates, the basic assumption is that words that are etymologically related should show similar phonemic shape. The standard way here is using symbolic string distances such as the normalized Levenshtein distance. However, this assumes that phonemes are equidistant to each other. Weighted string comparisons, either hand-crafted of learned, try to account for the fact that some phonemes are closer to each other than to others. 
+%Using embeddings for string comparison means that one has to embed the sequence of phoneme embeddings of all words to be compared into some common latent space. Such word embeddings would then be close to each other if the words share similar phonological information and hence would inherently allow for weighted comparisons. 
+%\subsection{Modeling Sound Change}
+%\subsection{Proto-Form Reconstruction}
+%Especially for graphic data, the benefits of generative models, especially generative auto-encoders, lead to rising interest in such models. Here, a latent variable is used to approximate the expected output of a network. A quite simplistic model of sound change would be that the proto-form should contain information common to all daughter words, that is, the proto-form should be some sort of mean of all daughter words. If we now train such a model to encode and decode words and further cluster all words belonging to a certain cognate class, the centroid of such clusters should correspond to the underlying proto-form of the given words.
 \subsection{Phoneme Inventory Clustering}
 \section{Resume}
+While the theoretical benefits of phoneme embeddings might look appealing, the 
 
 \bibliographystyle{apa}
 \bibliography{references} 
@@ -540,7 +557,7 @@ p, t" & t & p" \\
 t, p" & p & t" \\
 k, t" & t & k" \\
 
-\hline \multicolumn{3}{l}{check voiced pulmonic plosive  $\rightarrow$ voiced glottalized plosive via voiced glottalized plosive}\\  \hline
+\hline \multicolumn{3}{l}{voiced pulmonic plosive  $\rightarrow$ voiced glottalized plosive via voiced glottalized plosive}\\  \hline
 
 b, d" & d & b" \\
 d, b" & b & d" \\

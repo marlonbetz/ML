@@ -1,0 +1,19 @@
+import codecs 
+import numpy as np
+from pandas import DataFrame
+phoneme_embeddings = dict()
+for line in codecs.open("phoneme_embeddings_plm.csv","r"):
+    line = line.split(",")
+    key= line[0][1:-1]
+    emb = line[1:]
+    emb[-1] = emb[-1][:-1]
+    emb = np.array([float(e) for e in emb])
+    phoneme_embeddings[key] = emb
+
+
+phoneme_embeddings = DataFrame(phoneme_embeddings)
+
+from sklearn.manifold import TSNE
+
+m = TSNE()
+m.fit_transform(phoneme_embeddings, y)

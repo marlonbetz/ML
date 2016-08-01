@@ -1,0 +1,10 @@
+import numpy as np 
+from keras.models import Model
+from keras.layers import LSTM,Dense,Input
+
+n_symbols = 1000
+dim_embedding_phono = 10
+n_language
+
+input_phono = Input((n_symbols,))
+embedded_phono = Dense(dim_embedding_phono,activation="linear")(input_phono)

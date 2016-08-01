@@ -1,5 +1,0 @@
-import numpy as np 
-from pandas import DataFrame
-import pickle
-
-df = pickle.load(open("performances.pkl"))
