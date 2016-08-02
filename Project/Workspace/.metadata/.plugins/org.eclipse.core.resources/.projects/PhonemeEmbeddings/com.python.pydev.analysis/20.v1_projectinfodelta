@@ -1,0 +1,17 @@
+INSTUPspecific_evaluation_PLM
+/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/specific_evaluation_PLM.py
+INFOS:&&3|1|2|0&&3|3|2|0&&3|4|2|0&&3|5|2|0&&3|5|2|0&&3|1|2|0&&3|6|2|0&&3|7|2|0&&3|7|2|0&&3|8|2|0&&3|9|2|0&&3|10|2|0&&3|11|2|0&&3|12|2|0&&3|13|2|0&&3|14|2|0
+acc=14
+phoneme_embeddings=1
+c=8
+line=3
+acc_all=13
+c_true=9
+tags=7
+c_true_all=10
+true=12
+emb=5
+clf=6
+specific_evaluation_PLM=2
+key=4
+predicted=11

@@ -176,6 +176,12 @@ Tsvetkov, Y., Sitaram, S., Faruqui, M., Lample, G., Littell, P., Mortensen, D.,
   phonetic representation learning.
 \newblock {\em arXiv preprint arXiv:1605.03832}.
 
+\bibitem[\protect\astroncite{Vaswani et~al.}{2013}]{vaswani2013decoding}
+Vaswani, A., Zhao, Y., Fossum, V., and Chiang, D. (2013).
+\newblock Decoding with large-scale neural language models improves
+  translation.
+\newblock In {\em EMNLP}, pages 1387--1392. Citeseer.
+
 \bibitem[\protect\astroncite{Wichmann et~al.}{2010}]{wichmann2010asjp}
 Wichmann, S., M{\"u}ller, A., Velupillai, V., Brown, C.~H., Holman, E.~W.,
   Brown, P., Sauppe, S., Belyaev, O., Urban, M., Molochieva, Z., et~al. (2010).

@@ -198,7 +198,7 @@ P(y=1|w,c) = \frac{P(w|c)}{kP(w|c)+Q(w)}
 \label{eq:nce_5}
 \end{equation}
 
-Here, instead of taking the traditional softmax for  $P(w|c)$, NCE allows for a reparametrization of it: instead of summing over all probabilities in the lexicon to normalize the data, the denominator of the softmax is substituted by a parameter $Z(c)$ that is estimated by the model itself. In fact, and report equal performance while setting $Z(c)$ to 1, that is, the model learns to normalize the probabilities completely on its own. Coming from the definition of this probability in the CBOW architecture from Eq. \ref{eq:cbow_softmax_prob}, this leaves us with the probability of a word given a context as 
+Here, instead of taking the traditional softmax for  $P(w|c)$, NCE allows for a reparametrization of it: instead of summing over all probabilities in the lexicon to normalize the data, the denominator of the softmax is substituted by a parameter $Z(c)$ that is estimated by the model itself. In fact, \cite{vaswani2013decoding, mnih2012fast} report  equal performance while setting $Z(c)$ to 1, that is, the model learns to normalize the probabilities completely on its own. Coming from the definition of this probability in the CBOW architecture from Eq. \ref{eq:cbow_softmax_prob}, this leaves us with the probability of a word given a context as 
 
 \begin{equation}
 P(w|c) = \exp (h^{\top}v'_w)
