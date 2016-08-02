@@ -5,45 +5,45 @@ The style file: apa.bst
 Database file #1: references.bib
 Warning--empty journal in cho2015using
 Warning--can't use both volume and number fields in gutmann2010noise
-You've used 29 entries,
+You've used 34 entries,
             1940 wiz_defined-function locations,
-            622 strings with 8719 characters,
-and the built_in function-call counts, 12910 in all, are:
-= -- 1259
-> -- 550
-< -- 27
-+ -- 197
-- -- 186
-* -- 1055
-:= -- 2129
-add.period$ -- 89
-call.type$ -- 29
-change.case$ -- 234
-chr.to.int$ -- 26
-cite$ -- 31
-duplicate$ -- 552
-empty$ -- 891
-format.name$ -- 233
-if$ -- 2611
+            646 strings with 9737 characters,
+and the built_in function-call counts, 14960 in all, are:
+= -- 1443
+> -- 685
+< -- 28
++ -- 247
+- -- 234
+* -- 1247
+:= -- 2511
+add.period$ -- 104
+call.type$ -- 34
+change.case$ -- 281
+chr.to.int$ -- 31
+cite$ -- 36
+duplicate$ -- 615
+empty$ -- 998
+format.name$ -- 288
+if$ -- 2983
 int.to.chr$ -- 4
 int.to.str$ -- 0
-missing$ -- 29
-newline$ -- 146
-num.names$ -- 89
-pop$ -- 273
+missing$ -- 34
+newline$ -- 171
+num.names$ -- 104
+pop$ -- 318
 preamble$ -- 1
-purify$ -- 237
+purify$ -- 285
 quote$ -- 0
-skip$ -- 422
+skip$ -- 471
 stack$ -- 0
-substring$ -- 799
-swap$ -- 163
+substring$ -- 886
+swap$ -- 172
 text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 168
+type$ -- 196
 warning$ -- 2
-while$ -- 95
+while$ -- 107
 width$ -- 0
-write$ -- 369
+write$ -- 430
 (There were 2 warnings)

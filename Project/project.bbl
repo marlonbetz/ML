@@ -1,5 +1,11 @@
 \begin{thebibliography}{}
 
+\bibitem[\protect\astroncite{Bengio and
+  Courville}{2016}]{Goodfellow-et-al-2016-Book}
+Bengio, I. G.~Y. and Courville, A. (2016).
+\newblock Deep learning.
+\newblock Book in preparation for MIT Press.
+
 \bibitem[\protect\astroncite{Bengio et~al.}{2003a}]{bengio2003neural}
 Bengio, Y., Ducharme, R., Vincent, P., and Jauvin, C. (2003a).
 \newblock A neural probabilistic language model.
@@ -29,6 +35,12 @@ Chen, X., Xu, L., Liu, Z., Sun, M., and Luan, H. (2015b).
 \bibitem[\protect\astroncite{Cho et~al.}{2015}]{cho2015using}
 Cho, S. J.~K., Memisevic, R., and Bengio, Y. (2015).
 \newblock On using very large target vocabulary for neural machine translation.
+
+\bibitem[\protect\astroncite{Chung et~al.}{2014}]{chung2014empirical}
+Chung, J., Gulcehre, C., Cho, K., and Bengio, Y. (2014).
+\newblock Empirical evaluation of gated recurrent neural networks on sequence
+  modeling.
+\newblock {\em arXiv preprint arXiv:1412.3555}.
 
 \bibitem[\protect\astroncite{Collobert and Weston}{2008}]{collobert2008unified}
 Collobert, R. and Weston, J. (2008).
@@ -90,6 +102,11 @@ Kondrak, G. (2000).
 \newblock In {\em Proceedings of the 1st North American chapter of the
   Association for Computational Linguistics conference}, pages 288--295.
   Association for Computational Linguistics.
+
+\bibitem[\protect\astroncite{Landauer et~al.}{2013}]{landauer2013handbook}
+Landauer, T.~K., McNamara, D.~S., Dennis, S., and Kintsch, W. (2013).
+\newblock {\em Handbook of latent semantic analysis}.
+\newblock Psychology Press.
 
 \bibitem[\protect\astroncite{Lewis et~al.}{2015}]{lewis2015ethnologue}
 Lewis, M.~P., Simons, G.~F., and Fennig, C.~D. (2015).
@@ -158,6 +175,18 @@ Tsvetkov, Y., Sitaram, S., Faruqui, M., Lample, G., Littell, P., Mortensen, D.,
 \newblock Polyglot neural language models: A case study in cross-lingual
   phonetic representation learning.
 \newblock {\em arXiv preprint arXiv:1605.03832}.
+
+\bibitem[\protect\astroncite{Wichmann et~al.}{2010}]{wichmann2010asjp}
+Wichmann, S., M{\"u}ller, A., Velupillai, V., Brown, C.~H., Holman, E.~W.,
+  Brown, P., Sauppe, S., Belyaev, O., Urban, M., Molochieva, Z., et~al. (2010).
+\newblock The asjp database (version 13).
+\newblock {\em See http://email. eva. mpg. de/wichmann/languages. htm}.
+
+\bibitem[\protect\astroncite{Wichmann et~al.}{2011}]{wichmann2011phonological}
+Wichmann, S., Rama, T., and Holman, E.~W. (2011).
+\newblock Phonological diversity, word length, and population sizes across
+  languages: The asjp evidence.
+\newblock {\em Linguistic Typology}, 15(2):177--198.
 
 \bibitem[\protect\astroncite{Zhang et~al.}{2015}]{zhang2015character}
 Zhang, X., Zhao, J., and LeCun, Y. (2015).

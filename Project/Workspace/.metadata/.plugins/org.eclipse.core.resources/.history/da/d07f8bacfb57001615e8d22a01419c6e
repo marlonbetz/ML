@@ -1,0 +1,4 @@
+import numpy as np 
+from sklearn.neighbors import KNeighborsClassifier
+
+KNeighborsClassifier(n_neighbors=1,algorithm="brute",metric="cosine")

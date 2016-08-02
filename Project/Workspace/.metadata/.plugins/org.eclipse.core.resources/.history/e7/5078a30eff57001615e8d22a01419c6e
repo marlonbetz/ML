@@ -1,0 +1,46 @@
+import codecs 
+import numpy as np
+from pandas import DataFrame
+import regex
+phoneme_embeddings = dict()
+for line in codecs.open("phoneme_embeddings_plm.csv","r"):
+    line = line.split(",")
+    key= line[0][1:-1]
+    emb = line[1:]
+    emb[-1] = emb[-1][:-1]
+    emb = np.array([float(e) for e in emb])
+    phoneme_embeddings[key] = emb
+
+phoneme_embeddings = DataFrame(phoneme_embeddings,columns=phoneme_embeddings.keys())
+print(phoneme_embeddings.columns)
+from sklearn.manifold import TSNE
+
+m = TSNE()
+phoneme_embeddings_tsne = m.fit_transform(phoneme_embeddings.transpose())
+print(len(phoneme_embeddings_tsne))
+import matplotlib.pyplot as plt
+for p,emb in zip(phoneme_embeddings.columns, phoneme_embeddings_tsne):
+    c = "black"
+#     if regex.search("[aeiou3E]\\*?", p):
+#         c = "red"
+#     if regex.search(".*w~", p):
+#         c = "blue"
+#     if regex.search(".*y~", p):
+#         c = "yellow"
+#     if regex.search(".*h~", p):
+#         c = "brown"
+#     if regex.search(".*\"", p):
+#         c = "green"
+    if p in ["STANDARD_GERMAN","BERNESE_GERMAN","FRISIAN",
+             "ENGLISH","DUTCH","YIDDISH","DANISH","SWEDISH","FAROESE","NORWEGIAN_RIKSMAL",
+             "GJESTAL_NORWEGIAN","NORWEGIAN_BOKMAAL","NORWEGIAN_NYNORSK_TOTEN","SANDNES_NORWEGIAN",
+             "ICELANDIC"]:
+        c = "red"
+    if p in ["POLISH","KASHUBIAN","CZECH",
+             "LOWER_SORBIAN","UPPER_SORBIAN","SLOVAK","SLOVENIAN","MACEDONIAN","BULGARIAN","UKRAINIAN",
+             "BELORUSSIAN","RUSSIAN"]:
+        c = "blue"
+#     if regex.search("STANDARD_GERMAN", p):
+#             c = "red"
+        plt.annotate(p,(emb[0],emb[1]),color=c)
+plt.show()

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.29)  1 AUG 2016 15:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.29)  2 AUG 2016 16:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -493,7 +493,30 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[2] [3]
+[2]
+./project.tex:34: Undefined control sequence.
+\b@Goodfellow-et-al-2016-Book ->\astroncite 
+                                            {Bengio and Courville}{2016}
+l.34 ...learning \cite{Goodfellow-et-al-2016-Book}
+                                                  . This means that embeddin...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./project.tex:34: Undefined control sequence.
+\b@Goodfellow-et-al-2016-Book ->\astroncite 
+                                            {Bengio and Courville}{2016}
+l.34 ...learning \cite{Goodfellow-et-al-2016-Book}
+                                                  . This means that embeddin...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[3]
 ./project.tex:36: Undefined control sequence.
 \b@dos2014learning ->\astroncite 
                                  {dos Santos and Zadrozny}{2014}
@@ -560,7 +583,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<bengio2006network.png, id=18, 797.98125pt x 615.29875pt>
+<bengio2006network.png, id=19, 797.98125pt x 615.29875pt>
 File: bengio2006network.png Graphic file (type png)
 
 <use bengio2006network.png>
@@ -611,10 +634,54 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:52: Undefined control sequence.
+./project.tex:50: Undefined control sequence.
+\b@landauer2013handbook ->\astroncite 
+                                      {Landauer et\nobreakspace {}al.}{2013}
+l.50 ...{landauer2013handbook,pennington2014glove}
+                                                   and neural embedding mode...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./project.tex:50: Undefined control sequence.
+\b@landauer2013handbook ->\astroncite 
+                                      {Landauer et\nobreakspace {}al.}{2013}
+l.50 ...{landauer2013handbook,pennington2014glove}
+                                                   and neural embedding mode...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./project.tex:50: Undefined control sequence.
+\b@pennington2014glove ->\astroncite 
+                                     {Pennington et\nobreakspace {}al.}{2014}
+l.50 ...{landauer2013handbook,pennington2014glove}
+                                                   and neural embedding mode...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./project.tex:50: Undefined control sequence.
+\b@pennington2014glove ->\astroncite 
+                                     {Pennington et\nobreakspace {}al.}{2014}
+l.50 ...{landauer2013handbook,pennington2014glove}
+                                                   and neural embedding mode...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./project.tex:53: Undefined control sequence.
 \b@bengio2003neural ->\astroncite 
                                   {Bengio et\nobreakspace {}al.}{2003a}
-l.52  \cite{bengio2003neural}
+l.53  \cite{bengio2003neural}
                               pioneered as the first to introduce Neural Lan...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -622,10 +689,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:52: Undefined control sequence.
+./project.tex:53: Undefined control sequence.
 \b@bengio2003neural ->\astroncite 
                                   {Bengio et\nobreakspace {}al.}{2003a}
-l.52  \cite{bengio2003neural}
+l.53  \cite{bengio2003neural}
                               pioneered as the first to introduce Neural Lan...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -633,17 +700,18 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 55.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+[4]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 56.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 55.
- [4]
-./project.tex:58: Undefined control sequence.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 56.
+
+./project.tex:59: Undefined control sequence.
 \b@collobert2008unified ->\astroncite 
                                       {Collobert and Weston}{2008}
-l.58 \cite{collobert2008unified}
+l.59 \cite{collobert2008unified}
                                  then improved the model tremendously by get...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -651,10 +719,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:58: Undefined control sequence.
+./project.tex:59: Undefined control sequence.
 \b@collobert2008unified ->\astroncite 
                                       {Collobert and Weston}{2008}
-l.58 \cite{collobert2008unified}
+l.59 \cite{collobert2008unified}
                                  then improved the model tremendously by get...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -662,10 +730,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:63: Undefined control sequence.
+./project.tex:64: Undefined control sequence.
 \b@bengio2003neural ->\astroncite 
                                   {Bengio et\nobreakspace {}al.}{2003a}
-l.63 ...ill the same as in \cite{bengio2003neural}
+l.64 ...ill the same as in \cite{bengio2003neural}
                                                   . This model could already...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -673,10 +741,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:63: Undefined control sequence.
+./project.tex:64: Undefined control sequence.
 \b@bengio2003neural ->\astroncite 
                                   {Bengio et\nobreakspace {}al.}{2003a}
-l.63 ...ill the same as in \cite{bengio2003neural}
+l.64 ...ill the same as in \cite{bengio2003neural}
                                                   . This model could already...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -684,10 +752,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:63: Undefined control sequence.
+./project.tex:64: Undefined control sequence.
 \b@bengio2003neural ->\astroncite 
                                   {Bengio et\nobreakspace {}al.}{2003a}
-l.63 ...arning enormously (\cite{bengio2003neural}
+l.64 ...arning enormously (\cite{bengio2003neural}
                                                    report a training time of...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -695,10 +763,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:63: Undefined control sequence.
+./project.tex:64: Undefined control sequence.
 \b@bengio2003neural ->\astroncite 
                                   {Bengio et\nobreakspace {}al.}{2003a}
-l.63 ...arning enormously (\cite{bengio2003neural}
+l.64 ...arning enormously (\cite{bengio2003neural}
                                                    report a training time of...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -706,16 +774,17 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<word2vec.png, id=24, 915.42pt x 550.055pt>
+[5 <./bengio2006network.png>] <word2vec.png, id=34, 915.42pt x 550.055pt>
 File: word2vec.png Graphic file (type png)
- <use word2vec.png>
-Package pdftex.def Info: word2vec.png used on input line 67.
+
+<use word2vec.png>
+Package pdftex.def Info: word2vec.png used on input line 68.
 (pdftex.def)             Requested size: 322.50346pt x 193.7811pt.
 
-./project.tex:69: Undefined control sequence.
+./project.tex:70: Undefined control sequence.
 \b@mikolov2013efficient ->\astroncite 
                                       {Mikolov et\nobreakspace {}al.}{2013a}
-l.69 ...t word. From \cite{mikolov2013efficient}.}
+l.70 ...t word. From \cite{mikolov2013efficient}.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -723,10 +792,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:69: Undefined control sequence.
+./project.tex:70: Undefined control sequence.
 \b@mikolov2013efficient ->\astroncite 
                                       {Mikolov et\nobreakspace {}al.}{2013a}
-l.69 ...t word. From \cite{mikolov2013efficient}.}
+l.70 ...t word. From \cite{mikolov2013efficient}.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -734,10 +803,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:69: Undefined control sequence.
+./project.tex:70: Undefined control sequence.
 \b@mikolov2013efficient ->\astroncite 
                                       {Mikolov et\nobreakspace {}al.}{2013a}
-l.69 ...t word. From \cite{mikolov2013efficient}.}
+l.70 ...t word. From \cite{mikolov2013efficient}.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -745,10 +814,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:69: Undefined control sequence.
+./project.tex:70: Undefined control sequence.
 \b@mikolov2013efficient ->\astroncite 
                                       {Mikolov et\nobreakspace {}al.}{2013a}
-l.69 ...t word. From \cite{mikolov2013efficient}.}
+l.70 ...t word. From \cite{mikolov2013efficient}.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -756,10 +825,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:72: Undefined control sequence.
+./project.tex:73: Undefined control sequence.
 \b@mikolov2013efficient ->\astroncite 
                                       {Mikolov et\nobreakspace {}al.}{2013a}
-l.72 ...kolov2013efficient,mikolov2013distributed}
+l.73 ...kolov2013efficient,mikolov2013distributed}
                                                    stands out as major break...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -767,10 +836,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:72: Undefined control sequence.
+./project.tex:73: Undefined control sequence.
 \b@mikolov2013efficient ->\astroncite 
                                       {Mikolov et\nobreakspace {}al.}{2013a}
-l.72 ...kolov2013efficient,mikolov2013distributed}
+l.73 ...kolov2013efficient,mikolov2013distributed}
                                                    stands out as major break...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -778,10 +847,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:72: Undefined control sequence.
+./project.tex:73: Undefined control sequence.
 \b@mikolov2013distributed ->\astroncite 
                                         {Mikolov et\nobreakspace {}al.}{2013b}
-l.72 ...kolov2013efficient,mikolov2013distributed}
+l.73 ...kolov2013efficient,mikolov2013distributed}
                                                    stands out as major break...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -789,10 +858,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:72: Undefined control sequence.
+./project.tex:73: Undefined control sequence.
 \b@mikolov2013distributed ->\astroncite 
                                         {Mikolov et\nobreakspace {}al.}{2013b}
-l.72 ...kolov2013efficient,mikolov2013distributed}
+l.73 ...kolov2013efficient,mikolov2013distributed}
                                                    stands out as major break...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -800,10 +869,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:72: Undefined control sequence.
+./project.tex:73: Undefined control sequence.
 \b@bengio2003neural ->\astroncite 
                                   {Bengio et\nobreakspace {}al.}{2003a}
-l.72 ...ite{bengio2003neural,collobert2008unified}
+l.73 ...ite{bengio2003neural,collobert2008unified}
                                                   , which employ non-linear ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -811,10 +880,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:72: Undefined control sequence.
+./project.tex:73: Undefined control sequence.
 \b@bengio2003neural ->\astroncite 
                                   {Bengio et\nobreakspace {}al.}{2003a}
-l.72 ...ite{bengio2003neural,collobert2008unified}
+l.73 ...ite{bengio2003neural,collobert2008unified}
                                                   , which employ non-linear ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -822,10 +891,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:72: Undefined control sequence.
+./project.tex:73: Undefined control sequence.
 \b@collobert2008unified ->\astroncite 
                                       {Collobert and Weston}{2008}
-l.72 ...ite{bengio2003neural,collobert2008unified}
+l.73 ...ite{bengio2003neural,collobert2008unified}
                                                   , which employ non-linear ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -833,10 +902,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:72: Undefined control sequence.
+./project.tex:73: Undefined control sequence.
 \b@collobert2008unified ->\astroncite 
                                       {Collobert and Weston}{2008}
-l.72 ...ite{bengio2003neural,collobert2008unified}
+l.73 ...ite{bengio2003neural,collobert2008unified}
                                                   , which employ non-linear ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -844,21 +913,21 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[5 <./bengio2006network.png>] [6 <./word2vec.png>]
-./project.tex:97: Double subscript.
-l.97 where $v_w_
+[6 <./word2vec.png>]
+./project.tex:98: Double subscript.
+l.98 where $v_w_
                 i$ is an input vector and $v'_w_i$ an output vector represen...
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./project.tex:97: Double subscript.
-l.97 where $v_w_i$ is an input vector and $v'_w_
+./project.tex:98: Double subscript.
+l.98 where $v_w_i$ is an input vector and $v'_w_
                                                 i$ an output vector represen...
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./project.tex:97: Undefined control sequence.
+./project.tex:98: Undefined control sequence.
 \b@morin2005hierarchical ->\astroncite 
                                        {Morin and Bengio}{2005}
-l.97 ...ax classifier \cite{morin2005hierarchical}
+l.98 ...ax classifier \cite{morin2005hierarchical}
                                                    nstead. Here, the classif...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -866,10 +935,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:97: Undefined control sequence.
+./project.tex:98: Undefined control sequence.
 \b@morin2005hierarchical ->\astroncite 
                                        {Morin and Bengio}{2005}
-l.97 ...ax classifier \cite{morin2005hierarchical}
+l.98 ...ax classifier \cite{morin2005hierarchical}
                                                    nstead. Here, the classif...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -877,10 +946,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:107: Undefined control sequence.
+./project.tex:108: Undefined control sequence.
 \b@chen2015strategies ->\astroncite 
                                     {Chen et\nobreakspace {}al.}{2015a}
-l.107 ...ted Softmax (cf.\cite{chen2015strategies}
+l.108 ...ted Softmax (cf.\cite{chen2015strategies}
                                                   ), where the idea is that ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -888,10 +957,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:107: Undefined control sequence.
+./project.tex:108: Undefined control sequence.
 \b@chen2015strategies ->\astroncite 
                                     {Chen et\nobreakspace {}al.}{2015a}
-l.107 ...ted Softmax (cf.\cite{chen2015strategies}
+l.108 ...ted Softmax (cf.\cite{chen2015strategies}
                                                   ), where the idea is that ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -899,10 +968,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:107: Undefined control sequence.
+./project.tex:108: Undefined control sequence.
 \b@chen2015strategies ->\astroncite 
                                     {Chen et\nobreakspace {}al.}{2015a}
-l.107 ...tain frequency. \cite{chen2015strategies}
+l.108 ...tain frequency. \cite{chen2015strategies}
                                                    mention their model is fa...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -910,10 +979,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:107: Undefined control sequence.
+./project.tex:108: Undefined control sequence.
 \b@chen2015strategies ->\astroncite 
                                     {Chen et\nobreakspace {}al.}{2015a}
-l.107 ...tain frequency. \cite{chen2015strategies}
+l.108 ...tain frequency. \cite{chen2015strategies}
                                                    mention their model is fa...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -922,10 +991,10 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [7]
-./project.tex:166: Undefined control sequence.
+./project.tex:167: Undefined control sequence.
 \b@liu2008monte ->\astroncite 
                               {Liu}{2008}
-l.166 ...003quick,bengio2008adaptive,cho2015using}
+l.167 ...003quick,bengio2008adaptive,cho2015using}
                                                   , where a proposal distrib...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -933,10 +1002,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:166: Undefined control sequence.
+./project.tex:167: Undefined control sequence.
 \b@liu2008monte ->\astroncite 
                               {Liu}{2008}
-l.166 ...003quick,bengio2008adaptive,cho2015using}
+l.167 ...003quick,bengio2008adaptive,cho2015using}
                                                   , where a proposal distrib...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -944,10 +1013,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:166: Undefined control sequence.
+./project.tex:167: Undefined control sequence.
 \b@bengio2003quick ->\astroncite 
                                  {Bengio et\nobreakspace {}al.}{2003b}
-l.166 ...003quick,bengio2008adaptive,cho2015using}
+l.167 ...003quick,bengio2008adaptive,cho2015using}
                                                   , where a proposal distrib...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -955,10 +1024,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:166: Undefined control sequence.
+./project.tex:167: Undefined control sequence.
 \b@bengio2003quick ->\astroncite 
                                  {Bengio et\nobreakspace {}al.}{2003b}
-l.166 ...003quick,bengio2008adaptive,cho2015using}
+l.167 ...003quick,bengio2008adaptive,cho2015using}
                                                   , where a proposal distrib...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -966,10 +1035,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:166: Undefined control sequence.
+./project.tex:167: Undefined control sequence.
 \b@bengio2008adaptive ->\astroncite 
                                     {Bengio and Sen{\'e}cal}{2008}
-l.166 ...003quick,bengio2008adaptive,cho2015using}
+l.167 ...003quick,bengio2008adaptive,cho2015using}
                                                   , where a proposal distrib...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -977,10 +1046,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:166: Undefined control sequence.
+./project.tex:167: Undefined control sequence.
 \b@bengio2008adaptive ->\astroncite 
                                     {Bengio and Sen{\'e}cal}{2008}
-l.166 ...003quick,bengio2008adaptive,cho2015using}
+l.167 ...003quick,bengio2008adaptive,cho2015using}
                                                   , where a proposal distrib...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -988,10 +1057,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:166: Undefined control sequence.
+./project.tex:167: Undefined control sequence.
 \b@cho2015using ->\astroncite 
                               {Cho et\nobreakspace {}al.}{2015}
-l.166 ...003quick,bengio2008adaptive,cho2015using}
+l.167 ...003quick,bengio2008adaptive,cho2015using}
                                                   , where a proposal distrib...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -999,10 +1068,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:166: Undefined control sequence.
+./project.tex:167: Undefined control sequence.
 \b@cho2015using ->\astroncite 
                               {Cho et\nobreakspace {}al.}{2015}
-l.166 ...003quick,bengio2008adaptive,cho2015using}
+l.167 ...003quick,bengio2008adaptive,cho2015using}
                                                   , where a proposal distrib...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1010,10 +1079,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:167: Undefined control sequence.
+./project.tex:168: Undefined control sequence.
 \b@gutmann2010noise ->\astroncite 
                                   {Gutmann and Hyv{\"a}rinen}{2010}
-l.167 ...NCE, \cite{gutmann2010noise,mnih2012fast}
+l.168 ...NCE, \cite{gutmann2010noise,mnih2012fast}
                                                   ) trains a model to differ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1021,10 +1090,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:167: Undefined control sequence.
+./project.tex:168: Undefined control sequence.
 \b@gutmann2010noise ->\astroncite 
                                   {Gutmann and Hyv{\"a}rinen}{2010}
-l.167 ...NCE, \cite{gutmann2010noise,mnih2012fast}
+l.168 ...NCE, \cite{gutmann2010noise,mnih2012fast}
                                                   ) trains a model to differ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1032,10 +1101,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:167: Undefined control sequence.
+./project.tex:168: Undefined control sequence.
 \b@mnih2012fast ->\astroncite 
                               {Mnih and Teh}{2012}
-l.167 ...NCE, \cite{gutmann2010noise,mnih2012fast}
+l.168 ...NCE, \cite{gutmann2010noise,mnih2012fast}
                                                   ) trains a model to differ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1043,10 +1112,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:167: Undefined control sequence.
+./project.tex:168: Undefined control sequence.
 \b@mnih2012fast ->\astroncite 
                               {Mnih and Teh}{2012}
-l.167 ...NCE, \cite{gutmann2010noise,mnih2012fast}
+l.168 ...NCE, \cite{gutmann2010noise,mnih2012fast}
                                                   ) trains a model to differ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1055,7 +1124,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [8]
-Overfull \hbox (11.25656pt too wide) in paragraph at lines 200--201
+Overfull \hbox (11.25656pt too wide) in paragraph at lines 201--202
 []\OT1/cmr/m/n/10.95 Here, in-stead of tak-ing the tra-di-tional soft-max for $
 \OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 w\OMS/cmsy/m/n/10.
 95 j\OML/cmm/m/it/10.95 c\OT1/cmr/m/n/10.95 )$, NCE al-lows for a reparametriza
@@ -1063,10 +1132,10 @@ Overfull \hbox (11.25656pt too wide) in paragraph at lines 200--201
  []
 
 [9]
-./project.tex:249: Undefined control sequence.
+./project.tex:250: Undefined control sequence.
 \b@goldberg2014word2vec ->\astroncite 
                                       {Goldberg and Levy}{2014}
-l.249 ...s of NEG, see \cite{goldberg2014word2vec}
+l.250 ...s of NEG, see \cite{goldberg2014word2vec}
                                                   .
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1074,10 +1143,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:249: Undefined control sequence.
+./project.tex:250: Undefined control sequence.
 \b@goldberg2014word2vec ->\astroncite 
                                       {Goldberg and Levy}{2014}
-l.249 ...s of NEG, see \cite{goldberg2014word2vec}
+l.250 ...s of NEG, see \cite{goldberg2014word2vec}
                                                   .
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1086,20 +1155,20 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 249--251
+Underfull \hbox (badness 10000) in paragraph at lines 250--252
 
  []
 
-<polyglotLM.png, id=51, 567.11874pt x 510.90875pt>
+<polyglotLM.png, id=52, 567.11874pt x 510.90875pt>
 File: polyglotLM.png Graphic file (type png)
  <use polyglotLM.png>
-Package pdftex.def Info: polyglotLM.png used on input line 255.
+Package pdftex.def Info: polyglotLM.png used on input line 256.
 (pdftex.def)             Requested size: 322.50346pt x 290.55057pt.
 
-./project.tex:256: Undefined control sequence.
+./project.tex:257: Undefined control sequence.
 \b@tsvetkov2016polyglot ->\astroncite 
                                       {Tsvetkov et\nobreakspace {}al.}{2016}
-l.256 ... Model. From \cite{tsvetkov2016polyglot}}
+l.257 ... Model. From \cite{tsvetkov2016polyglot}}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1107,10 +1176,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:256: Undefined control sequence.
+./project.tex:257: Undefined control sequence.
 \b@tsvetkov2016polyglot ->\astroncite 
                                       {Tsvetkov et\nobreakspace {}al.}{2016}
-l.256 ... Model. From \cite{tsvetkov2016polyglot}}
+l.257 ... Model. From \cite{tsvetkov2016polyglot}}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1118,10 +1187,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:256: Undefined control sequence.
+./project.tex:257: Undefined control sequence.
 \b@tsvetkov2016polyglot ->\astroncite 
                                       {Tsvetkov et\nobreakspace {}al.}{2016}
-l.256 ... Model. From \cite{tsvetkov2016polyglot}}
+l.257 ... Model. From \cite{tsvetkov2016polyglot}}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1129,10 +1198,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:256: Undefined control sequence.
+./project.tex:257: Undefined control sequence.
 \b@tsvetkov2016polyglot ->\astroncite 
                                       {Tsvetkov et\nobreakspace {}al.}{2016}
-l.256 ... Model. From \cite{tsvetkov2016polyglot}}
+l.257 ... Model. From \cite{tsvetkov2016polyglot}}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1140,10 +1209,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:263: Undefined control sequence.
+./project.tex:264: Undefined control sequence.
 \b@hochreiter1997long ->\astroncite 
                                     {Hochreiter and Schmidhuber}{1997}
-l.263 ...Networks (LSTM, \cite{hochreiter1997long}
+l.264 ...Networks (LSTM, \cite{hochreiter1997long}
                                                   ), there is an increase of...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1151,10 +1220,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:263: Undefined control sequence.
+./project.tex:264: Undefined control sequence.
 \b@hochreiter1997long ->\astroncite 
                                     {Hochreiter and Schmidhuber}{1997}
-l.263 ...Networks (LSTM, \cite{hochreiter1997long}
+l.264 ...Networks (LSTM, \cite{hochreiter1997long}
                                                   ), there is an increase of...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1162,10 +1231,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:263: Undefined control sequence.
+./project.tex:264: Undefined control sequence.
 \b@chen2015joint ->\astroncite 
                                {Chen et\nobreakspace {}al.}{2015b}
-l.263 ...finding,kim2015character,dos2014learning}
+l.264 ...finding,kim2015character,dos2014learning}
                                                   , while some learn them jo...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1173,10 +1242,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:263: Undefined control sequence.
+./project.tex:264: Undefined control sequence.
 \b@chen2015joint ->\astroncite 
                                {Chen et\nobreakspace {}al.}{2015b}
-l.263 ...finding,kim2015character,dos2014learning}
+l.264 ...finding,kim2015character,dos2014learning}
                                                   , while some learn them jo...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1184,10 +1253,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:263: Undefined control sequence.
+./project.tex:264: Undefined control sequence.
 \b@ling2015finding ->\astroncite 
                                  {Ling et\nobreakspace {}al.}{2015}
-l.263 ...finding,kim2015character,dos2014learning}
+l.264 ...finding,kim2015character,dos2014learning}
                                                   , while some learn them jo...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1195,10 +1264,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:263: Undefined control sequence.
+./project.tex:264: Undefined control sequence.
 \b@ling2015finding ->\astroncite 
                                  {Ling et\nobreakspace {}al.}{2015}
-l.263 ...finding,kim2015character,dos2014learning}
+l.264 ...finding,kim2015character,dos2014learning}
                                                   , while some learn them jo...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1206,10 +1275,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:263: Undefined control sequence.
+./project.tex:264: Undefined control sequence.
 \b@kim2015character ->\astroncite 
                                   {Kim et\nobreakspace {}al.}{2015}
-l.263 ...finding,kim2015character,dos2014learning}
+l.264 ...finding,kim2015character,dos2014learning}
                                                   , while some learn them jo...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1217,10 +1286,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:263: Undefined control sequence.
+./project.tex:264: Undefined control sequence.
 \b@kim2015character ->\astroncite 
                                   {Kim et\nobreakspace {}al.}{2015}
-l.263 ...finding,kim2015character,dos2014learning}
+l.264 ...finding,kim2015character,dos2014learning}
                                                   , while some learn them jo...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1228,10 +1297,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:263: Undefined control sequence.
+./project.tex:264: Undefined control sequence.
 \b@dos2014learning ->\astroncite 
                                  {dos Santos and Zadrozny}{2014}
-l.263 ...finding,kim2015character,dos2014learning}
+l.264 ...finding,kim2015character,dos2014learning}
                                                   , while some learn them jo...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1239,10 +1308,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:263: Undefined control sequence.
+./project.tex:264: Undefined control sequence.
 \b@dos2014learning ->\astroncite 
                                  {dos Santos and Zadrozny}{2014}
-l.263 ...finding,kim2015character,dos2014learning}
+l.264 ...finding,kim2015character,dos2014learning}
                                                   , while some learn them jo...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1250,10 +1319,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:263: Undefined control sequence.
+./project.tex:264: Undefined control sequence.
 \b@zhang2015character ->\astroncite 
                                     {Zhang et\nobreakspace {}al.}{2015}
-l.263 ...lutional models \cite{zhang2015character}
+l.264 ...lutional models \cite{zhang2015character}
                                                   . One family of models imp...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1261,10 +1330,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:263: Undefined control sequence.
+./project.tex:264: Undefined control sequence.
 \b@zhang2015character ->\astroncite 
                                     {Zhang et\nobreakspace {}al.}{2015}
-l.263 ...lutional models \cite{zhang2015character}
+l.264 ...lutional models \cite{zhang2015character}
                                                   . One family of models imp...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1272,10 +1341,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:263: Undefined control sequence.
+./project.tex:264: Undefined control sequence.
 \b@tsvetkov2016polyglot ->\astroncite 
                                       {Tsvetkov et\nobreakspace {}al.}{2016}
-l.263 ... Models (PLM) \cite{tsvetkov2016polyglot}
+l.264 ... Models (PLM) \cite{tsvetkov2016polyglot}
                                                   . Here, a deep model tries...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1283,10 +1352,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:263: Undefined control sequence.
+./project.tex:264: Undefined control sequence.
 \b@tsvetkov2016polyglot ->\astroncite 
                                       {Tsvetkov et\nobreakspace {}al.}{2016}
-l.263 ... Models (PLM) \cite{tsvetkov2016polyglot}
+l.264 ... Models (PLM) \cite{tsvetkov2016polyglot}
                                                   . Here, a deep model tries...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1294,10 +1363,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:263: Undefined control sequence.
+./project.tex:264: Undefined control sequence.
 \b@wals ->\astroncite 
                       {Dryer and Haspelmath}{2013}
-l.263 ...logical information from WALS \cite{wals}
+l.264 ...logical information from WALS \cite{wals}
                                                   , PHOIBLE \cite{phoible} a...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1305,10 +1374,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:263: Undefined control sequence.
+./project.tex:264: Undefined control sequence.
 \b@wals ->\astroncite 
                       {Dryer and Haspelmath}{2013}
-l.263 ...logical information from WALS \cite{wals}
+l.264 ...logical information from WALS \cite{wals}
                                                   , PHOIBLE \cite{phoible} a...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1316,10 +1385,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:263: Undefined control sequence.
+./project.tex:264: Undefined control sequence.
 \b@phoible ->\astroncite 
                          {Moran et\nobreakspace {}al.}{2014}
-l.263 ... WALS \cite{wals}, PHOIBLE \cite{phoible}
+l.264 ... WALS \cite{wals}, PHOIBLE \cite{phoible}
                                                    and Ethnologue \cite{lewi...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1327,10 +1396,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:263: Undefined control sequence.
+./project.tex:264: Undefined control sequence.
 \b@phoible ->\astroncite 
                          {Moran et\nobreakspace {}al.}{2014}
-l.263 ... WALS \cite{wals}, PHOIBLE \cite{phoible}
+l.264 ... WALS \cite{wals}, PHOIBLE \cite{phoible}
                                                    and Ethnologue \cite{lewi...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1338,10 +1407,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:263: Undefined control sequence.
+./project.tex:264: Undefined control sequence.
 \b@lewis2015ethnologue ->\astroncite 
                                      {Lewis et\nobreakspace {}al.}{2015}
-l.263 ...and Ethnologue \cite{lewis2015ethnologue}
+l.264 ...and Ethnologue \cite{lewis2015ethnologue}
                                                    (see Fig. \ref{fig:plm}).
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1349,10 +1418,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:263: Undefined control sequence.
+./project.tex:264: Undefined control sequence.
 \b@lewis2015ethnologue ->\astroncite 
                                      {Lewis et\nobreakspace {}al.}{2015}
-l.263 ...and Ethnologue \cite{lewis2015ethnologue}
+l.264 ...and Ethnologue \cite{lewis2015ethnologue}
                                                    (see Fig. \ref{fig:plm}).
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1361,17 +1430,57 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [10] [11 <./polyglotLM.png>]
-Overfull \hbox (12.32724pt too wide) in paragraph at lines 299--300
+Overfull \hbox (12.32724pt too wide) in paragraph at lines 300--301
 []\OT1/cmr/m/n/10.95 Accordingly, the loss func-tion here is a cat-e-gor-i-cal 
 cross-entropy $\OML/cmm/m/it/10.95 H\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^^
 ; []\OT1/cmr/m/n/10.95 )$ over all phonemes: 
  []
 
 [12]
-./project.tex:315: Undefined control sequence.
+./project.tex:311: Undefined control sequence.
+\b@wichmann2010asjp ->\astroncite 
+                                  {Wichmann et\nobreakspace {}al.}{2010}
+l.311 ...nt Program (ASJP, \cite{wichmann2010asjp}
+                                                  ) will serve as a training...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./project.tex:311: Undefined control sequence.
+\b@wichmann2010asjp ->\astroncite 
+                                  {Wichmann et\nobreakspace {}al.}{2010}
+l.311 ...nt Program (ASJP, \cite{wichmann2010asjp}
+                                                  ) will serve as a training...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<word2vec_all.png, id=63, 941.6781pt x 683.6742pt>
+File: word2vec_all.png Graphic file (type png)
+ <use word2vec_all.png>
+Package pdftex.def Info: word2vec_all.png used on input line 317.
+(pdftex.def)             Requested size: 430.00462pt x 312.18846pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<plm_all.png, id=64, 1299.4146pt x 339.669pt>
+File: plm_all.png Graphic file (type png)
+ <use plm_all.png>
+Package pdftex.def Info: plm_all.png used on input line 325.
+(pdftex.def)             Requested size: 430.00462pt x 112.40208pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+./project.tex:332: Undefined control sequence.
 \b@schnabel2015evaluation ->\astroncite 
                                         {Schnabel et\nobreakspace {}al.}{2015}
-l.315 ...rence tests \cite{schnabel2015evaluation}
+l.332 ...rence tests \cite{schnabel2015evaluation}
                                                   . They all have in common ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1379,10 +1488,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:315: Undefined control sequence.
+./project.tex:332: Undefined control sequence.
 \b@schnabel2015evaluation ->\astroncite 
                                         {Schnabel et\nobreakspace {}al.}{2015}
-l.315 ...rence tests \cite{schnabel2015evaluation}
+l.332 ...rence tests \cite{schnabel2015evaluation}
                                                   . They all have in common ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1390,10 +1499,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:315: Undefined control sequence.
+./project.tex:332: Undefined control sequence.
 \b@mikolov2013distributed ->\astroncite 
                                         {Mikolov et\nobreakspace {}al.}{2013b}
-l.315 ... popular by \cite{mikolov2013distributed}
+l.332 ... popular by \cite{mikolov2013distributed}
                                                   . I hand-crafted an analog...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1401,10 +1510,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:315: Undefined control sequence.
+./project.tex:332: Undefined control sequence.
 \b@mikolov2013distributed ->\astroncite 
                                         {Mikolov et\nobreakspace {}al.}{2013b}
-l.315 ... popular by \cite{mikolov2013distributed}
+l.332 ... popular by \cite{mikolov2013distributed}
                                                   . I hand-crafted an analog...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1412,85 +1521,86 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[13] <4models_comparison_meanAccLossTopn1.png, id=67, 876.6351pt x 629.4717pt>
+[13] [14 <./word2vec_all.png>]
+<4models_comparison_meanAccLossTopn1.png, id=74, 876.6351pt x 629.4717pt>
 File: 4models_comparison_meanAccLossTopn1.png Graphic file (type png)
 
 <use 4models_comparison_meanAccLossTopn1.png>
 Package pdftex.def Info: 4models_comparison_meanAccLossTopn1.png used on input 
-line 340.
+line 358.
 (pdftex.def)             Requested size: 430.00462pt x 308.76079pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<4models_comparison_topn1_heatmap.png, id=68, 758.835pt x 538.4115pt>
+<4models_comparison_topn1_heatmap.png, id=75, 758.835pt x 538.4115pt>
 File: 4models_comparison_topn1_heatmap.png Graphic file (type png)
 
 <use 4models_comparison_topn1_heatmap.png>
 Package pdftex.def Info: 4models_comparison_topn1_heatmap.png used on input lin
-e 358.
+e 376.
 (pdftex.def)             Requested size: 430.00462pt x 305.10677pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<acc_k_neg_vs_windowSize.png, id=69, 578.16pt x 397.485pt>
+<acc_k_neg_vs_windowSize.png, id=76, 578.16pt x 397.485pt>
 File: acc_k_neg_vs_windowSize.png Graphic file (type png)
 
 <use acc_k_neg_vs_windowSize.png>
-Package pdftex.def Info: acc_k_neg_vs_windowSize.png used on input line 366.
+Package pdftex.def Info: acc_k_neg_vs_windowSize.png used on input line 384.
 (pdftex.def)             Requested size: 344.005pt x 236.50348pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<detailed_evaluation_topn1.png, id=70, 898.3161pt x 646.0938pt>
+<detailed_evaluation_topn1.png, id=77, 898.3161pt x 646.0938pt>
 File: detailed_evaluation_topn1.png Graphic file (type png)
 
 <use detailed_evaluation_topn1.png>
-Package pdftex.def Info: detailed_evaluation_topn1.png used on input line 373.
+Package pdftex.def Info: detailed_evaluation_topn1.png used on input line 391.
 (pdftex.def)             Requested size: 430.00462pt x 309.26381pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<detailed_evaluation_topn20.png, id=71, 1124.5212pt x 247.1634pt>
+<detailed_evaluation_topn20.png, id=78, 1124.5212pt x 247.1634pt>
 File: detailed_evaluation_topn20.png Graphic file (type png)
 
 <use detailed_evaluation_topn20.png>
-Package pdftex.def Info: detailed_evaluation_topn20.png used on input line 380.
+Package pdftex.def Info: detailed_evaluation_topn20.png used on input line 398.
 
 (pdftex.def)             Requested size: 430.00462pt x 94.5114pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<detailed_evaluation_topn1_poooled.png, id=72, 1292.9103pt x 292.6935pt>
+<detailed_evaluation_topn1_poooled.png, id=79, 1292.9103pt x 292.6935pt>
 File: detailed_evaluation_topn1_poooled.png Graphic file (type png)
 
 <use detailed_evaluation_topn1_poooled.png>
 Package pdftex.def Info: detailed_evaluation_topn1_poooled.png used on input li
-ne 387.
+ne 405.
 (pdftex.def)             Requested size: 430.00462pt x 97.34392pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<freq_acc_correlation_logspace_topn1.png, id=73, 578.16pt x 433.62pt>
+<freq_acc_correlation_logspace_topn1.png, id=80, 578.16pt x 433.62pt>
 File: freq_acc_correlation_logspace_topn1.png Graphic file (type png)
 
 <use freq_acc_correlation_logspace_topn1.png>
 Package pdftex.def Info: freq_acc_correlation_logspace_topn1.png used on input 
-line 394.
+line 412.
 (pdftex.def)             Requested size: 215.0023pt x 161.25072pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-./project.tex:405: Undefined control sequence.
+./project.tex:422: Undefined control sequence.
 \b@rama2016siamese ->\astroncite 
                                  {Rama}{2016}
-l.405 ...te{rama2016siamese,jager2014phylogenetic}
+l.422 ...te{rama2016siamese,jager2014phylogenetic}
                                                    and pool coarticulations ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1498,10 +1608,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:405: Undefined control sequence.
+./project.tex:422: Undefined control sequence.
 \b@rama2016siamese ->\astroncite 
                                  {Rama}{2016}
-l.405 ...te{rama2016siamese,jager2014phylogenetic}
+l.422 ...te{rama2016siamese,jager2014phylogenetic}
                                                    and pool coarticulations ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1509,10 +1619,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:405: Undefined control sequence.
+./project.tex:422: Undefined control sequence.
 \b@jager2014phylogenetic ->\astroncite 
                                        {J{\"a}ger}{2014}
-l.405 ...te{rama2016siamese,jager2014phylogenetic}
+l.422 ...te{rama2016siamese,jager2014phylogenetic}
                                                    and pool coarticulations ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1520,10 +1630,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:405: Undefined control sequence.
+./project.tex:422: Undefined control sequence.
 \b@jager2014phylogenetic ->\astroncite 
                                        {J{\"a}ger}{2014}
-l.405 ...te{rama2016siamese,jager2014phylogenetic}
+l.422 ...te{rama2016siamese,jager2014phylogenetic}
                                                    and pool coarticulations ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1531,16 +1641,80 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+[15 <./plm_all.png>] [16 <./4models_comparison_meanAccLossTopn1.png>]
+./project.tex:427: Undefined control sequence.
+\b@tsvetkov2016polyglot ->\astroncite 
+                                      {Tsvetkov et\nobreakspace {}al.}{2016}
+l.427 ...ge model from \cite{tsvetkov2016polyglot}
+                                                  . As typological language ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-LaTeX Warning: Reference `detailed_evaluation_topn20' on page 14 undefined on i
-nput line 408.
+./project.tex:427: Undefined control sequence.
+\b@tsvetkov2016polyglot ->\astroncite 
+                                      {Tsvetkov et\nobreakspace {}al.}{2016}
+l.427 ...ge model from \cite{tsvetkov2016polyglot}
+                                                  . As typological language ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-[14] [15 <./4models_comparison_meanAccLossTopn1.png>] [16 <./4models_comparison
-_topn1_heatmap.png>] (./project.bbl
-./project.bbl:3: Undefined control sequence.
+./project.tex:427: Undefined control sequence.
+\b@wichmann2011phonological ->\astroncite 
+                                          {Wichmann et\nobreakspace {}al.}{2...
+l.427 ...languages \cite{wichmann2011phonological}
+                                                  .  I further grouped the o...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./project.tex:427: Undefined control sequence.
+\b@wichmann2011phonological ->\astroncite 
+                                          {Wichmann et\nobreakspace {}al.}{2...
+l.427 ...languages \cite{wichmann2011phonological}
+                                                  .  I further grouped the o...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./project.tex:427: Undefined control sequence.
+\b@chung2014empirical ->\astroncite 
+                                    {Chung et\nobreakspace {}al.}{2014}
+l.427 ...Recurrent Units \cite{chung2014empirical}
+                                                   instead of LSTMs, as they...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./project.tex:427: Undefined control sequence.
+\b@chung2014empirical ->\astroncite 
+                                    {Chung et\nobreakspace {}al.}{2014}
+l.427 ...Recurrent Units \cite{chung2014empirical}
+                                                   instead of LSTMs, as they...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[17 <./4models_comparison_topn1_heatmap.png>] [18 <./acc_k_neg_vs_windowSize.pn
+g>] [19 <./detailed_evaluation_topn1.png>] [20 <./detailed_evaluation_topn20.pn
+g> <./detailed_evaluation_topn1_poooled.png>] (./project.bbl
+./project.bbl:4: Undefined control sequence.
 <argument> \protect \astroncite 
-                                {Bengio et~al.}{2003a}
-l.3 ...te{Bengio et~al.}{2003a}]{bengio2003neural}
+                                {Bengio and Courville}{2016}
+l.4 ...urville}{2016}]{Goodfellow-et-al-2016-Book}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1548,10 +1722,11 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.bbl:8: Undefined control sequence.
+[21 <./freq_acc_correlation_logspace_topn1.png>]
+./project.bbl:9: Undefined control sequence.
 <argument> \protect \astroncite 
-                                {Bengio and Sen{\'e}cal}{2008}
-l.8 ...and Sen{\'e}cal}{2008}]{bengio2008adaptive}
+                                {Bengio et~al.}{2003a}
+l.9 ...te{Bengio et~al.}{2003a}]{bengio2003neural}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1561,8 +1736,8 @@ and I'll forget about whatever was undefined.
 
 ./project.bbl:14: Undefined control sequence.
 <argument> \protect \astroncite 
-                                {Bengio et~al.}{2003b}
-l.14 ...te{Bengio et~al.}{2003b}]{bengio2003quick}
+                                {Bengio and Sen{\'e}cal}{2008}
+l.14 ...nd Sen{\'e}cal}{2008}]{bengio2008adaptive}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1570,11 +1745,21 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[17 <./acc_k_neg_vs_windowSize.png>]
-./project.bbl:19: Undefined control sequence.
+./project.bbl:20: Undefined control sequence.
+<argument> \protect \astroncite 
+                                {Bengio et~al.}{2003b}
+l.20 ...te{Bengio et~al.}{2003b}]{bengio2003quick}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./project.bbl:25: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Chen et~al.}{2015a}
-l.19 ...e{Chen et~al.}{2015a}]{chen2015strategies}
+l.25 ...e{Chen et~al.}{2015a}]{chen2015strategies}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1582,10 +1767,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.bbl:24: Undefined control sequence.
+./project.bbl:30: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Chen et~al.}{2015b}
-l.24 ...oncite{Chen et~al.}{2015b}]{chen2015joint}
+l.30 ...oncite{Chen et~al.}{2015b}]{chen2015joint}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1593,10 +1778,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.bbl:29: Undefined control sequence.
+./project.bbl:35: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Cho et~al.}{2015}
-l.29 ...stroncite{Cho et~al.}{2015}]{cho2015using}
+l.35 ...stroncite{Cho et~al.}{2015}]{cho2015using}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1604,11 +1789,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[18 <./detailed_evaluation_topn1.png>]
-./project.bbl:33: Undefined control sequence.
+./project.bbl:39: Undefined control sequence.
 <argument> \protect \astroncite 
-                                {Collobert and Weston}{2008}
-l.33 ...t and Weston}{2008}]{collobert2008unified}
+                                {Chung et~al.}{2014}
+l.39 ...e{Chung et~al.}{2014}]{chung2014empirical}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1616,23 +1800,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.bbl:40: Undefined control sequence.
-<argument> \protect \astroncite 
-                                {dos Santos and Zadrozny}{2014}
-l.40 ...ntos and Zadrozny}{2014}]{dos2014learning}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[19 <./detailed_evaluation_topn20.png> <./detailed_evaluation_topn1_poooled.png
->]
 ./project.bbl:45: Undefined control sequence.
 <argument> \protect \astroncite 
-                                {Dryer and Haspelmath}{2013}
-l.45 ...roncite{Dryer and Haspelmath}{2013}]{wals}
+                                {Collobert and Weston}{2008}
+l.45 ...t and Weston}{2008}]{collobert2008unified}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1640,10 +1811,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.bbl:50: Undefined control sequence.
+./project.bbl:52: Undefined control sequence.
 <argument> \protect \astroncite 
-                                {Goldberg and Levy}{2014}
-l.50 ...erg and Levy}{2014}]{goldberg2014word2vec}
+                                {dos Santos and Zadrozny}{2014}
+l.52 ...ntos and Zadrozny}{2014}]{dos2014learning}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1653,20 +1824,20 @@ and I'll forget about whatever was undefined.
 
 ./project.bbl:57: Undefined control sequence.
 <argument> \protect \astroncite 
-                                {Gutmann and Hyv{\"a}rinen}{2010}
-l.57   Hyv{\"a}rinen}{2010}]{gutmann2010noise}
-                                              
+                                {Dryer and Haspelmath}{2013}
+l.57 ...roncite{Dryer and Haspelmath}{2013}]{wals}
+                                                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.bbl:64: Undefined control sequence.
+./project.bbl:62: Undefined control sequence.
 <argument> \protect \astroncite 
-                                {Hochreiter and Schmidhuber}{1997}
-l.64   Schmidhuber}{1997}]{hochreiter1997long}
-                                              
+                                {Goldberg and Levy}{2014}
+l.62 ...erg and Levy}{2014}]{goldberg2014word2vec}
+                                                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1675,30 +1846,31 @@ and I'll forget about whatever was undefined.
 
 ./project.bbl:69: Undefined control sequence.
 <argument> \protect \astroncite 
+                                {Gutmann and Hyv{\"a}rinen}{2010}
+l.69   Hyv{\"a}rinen}{2010}]{gutmann2010noise}
+                                              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./project.bbl:76: Undefined control sequence.
+<argument> \protect \astroncite 
+                                {Hochreiter and Schmidhuber}{1997}
+l.76   Schmidhuber}{1997}]{hochreiter1997long}
+                                              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[22]
+./project.bbl:81: Undefined control sequence.
+<argument> \protect \astroncite 
                                 {J{\"a}ger}{2014}
-l.69 ...e{J{\"a}ger}{2014}]{jager2014phylogenetic}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./project.bbl:75: Undefined control sequence.
-<argument> \protect \astroncite 
-                                {Kim et~al.}{2015}
-l.75 ...ncite{Kim et~al.}{2015}]{kim2015character}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./project.bbl:80: Undefined control sequence.
-<argument> \protect \astroncite 
-                                {Kiros et~al.}{2015}
-l.80 ...oncite{Kiros et~al.}{2015}]{kiros2015skip}
+l.81 ...e{J{\"a}ger}{2014}]{jager2014phylogenetic}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1708,8 +1880,8 @@ and I'll forget about whatever was undefined.
 
 ./project.bbl:87: Undefined control sequence.
 <argument> \protect \astroncite 
-                                {Kondrak}{2000}
-l.87 ...astroncite{Kondrak}{2000}]{kondrak2000new}
+                                {Kim et~al.}{2015}
+l.87 ...ncite{Kim et~al.}{2015}]{kim2015character}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1717,11 +1889,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[20 <./freq_acc_correlation_logspace_topn1.png>]
-./project.bbl:94: Undefined control sequence.
+./project.bbl:92: Undefined control sequence.
 <argument> \protect \astroncite 
-                                {Lewis et~al.}{2015}
-l.94 ...{Lewis et~al.}{2015}]{lewis2015ethnologue}
+                                {Kiros et~al.}{2015}
+l.92 ...oncite{Kiros et~al.}{2015}]{kiros2015skip}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1731,8 +1902,8 @@ and I'll forget about whatever was undefined.
 
 ./project.bbl:99: Undefined control sequence.
 <argument> \protect \astroncite 
-                                {Ling et~al.}{2015}
-l.99 ...ncite{Ling et~al.}{2015}]{ling2015finding}
+                                {Kondrak}{2000}
+l.99 ...astroncite{Kondrak}{2000}]{kondrak2000new}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1742,8 +1913,8 @@ and I'll forget about whatever was undefined.
 
 ./project.bbl:106: Undefined control sequence.
 <argument> \protect \astroncite 
-                                {Liu}{2008}
-l.106 ...tect\astroncite{Liu}{2008}]{liu2008monte}
+                                {Landauer et~al.}{2013}
+l.106 ...auer et~al.}{2013}]{landauer2013handbook}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1753,8 +1924,8 @@ and I'll forget about whatever was undefined.
 
 ./project.bbl:111: Undefined control sequence.
 <argument> \protect \astroncite 
-                                {Mikolov et~al.}{2013a}
-l.111 ...lov et~al.}{2013a}]{mikolov2013efficient}
+                                {Lewis et~al.}{2015}
+l.111 ...Lewis et~al.}{2015}]{lewis2015ethnologue}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1764,8 +1935,8 @@ and I'll forget about whatever was undefined.
 
 ./project.bbl:116: Undefined control sequence.
 <argument> \protect \astroncite 
-                                {Mikolov et~al.}{2013b}
-l.116 ...v et~al.}{2013b}]{mikolov2013distributed}
+                                {Ling et~al.}{2015}
+l.116 ...cite{Ling et~al.}{2015}]{ling2015finding}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1775,8 +1946,8 @@ and I'll forget about whatever was undefined.
 
 ./project.bbl:123: Undefined control sequence.
 <argument> \protect \astroncite 
-                                {Mnih and Teh}{2012}
-l.123 ...oncite{Mnih and Teh}{2012}]{mnih2012fast}
+                                {Liu}{2008}
+l.123 ...tect\astroncite{Liu}{2008}]{liu2008monte}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1784,10 +1955,43 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.bbl:129: Undefined control sequence.
+./project.bbl:128: Undefined control sequence.
+<argument> \protect \astroncite 
+                                {Mikolov et~al.}{2013a}
+l.128 ...lov et~al.}{2013a}]{mikolov2013efficient}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./project.bbl:133: Undefined control sequence.
+<argument> \protect \astroncite 
+                                {Mikolov et~al.}{2013b}
+l.133 ...v et~al.}{2013b}]{mikolov2013distributed}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./project.bbl:140: Undefined control sequence.
+<argument> \protect \astroncite 
+                                {Mnih and Teh}{2012}
+l.140 ...oncite{Mnih and Teh}{2012}]{mnih2012fast}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./project.bbl:146: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Moran et~al.}{2014}
-l.129 ...\astroncite{Moran et~al.}{2014}]{phoible}
+l.146 ...\astroncite{Moran et~al.}{2014}]{phoible}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1795,10 +1999,11 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.bbl:134: Undefined control sequence.
+[23]
+./project.bbl:151: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Morin and Bengio}{2005}
-l.134 ...and Bengio}{2005}]{morin2005hierarchical}
+l.151 ...and Bengio}{2005}]{morin2005hierarchical}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1806,10 +2011,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.bbl:139: Undefined control sequence.
+./project.bbl:156: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Pennington et~al.}{2014}
-l.139 ...ngton et~al.}{2014}]{pennington2014glove}
+l.156 ...ngton et~al.}{2014}]{pennington2014glove}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1817,10 +2022,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.bbl:144: Undefined control sequence.
+./project.bbl:161: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Rama}{2016}
-l.144 ...\astroncite{Rama}{2016}]{rama2016siamese}
+l.161 ...\astroncite{Rama}{2016}]{rama2016siamese}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1828,10 +2033,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.bbl:150: Undefined control sequence.
+./project.bbl:167: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Schnabel et~al.}{2015}
-l.150 ...el et~al.}{2015}]{schnabel2015evaluation}
+l.167 ...el et~al.}{2015}]{schnabel2015evaluation}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1839,10 +2044,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.bbl:155: Undefined control sequence.
+./project.bbl:172: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Tsvetkov et~al.}{2016}
-l.155 ...tkov et~al.}{2016}]{tsvetkov2016polyglot}
+l.172 ...tkov et~al.}{2016}]{tsvetkov2016polyglot}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1850,10 +2055,32 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.bbl:162: Undefined control sequence.
+./project.bbl:179: Undefined control sequence.
+<argument> \protect \astroncite 
+                                {Wichmann et~al.}{2010}
+l.179 ...Wichmann et~al.}{2010}]{wichmann2010asjp}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./project.bbl:185: Undefined control sequence.
+<argument> \protect \astroncite 
+                                {Wichmann et~al.}{2011}
+l.185 ... et~al.}{2011}]{wichmann2011phonological}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./project.bbl:191: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Zhang et~al.}{2015}
-l.162 ...{Zhang et~al.}{2015}]{zhang2015character}
+l.191 ...{Zhang et~al.}{2015}]{zhang2015character}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1861,24 +2088,24 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[21])
+)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[22]
+[24]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 Missing character: There is no â in font cmr10!
 Missing character: There is no ˆ in font cmr10!
 Missing character: There is no ¼ in font cmr10!
-./project.tex:632: Undefined control sequence.
+./project.tex:652: Undefined control sequence.
 \b@jager2014phylogenetic ->\astroncite 
                                        {J{\"a}ger}{2014}
-l.632 ...es follow  \cite{jager2014phylogenetic}.}
+l.652 ...es follow  \cite{jager2014phylogenetic}.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1886,10 +2113,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:632: Undefined control sequence.
+./project.tex:652: Undefined control sequence.
 \b@jager2014phylogenetic ->\astroncite 
                                        {J{\"a}ger}{2014}
-l.632 ...es follow  \cite{jager2014phylogenetic}.}
+l.652 ...es follow  \cite{jager2014phylogenetic}.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1900,10 +2127,10 @@ and I'll forget about whatever was undefined.
 Missing character: There is no â in font cmr10!
 Missing character: There is no ˆ in font cmr10!
 Missing character: There is no ¼ in font cmr10!
-./project.tex:632: Undefined control sequence.
+./project.tex:652: Undefined control sequence.
 \b@jager2014phylogenetic ->\astroncite 
                                        {J{\"a}ger}{2014}
-l.632 ...es follow  \cite{jager2014phylogenetic}.}
+l.652 ...es follow  \cite{jager2014phylogenetic}.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1911,10 +2138,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:632: Undefined control sequence.
+./project.tex:652: Undefined control sequence.
 \b@jager2014phylogenetic ->\astroncite 
                                        {J{\"a}ger}{2014}
-l.632 ...es follow  \cite{jager2014phylogenetic}.}
+l.652 ...es follow  \cite{jager2014phylogenetic}.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1923,7 +2150,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (0.98665pt too wide) in paragraph at lines 633--670
+Overfull \hbox (0.98665pt too wide) in paragraph at lines 653--690
  [][] 
  []
 
@@ -1931,26 +2158,23 @@ Overfull \hbox (0.98665pt too wide) in paragraph at lines 633--670
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (34.1712pt too wide) in paragraph at lines 675--685
+Overfull \hbox (34.1712pt too wide) in paragraph at lines 695--705
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[23] [24] [25] [26] [27] (./project.aux)
-
-LaTeX Warning: There were undefined references.
-
+[25] [26] [27] [28] [29] (./project.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4643 strings out of 493089
- 68335 string characters out of 6134842
+ 4660 strings out of 493089
+ 68618 string characters out of 6134842
  161496 words of memory out of 5000000
- 8055 multiletter control sequences out of 15000+600000
+ 8070 multiletter control sequences out of 15000+600000
  13758 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,12n,40p,1708b,301s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1972,10 +2196,10 @@ e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 5/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/
 2015/texmf-dist/fonts/type1/public/tipa/tipa10.pfb>
-Output written on project.pdf (27 pages, 757583 bytes).
+Output written on project.pdf (29 pages, 980532 bytes).
 PDF statistics:
- 185 PDF objects out of 1000 (max. 8388607)
- 116 compressed objects within 2 object streams
+ 195 PDF objects out of 1000 (max. 8388607)
+ 120 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,104 @@
+import codecs 
+import numpy as np
+from pandas import DataFrame
+import regex
+from sklearn.manifold import TSNE
+import matplotlib.pyplot as plt
+
+def plot_languages(path):
+    phoneme_embeddings = dict()
+    for line in codecs.open(path,"r"):
+        line = line.split(",")
+        key= line[0][1:-1]
+        emb = line[1:]
+        emb[-1] = emb[-1][:-1]
+        emb = np.array([float(e) for e in emb])
+        phoneme_embeddings[key] = emb
+    
+    phoneme_embeddings = DataFrame(phoneme_embeddings,columns=phoneme_embeddings.keys())
+    print(phoneme_embeddings.columns)
+    
+    m = TSNE()
+    phoneme_embeddings_tsne = m.fit_transform(phoneme_embeddings[["STANDARD_GERMAN","BERNESE_GERMAN","EASTERN_FRISIAN","NORTH_FRISIAN_AMRUM",                                                           
+                 "ENGLISH","DUTCH","YIDDISH_EASTERN","YIDDISH_WESTERN","DANISH","SWEDISH","FAROESE","NORWEGIAN_RIKSMAL",
+                 "GJESTAL_NORWEGIAN","NORWEGIAN_BOKMAAL","NORWEGIAN_NYNORSK_TOTEN","SANDNES_NORWEGIAN",
+                 "ICELANDIC","POLISH","KASHUBIAN","CZECH",
+                 "LOWER_SORBIAN","UPPER_SORBIAN","SLOVAK","SLOVENIAN","MACEDONIAN","BULGARIAN","UKRAINIAN",
+                 "BELARUSIAN","RUSSIAN","ARABIC_CYPRIOT_SPOKEN","ARABIC_GULF_SPOKEN","ARABIC_LIBYAN_SPOKEN","ARABIC_NORTH_LEVANTINE_SPOKEN",
+                 "ARABIC_SUDANESE_SPOKEN","CAIRO_ARABIC","DAMASCUS_ARABIC"]].transpose())
+    print(len(phoneme_embeddings_tsne))
+    for p,emb in zip(["STANDARD_GERMAN","BERNESE_GERMAN","EASTERN_FRISIAN","NORTH_FRISIAN_AMRUM",                                                         
+                 "ENGLISH","DUTCH","YIDDISH_EASTERN","YIDDISH_WESTERN","DANISH","SWEDISH","FAROESE","NORWEGIAN_RIKSMAL",
+                 "GJESTAL_NORWEGIAN","NORWEGIAN_BOKMAAL","NORWEGIAN_NYNORSK_TOTEN","SANDNES_NORWEGIAN",
+                 "ICELANDIC","POLISH","KASHUBIAN","CZECH",
+                 "LOWER_SORBIAN","UPPER_SORBIAN","SLOVAK","SLOVENIAN","MACEDONIAN","BULGARIAN","UKRAINIAN",
+                 "BELARUSIAN","RUSSIAN","ARABIC_CYPRIOT_SPOKEN","ARABIC_GULF_SPOKEN","ARABIC_LIBYAN_SPOKEN","ARABIC_NORTH_LEVANTINE_SPOKEN",
+                 "ARABIC_SUDANESE_SPOKEN","CAIRO_ARABIC","DAMASCUS_ARABIC"], phoneme_embeddings_tsne):
+        c = "black"
+    #     if regex.search("[aeiou3E]\\*?", p):
+    #         c = "red"
+    #     if regex.search(".*w~", p):
+    #         c = "blue"
+    #     if regex.search(".*y~", p):
+    #         c = "yellow"
+    #     if regex.search(".*h~", p):
+    #         c = "brown"
+    #     if regex.search(".*\"", p):
+    #         c = "green"
+        if p in ["STANDARD_GERMAN","BERNESE_GERMAN","EASTERN_FRISIAN","FRISIAN_WESTERN,","NORTH_FRISIAN_AMRUM"                                                            
+                 "ENGLISH","DUTCH","YIDDISH_EASTERN","YIDDISH_WESTERN","DANISH","SWEDISH","FAROESE","NORWEGIAN_RIKSMAL",
+                 "GJESTAL_NORWEGIAN","NORWEGIAN_BOKMAAL","NORWEGIAN_NYNORSK_TOTEN","SANDNES_NORWEGIAN","ICELANDIC"]:
+            c = "red"
+            plt.annotate(p,(emb[0],emb[1]),color=c)
+    
+        if p in ["POLISH","KASHUBIAN","CZECH",
+                 "LOWER_SORBIAN","UPPER_SORBIAN","SLOVAK","SLOVENIAN","MACEDONIAN","BULGARIAN","UKRAINIAN",
+                 "BELARUSIAN","RUSSIAN"]:
+            c = "blue"
+            plt.annotate(p,(emb[0],emb[1]),color=c)
+        if p in ["ARABIC_CYPRIOT_SPOKEN","ARABIC_GULF_SPOKEN","ARABIC_LIBYAN_SPOKEN","ARABIC_NORTH_LEVANTINE_SPOKEN",
+                 "ARABIC_SUDANESE_SPOKEN","CAIRO_ARABIC","DAMASCUS_ARABIC"]:
+            c = "blue"
+            plt.annotate(p,(emb[0],emb[1]),color=c)
+def plot_phonemes(path):
+    phoneme_embeddings = dict()
+    for line in codecs.open(path,"r"):
+        line = line.split(",")
+        key= line[0][1:-1]
+        emb = line[1:]
+        emb[-1] = emb[-1][:-1]
+        emb = np.array([float(e) for e in emb])
+        phoneme_embeddings[key] = emb
+    
+    phoneme_embeddings = DataFrame(phoneme_embeddings,columns=phoneme_embeddings.keys())
+    print(phoneme_embeddings.columns)
+    
+    m = TSNE()
+    phoneme_embeddings_tsne = m.fit_transform(phoneme_embeddings.transpose())
+    print(len(phoneme_embeddings_tsne))
+    for p,emb in zip(phoneme_embeddings.columns, phoneme_embeddings_tsne):
+        c = "black"
+        if regex.search("^[aeiou3E][*]?$", p):
+            c = "red"
+            plt.annotate(p,(emb[0],emb[1]),color=c)
+        if regex.search("^.*w~$", p):
+            c = "blue"
+            plt.annotate(p,(emb[0],emb[1]),color=c)
+        if regex.search("^.*y~$", p):
+            c = "yellow"
+            plt.annotate(p,(emb[0],emb[1]),color=c)
+        if regex.search("^.*h~$", p):
+            c = "brown"
+            plt.annotate(p,(emb[0],emb[1]),color=c)
+        if regex.search("^.*\"$", p):
+            c = "green"
+            plt.annotate(p,(emb[0],emb[1]),color=c)
+
+        
+plt.subplot(1,3,1)
+plot_phonemes("phoneme_embeddings_plm.csv")
+plt.subplot(1,3,2)
+plot_phonemes("phoneme_embeddings_plm.csv")
+plt.subplot(1,3,3)
+plot_languages("lang_embeddings_plm.csv")
+plt.show()

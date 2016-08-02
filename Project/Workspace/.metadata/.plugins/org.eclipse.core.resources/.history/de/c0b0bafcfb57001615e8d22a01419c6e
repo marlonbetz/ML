@@ -1,0 +1,21 @@
+from sklearn.neighbors import KNeighborsClassifier
+import codecs 
+import numpy as np
+from pandas import DataFrame
+import regex
+import evaluation
+phoneme_embeddings = dict()
+for line in codecs.open("phoneme_embeddings_plm.csv","r"):
+    line = line.split(",")
+    key= line[0][1:-1]
+    emb = line[1:]
+    emb[-1] = emb[-1][:-1]
+    emb = np.array([float(e) for e in emb])
+    phoneme_embeddings[key] = emb
+
+phoneme_embeddings = DataFrame(phoneme_embeddings,columns=phoneme_embeddings.keys())
+
+clf  = KNeighborsClassifier(n_neighbors=1,algorithm="brute",metric="cosine")
+clf.fit(phoneme_embeddings.transpose(),phoneme_embeddings.columns)  
+
+for test in evaluation.Sim

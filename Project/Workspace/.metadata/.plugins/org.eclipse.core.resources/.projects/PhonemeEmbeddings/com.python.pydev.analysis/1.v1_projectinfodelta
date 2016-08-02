@@ -1,11 +1,1 @@
-INSTUPPLM_plot
-/Users/marlon/Documents/ML/git/Project/Workspace/PhonemeEmbeddings/PLM_plot.py
-INFOS:&&3|1|2|0&&3|3|2|0&&3|4|2|0&&3|5|2|0&&3|5|2|0&&3|1|2|0&&3|6|2|0&&3|7|2|0&&3|8|2|0&&3|8|2|0
-phoneme_embeddings=1
-PLM_plot=2
-c=8
-line=3
-phoneme_embeddings_tsne=7
-emb=5
-m=6
-key=4
+DELSTRplot_phonemes

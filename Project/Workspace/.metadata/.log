@@ -12024,3 +12024,170 @@ java.lang.RuntimeException: Unhandled: ExtSlice[dims=[Slice[lower=null, upper=nu
 	at org.python.pydev.editor.hover.PyTextHover.getDocstringHover(PyTextHover.java:232)
 	at org.python.pydev.editor.hover.PyTextHover.getHoverInfo(PyTextHover.java:144)
 	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+
+!ENTRY org.python.pydev.shared_core 4 4 2016-08-01 17:20:54.749
+!MESSAGE No message gotten (null message).
+!STACK 0
+org.eclipse.jface.text.BadLocationException
+	at org.eclipse.jface.text.TreeLineTracker.fail(TreeLineTracker.java:1055)
+	at org.eclipse.jface.text.TreeLineTracker.getLineInformation(TreeLineTracker.java:1182)
+	at org.eclipse.jface.text.AbstractLineTracker.getLineInformation(AbstractLineTracker.java:137)
+	at org.eclipse.jface.text.AbstractDocument.getLineInformation(AbstractDocument.java:929)
+	at org.eclipse.core.internal.filebuffers.SynchronizableDocument.getLineInformation(SynchronizableDocument.java:337)
+	at org.python.pydev.shared_core.string.TextSelectionUtils.getStartLine(TextSelectionUtils.java:164)
+	at org.python.pydev.editor.refactoring.RefactoringRequest.getBeginCol(RefactoringRequest.java:201)
+	at org.python.pydev.editor.refactoring.PyRefactoringFindDefinition.findActualDefinition(PyRefactoringFindDefinition.java:78)
+	at com.python.pydev.refactoring.refactorer.RefactorerFindDefinition.findDefinition(RefactorerFindDefinition.java:63)
+	at com.python.pydev.refactoring.refactorer.Refactorer.findDefinition(Refactorer.java:116)
+	at com.python.pydev.refactoring.wizards.rename.PyReferenceSearcher.prepareSearch(PyReferenceSearcher.java:110)
+	at com.python.pydev.refactoring.markoccurrences.MarkOccurrencesJob.createRequest(MarkOccurrencesJob.java:147)
+	at org.python.pydev.shared_ui.mark_occurrences.BaseMarkOccurrencesJob.run(BaseMarkOccurrencesJob.java:168)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.python.pydev.shared_core 4 4 2016-08-01 17:21:39.037
+!MESSAGE Unhandled: ExtSlice[dims=[Index[value=Name[id=neigh_ind, ctx=Load, reserved=false]], Index[value=Name[id=k, ctx=Load, reserved=false]]]]
+!STACK 0
+java.lang.RuntimeException: Unhandled: ExtSlice[dims=[Index[value=Name[id=neigh_ind, ctx=Load, reserved=false]], Index[value=Name[id=k, ctx=Load, reserved=false]]]]
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.unhandled_node(MakeAstValidForPrettyPrintingVisitor.java:105)
+	at org.python.pydev.parser.jython.ast.VisitorBase.visitExtSlice(VisitorBase.java:345)
+	at org.python.pydev.parser.jython.ast.ExtSlice.accept(ExtSlice.java:79)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.visitSubscript(MakeAstValidForPrettyPrintingVisitor.java:933)
+	at org.python.pydev.parser.jython.ast.Subscript.accept(Subscript.java:93)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.handleArguments(MakeAstValidForPrettyPrintingVisitor.java:1067)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.visitCall(MakeAstValidForPrettyPrintingVisitor.java:612)
+	at org.python.pydev.parser.jython.ast.Call.accept(Call.java:131)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.visitAssign(MakeAstValidForPrettyPrintingVisitor.java:184)
+	at org.python.pydev.parser.jython.ast.Assign.accept(Assign.java:90)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.visitIfPart(MakeAstValidForPrettyPrintingVisitor.java:1133)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.visitIf(MakeAstValidForPrettyPrintingVisitor.java:1114)
+	at org.python.pydev.parser.jython.ast.If.accept(If.java:102)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.visitFor(MakeAstValidForPrettyPrintingVisitor.java:457)
+	at org.python.pydev.parser.jython.ast.For.accept(For.java:114)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.visitFunctionDef(MakeAstValidForPrettyPrintingVisitor.java:862)
+	at org.python.pydev.parser.jython.ast.FunctionDef.accept(FunctionDef.java:131)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.visitClassDef(MakeAstValidForPrettyPrintingVisitor.java:722)
+	at org.python.pydev.parser.jython.ast.ClassDef.accept(ClassDef.java:166)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.makeValid(MakeAstValidForPrettyPrintingVisitor.java:171)
+	at org.python.pydev.editor.hover.PyTextHover.getDocstringHover(PyTextHover.java:232)
+	at org.python.pydev.editor.hover.PyTextHover.getHoverInfo(PyTextHover.java:144)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+
+!ENTRY org.python.pydev.shared_core 4 4 2016-08-01 17:27:08.177
+!MESSAGE ERROR reading shell.
+ProcessInfo:
+
+ - Executed: /Library/Frameworks/Python.framework/Versions/3.4/bin/python3 -u /Users/marlon/Downloads/Eclipse.app/Contents/Eclipse/plugins/org.python.pydev_4.3.0.201508182223/pysrc/pycompletionserver.py 53166
+
+ - Environment:
+APP_ICON_12887=../Resources/Eclipse.icns
+Apple_PubSub_Socket_Render=/private/tmp/com.apple.launchd.55hFgkj6BK/Render
+DISPLAY=/private/tmp/com.apple.launchd.mNt4Tq6N9M/org.macosforge.xquartz:0
+HOME=/Users/marlon
+JAVA_STARTED_ON_FIRST_THREAD_12887=1
+LOGNAME=marlon
+PATH=/usr/bin:/bin:/usr/sbin:/sbin
+PYTHONPATH=/Users/marlon/Downloads/Eclipse.app/Contents/Eclipse/plugins/org.python.pydev_4.3.0.201508182223/pysrc/pydev_sitecustomize:/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages/PyBrain-0.3.3-py3.4.egg:/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages/six-1.10.0-py3.4.egg:/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4:/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/plat-darwin:/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/lib-dynload:/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages
+SHELL=/bin/bash
+SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.wEk628O2hC/Listeners
+TMPDIR=/var/folders/0k/_64bmgbn2cdf7w477cfj_9j40000gn/T/
+USER=marlon
+XPC_FLAGS=0x0
+XPC_SERVICE_NAME=org.eclipse.platform.ide.79072
+__CF_USER_TEXT_ENCODING=0x1F5:0x0:0x0
+
+ - Working Dir:
+/Users/marlon/Downloads/Eclipse.app/Contents/Eclipse/plugins/org.python.pydev_4.3.0.201508182223/pysrc
+
+ - OS:
+Mac OS X
+
+ - Std output:
+
+
+ - Err output:
+
+!STACK 0
+java.nio.channels.ClosedByInterruptException
+	at java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:202)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:478)
+	at java.nio.channels.Channels.writeFullyImpl(Channels.java:78)
+	at java.nio.channels.Channels.writeFully(Channels.java:98)
+	at java.nio.channels.Channels.access$000(Channels.java:61)
+	at java.nio.channels.Channels$1.write(Channels.java:174)
+	at java.io.OutputStream.write(OutputStream.java:75)
+	at org.python.pydev.editor.codecompletion.shell.AbstractShell.write(AbstractShell.java:544)
+	at org.python.pydev.editor.codecompletion.shell.AbstractShell.writeAndGetResults(AbstractShell.java:691)
+	at org.python.pydev.editor.codecompletion.shell.AbstractShell.getImportCompletions(AbstractShell.java:756)
+	at org.python.pydev.editor.codecompletion.revisited.modules.CompiledModule.createInnerFromServer(CompiledModule.java:331)
+	at org.python.pydev.editor.codecompletion.revisited.modules.CompiledModule.getGlobalTokens(CompiledModule.java:531)
+	at org.python.pydev.editor.codecompletion.revisited.AbstractASTManager.internalGenerateGetCompletionsForModule(AbstractASTManager.java:734)
+	at org.python.pydev.editor.codecompletion.revisited.AbstractASTManager.getCompletionsForModule(AbstractASTManager.java:559)
+	at org.python.pydev.editor.codecompletion.revisited.AbstractASTManager.getCompletionsForModule(AbstractASTManager.java:528)
+	at org.python.pydev.editor.codecompletion.revisited.AbstractASTManager.getCompletionsForModule(AbstractASTManager.java:520)
+	at org.python.pydev.editor.codecompletion.revisited.AbstractASTManager.getCompletionsForModule(AbstractASTManager.java:511)
+	at org.python.pydev.editor.codecompletion.revisited.AbstractASTManager.internalGenerateGetCompletionsForModule(AbstractASTManager.java:742)
+	at org.python.pydev.editor.codecompletion.revisited.AbstractASTManager.getCompletionsForModule(AbstractASTManager.java:559)
+	at org.python.pydev.editor.codecompletion.revisited.AbstractASTManager.getCompletionsForModule(AbstractASTManager.java:528)
+	at org.python.pydev.editor.codecompletion.revisited.AbstractASTManager.getCompletionsForModule(AbstractASTManager.java:520)
+	at org.python.pydev.editor.codecompletion.revisited.modules.SourceModule.findGlobalTokDef(SourceModule.java:1021)
+	at org.python.pydev.editor.codecompletion.revisited.modules.SourceModule.findDefinitionsFromModAndTok(SourceModule.java:970)
+	at org.python.pydev.editor.codecompletion.revisited.modules.SourceModule.findDefinition(SourceModule.java:952)
+	at org.python.pydev.editor.codecompletion.revisited.modules.SourceModule.findDefinition(SourceModule.java:665)
+	at org.python.pydev.editor.codecompletion.revisited.modules.SourceModule.findDefinition(SourceModule.java:1)
+	at org.python.pydev.editor.refactoring.PyRefactoringFindDefinition.findActualDefinition(PyRefactoringFindDefinition.java:182)
+	at org.python.pydev.editor.refactoring.PyRefactoringFindDefinition.findActualDefinition(PyRefactoringFindDefinition.java:81)
+	at org.python.pydev.editor.hover.PyTextHover.getDocstringHover(PyTextHover.java:200)
+	at org.python.pydev.editor.hover.PyTextHover.getHoverInfo(PyTextHover.java:144)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+
+!ENTRY org.python.pydev.shared_core 4 4 2016-08-01 17:27:40.581
+!MESSAGE Unhandled: ExtSlice[dims=[Index[value=Name[id=neigh_ind, ctx=Load, reserved=false]], Index[value=Name[id=k, ctx=Load, reserved=false]]]]
+!STACK 0
+java.lang.RuntimeException: Unhandled: ExtSlice[dims=[Index[value=Name[id=neigh_ind, ctx=Load, reserved=false]], Index[value=Name[id=k, ctx=Load, reserved=false]]]]
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.unhandled_node(MakeAstValidForPrettyPrintingVisitor.java:105)
+	at org.python.pydev.parser.jython.ast.VisitorBase.visitExtSlice(VisitorBase.java:345)
+	at org.python.pydev.parser.jython.ast.ExtSlice.accept(ExtSlice.java:79)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.visitSubscript(MakeAstValidForPrettyPrintingVisitor.java:933)
+	at org.python.pydev.parser.jython.ast.Subscript.accept(Subscript.java:93)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.handleArguments(MakeAstValidForPrettyPrintingVisitor.java:1067)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.visitCall(MakeAstValidForPrettyPrintingVisitor.java:612)
+	at org.python.pydev.parser.jython.ast.Call.accept(Call.java:131)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.visitAssign(MakeAstValidForPrettyPrintingVisitor.java:184)
+	at org.python.pydev.parser.jython.ast.Assign.accept(Assign.java:90)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.visitIfPart(MakeAstValidForPrettyPrintingVisitor.java:1133)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.visitIf(MakeAstValidForPrettyPrintingVisitor.java:1114)
+	at org.python.pydev.parser.jython.ast.If.accept(If.java:102)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.visitFor(MakeAstValidForPrettyPrintingVisitor.java:457)
+	at org.python.pydev.parser.jython.ast.For.accept(For.java:114)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.visitFunctionDef(MakeAstValidForPrettyPrintingVisitor.java:862)
+	at org.python.pydev.parser.jython.ast.FunctionDef.accept(FunctionDef.java:131)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.makeValid(MakeAstValidForPrettyPrintingVisitor.java:171)
+	at org.python.pydev.editor.hover.PyTextHover.getDocstringHover(PyTextHover.java:232)
+	at org.python.pydev.editor.hover.PyTextHover.getHoverInfo(PyTextHover.java:144)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)
+
+!ENTRY org.python.pydev.shared_core 4 4 2016-08-01 18:07:27.975
+!MESSAGE Unhandled: ExtSlice[dims=[Slice[lower=null, upper=null, step=null], Slice[lower=null, upper=Name[id=k, ctx=Load, reserved=false], step=null]]]
+!STACK 0
+java.lang.RuntimeException: Unhandled: ExtSlice[dims=[Slice[lower=null, upper=null, step=null], Slice[lower=null, upper=Name[id=k, ctx=Load, reserved=false], step=null]]]
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.unhandled_node(MakeAstValidForPrettyPrintingVisitor.java:105)
+	at org.python.pydev.parser.jython.ast.VisitorBase.visitExtSlice(VisitorBase.java:345)
+	at org.python.pydev.parser.jython.ast.ExtSlice.accept(ExtSlice.java:79)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.visitSubscript(MakeAstValidForPrettyPrintingVisitor.java:933)
+	at org.python.pydev.parser.jython.ast.Subscript.accept(Subscript.java:93)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.visitAssign(MakeAstValidForPrettyPrintingVisitor.java:184)
+	at org.python.pydev.parser.jython.ast.Assign.accept(Assign.java:90)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.visitIfPart(MakeAstValidForPrettyPrintingVisitor.java:1133)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.visitIf(MakeAstValidForPrettyPrintingVisitor.java:1114)
+	at org.python.pydev.parser.jython.ast.If.accept(If.java:102)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.visitIfPart(MakeAstValidForPrettyPrintingVisitor.java:1133)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.visitIf(MakeAstValidForPrettyPrintingVisitor.java:1114)
+	at org.python.pydev.parser.jython.ast.If.accept(If.java:102)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.visitFunctionDef(MakeAstValidForPrettyPrintingVisitor.java:862)
+	at org.python.pydev.parser.jython.ast.FunctionDef.accept(FunctionDef.java:131)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.visitClassDef(MakeAstValidForPrettyPrintingVisitor.java:722)
+	at org.python.pydev.parser.jython.ast.ClassDef.accept(ClassDef.java:166)
+	at org.python.pydev.parser.prettyprinterv2.MakeAstValidForPrettyPrintingVisitor.makeValid(MakeAstValidForPrettyPrintingVisitor.java:171)
+	at org.python.pydev.editor.hover.PyTextHover.getDocstringHover(PyTextHover.java:232)
+	at org.python.pydev.editor.hover.PyTextHover.getHoverInfo(PyTextHover.java:144)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:168)

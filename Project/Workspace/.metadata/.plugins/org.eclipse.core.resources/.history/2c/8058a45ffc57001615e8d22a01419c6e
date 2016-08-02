@@ -1,0 +1,70 @@
+from sklearn.neighbors import KNeighborsClassifier
+import codecs 
+import numpy as np
+from pandas import DataFrame
+import regex
+import evaluation
+phoneme_embeddings = dict()
+for line in codecs.open("phoneme_embeddings_plm.csv","r"):
+    line = line.split(",")
+    key= line[0][1:-1]
+    emb = line[1:]
+    emb[-1] = emb[-1][:-1]
+    emb = np.array([float(e) for e in emb])
+    phoneme_embeddings[key] = emb
+
+phoneme_embeddings = DataFrame(phoneme_embeddings,columns=phoneme_embeddings.keys())
+
+clf  = KNeighborsClassifier(n_neighbors=1,algorithm="brute",metric="cosine")
+clf.fit(phoneme_embeddings.transpose(),phoneme_embeddings.columns)  
+
+tags = set()
+    for test in evaluation.SimilarityTestData:
+        for tag in test["tags"]:
+            tags.add(tag)
+    tags = list(tags)
+print("EVALUATION")
+c = dict()
+c_true = dict()
+c_true_all = 0
+for tag in tags:
+    c[tag] = 0
+    c_true[tag] = 0
+    
+
+
+
+
+for i,test in enumerate(evaluation.SimilarityTestData):
+
+    predicted = [s for (s,dist) in w2v_model.most_similar(positive=test["positive"], negative=test["negative"],topn=topn)]
+    true = test["true"][0]
+    if true in predicted:
+        c_true_all+=1
+    for tag in tags:
+        if tag in test["tags"]:
+            c[tag] += 1
+            if true in predicted:
+                c_true[tag] += 1
+
+    
+    dist = cosine(w2v_model[predicted[0]],w2v_model[true])
+    
+    print("positive",test["positive"],
+          "negative",test["negative"],
+          "true",test["true"],
+          "predicted",w2v_model.most_similar(positive=test["positive"], negative=test["negative"],topn=1),
+          "distance to true label",dist)
+    
+    
+acc_all = c_true_all/len(evaluation.SimilarityTestData)
+acc = dict()
+for tag in tags:
+    acc[tag] = c_true[tag] / c[tag]
+
+
+print("acc",acc)
+mean_acc_all.append(acc_all)
+
+for tag in tags:
+    mean_acc[tag].append(acc[tag])
