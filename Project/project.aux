@@ -17,13 +17,13 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3}Related Research}{4}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Embedding Models}{4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Neural Embedding Models}{4}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}Neural Language Models}{4}}
 \citation{collobert2008unified}
 \citation{bengio2003neural}
 \citation{bengio2003neural}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The neural language model as proposed in \cite  {bengio2003neural}.\relax }}{5}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:bengio2006network}{{1}{5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}Neural Language Models}{5}}
 \newlabel{eq:bengio2006network_loss}{{1}{5}}
 \citation{mikolov2013efficient}
 \citation{mikolov2013efficient}
@@ -57,6 +57,13 @@
 \newlabel{eq:nce_4}{{18}{9}}
 \newlabel{eq:nce_5}{{19}{9}}
 \citation{goldberg2014word2vec}
+\newlabel{eq:nce_6}{{20}{10}}
+\newlabel{eq:nce_6}{{21}{10}}
+\newlabel{eq:nce_7}{{22}{10}}
+\newlabel{eq:neg_sampling_1}{{23}{10}}
+\newlabel{eq:neg_sampling_2}{{24}{10}}
+\newlabel{eq:neg_sampling_3}{{25}{10}}
+\newlabel{eq:neg_sampling_3}{{26}{10}}
 \citation{tsvetkov2016polyglot}
 \citation{tsvetkov2016polyglot}
 \citation{hochreiter1997long}
@@ -66,27 +73,20 @@
 \citation{wals}
 \citation{phoible}
 \citation{lewis2015ethnologue}
-\newlabel{eq:nce_6}{{20}{10}}
-\newlabel{eq:nce_6}{{21}{10}}
-\newlabel{eq:nce_7}{{22}{10}}
-\newlabel{eq:neg_sampling_1}{{23}{10}}
-\newlabel{eq:neg_sampling_2}{{24}{10}}
-\newlabel{eq:neg_sampling_3}{{25}{10}}
-\newlabel{eq:neg_sampling_3}{{26}{10}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The Polyglot Language Model. From \cite  {tsvetkov2016polyglot}\relax }}{11}}
 \newlabel{fig:plm}{{3}{11}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3}Polyglot Neural Language Models}{12}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3}Polyglot Neural Language Models}{11}}
+\citation{wichmann2010asjp}
 \newlabel{eq:plm_1}{{27}{12}}
 \newlabel{eq:plm_2}{{28}{12}}
 \newlabel{eq:plm_3}{{29}{12}}
 \newlabel{eq:plm_4}{{30}{12}}
 \newlabel{eq:plm_5}{{31}{12}}
 \newlabel{eq:plm_6}{{32}{12}}
-\citation{wichmann2010asjp}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Evaluation}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Data}{12}}
 \citation{schnabel2015evaluation}
 \citation{mikolov2013distributed}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Evaluation}{13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Data}{13}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Intrinsic Evaluation}{13}}
 \newlabel{Intrinsic Evaluation}{{5.2}{13}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces t-SNE visualizations of the embeddings created by word2vec. (top left) The model learns to clearly separate natural classes such as vowels, plain pulmonic or glottalized consonants, while other articulations seem to spread over the feature space. (top right) A more detailed view on plain pulmonic consonants. Note the linear dependencies between voiced and unvoiced plosives and their respective nasal variant. (bottom left) Another detailed view. Note how the labialized uvular sounds cluster among glottalized consonants. (top right) The model seems to capture different manners of articulations across articulation type boundaries, as the linear dependency shows here.\relax }}{14}}
@@ -94,16 +94,16 @@
 \citation{rama2016siamese,jager2014phylogenetic}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces t-SNE visualizations of the embeddings created by the PLM. (left) Vowels as well as glottalizes sounds cluster among each other, while other classes show big variance over the embedding space. (middle) A more detailed view. Nasalized vowel still cluster closer to glottalized sounds. (right) Embeddings for some Germanic and Slavic languages. The Model does not seem to capture the relations between the languages too well.\relax }}{15}}
 \newlabel{fig:plm_all}{{5}{15}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Comparison of the four word2vec models evaluated. (top left) Both CBOW Models perform better than the skip-gram models over all numbers of embedding dimension. (bottom left) Mean distance between the predicted vector and the target with regard to embedding dimensions. Here, negative sampling yields less error than hierarchical softmax. (top right) Mean accuracy for the models with regard to the context window size. The models perform worse the bigger the context is. (bottom right) Mean distance between the predicted vector and the target with regard to context window size. Again, bigger contexts lead to worse predictions. \relax }}{16}}
-\newlabel{fig:4models_comparison_meanAccLossTopn1}{{6}{16}}
 \citation{tsvetkov2016polyglot}
 \citation{wichmann2011phonological}
 \citation{chung2014empirical}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Comparison of the four word2vec models evaluated. (top left) Both CBOW Models perform better than the skip-gram models over all numbers of embedding dimension. (bottom left) Mean distance between the predicted vector and the target with regard to embedding dimensions. Here, negative sampling yields less error than hierarchical softmax. (top right) Mean accuracy for the models with regard to the context window size. The models perform worse the bigger the context is. (bottom right) Mean distance between the predicted vector and the target with regard to context window size. Again, bigger contexts lead to worse predictions. \relax }}{16}}
+\newlabel{fig:4models_comparison_meanAccLossTopn1}{{6}{16}}
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Mean accuracies of the four models tested, over the number of embedding dimensions (left) and the context window size (right)\relax }}{17}}
 \newlabel{fig:4models_comparison_topn1_heatmap}{{7}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Discussion}{17}}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Mean and maximal accuracies of the skip-gram model with regard to the window size and number of negative samples over all other parameters.\relax }}{18}}
 \newlabel{fig:acc_k_neg_vs_windowSize}{{8}{18}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Discussion}{18}}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Mean accuracies for analogies with an analogy threshold of 1. The baseline model does not seem to be able to capture the compositionality of the latent features too well. (top left) Accuracy is best for plosives across plain pulmonic as well as more complex articulations, while fricatives perform worse. (top right) Glottalized and Plain pulmonic consonant phonemes yield best performance. Among complex articulations, which all perform bad, labialized phonemes yield best results, while aspirated and palatalized phonemes perform even worse. (bottom left) Adding voice works better than removing it or adding nasality. (bottom right) Vowel analogies work far better than consonant analogies. This should be due to the small number of possible vowel phonemes.\relax }}{19}}
 \newlabel{fig:detailed_evaluation_topn1}{{9}{19}}
 \bibstyle{apa}
@@ -112,14 +112,15 @@
 \newlabel{fig:detailed_evaluation_topn20}{{10}{20}}
 \@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Mean accuracies for analogies with an analogy threshold of 1 on the pooled consonant phonemes. Here, the model is also expected to yield better results, the number of latent features should be reduced. (left) Accuracy is doubled compared with the unpooled phonemes. (middle) Adding voice works quite well, while removing it still yields acceptable performance. Applying nasality again works quite bad. (right) Vowel analogy tasks seem to work reasonably well, but worse than with unpooled consonants.\relax }}{20}}
 \newlabel{fig:detailed_evaluation_topn1_poooled}{{11}{20}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Resume}{20}}
 \bibcite{Goodfellow-et-al-2016-Book}{\astroncite {Bengio and Courville}{2016}}
 \bibcite{bengio2003neural}{\astroncite {Bengio et\nobreakspace  {}al.}{2003a}}
 \bibcite{bengio2008adaptive}{\astroncite {Bengio and Sen{\'e}cal}{2008}}
 \bibcite{bengio2003quick}{\astroncite {Bengio et\nobreakspace  {}al.}{2003b}}
+\bibcite{chen2015strategies}{\astroncite {Chen et\nobreakspace  {}al.}{2015a}}
 \@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Frequency plotted against mean accuracy in log space. It is clearly visible how the bad performance of the complex phonemes is due to their underrepresentation in the corpus.\relax }}{21}}
 \newlabel{fig:freq_acc_correlation_logspace_topn1}{{12}{21}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Resume}{21}}
-\bibcite{chen2015strategies}{\astroncite {Chen et\nobreakspace  {}al.}{2015a}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Acknowledgements}{21}}
 \bibcite{chen2015joint}{\astroncite {Chen et\nobreakspace  {}al.}{2015b}}
 \bibcite{cho2015using}{\astroncite {Cho et\nobreakspace  {}al.}{2015}}
 \bibcite{chung2014empirical}{\astroncite {Chung et\nobreakspace  {}al.}{2014}}
@@ -150,7 +151,7 @@
 \bibcite{wichmann2010asjp}{\astroncite {Wichmann et\nobreakspace  {}al.}{2010}}
 \bibcite{wichmann2011phonological}{\astroncite {Wichmann et\nobreakspace  {}al.}{2011}}
 \bibcite{zhang2015character}{\astroncite {Zhang et\nobreakspace  {}al.}{2015}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Appendix}{24}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Appendix}{24}}
 \citation{jager2014phylogenetic}
 \citation{jager2014phylogenetic}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Consonant analogy tests. All analogy tasks consist of 2 positive values, one negative value and a target value, as described in 5.2\hbox {}.\relax }}{25}}

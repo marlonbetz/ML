@@ -441,6 +441,8 @@ Another final reason for the mediocre performance might finally be that in gener
 %\subsection{Phoneme Inventory Clustering}
 \section{Resume}
 While the theoretical benefits of language-independent phoneme embeddings look appealing, the lack of high-quality data sets might be the biggest challenge. ASJP provides  a large number of phonologically annotated word lists, but the quality of the annotations are improvable. The models themselves seem to learn meaningful concepts. Especially the word2vec models do perform well, given the mediocre quality of the data. Training on IPA-annotated corpora should work much better, but then it has to be made sure that such a corpus should cover enough phoneme inventories to allow for a generalization of latent phonological features, beyond the bias caused by language-specific restrictions on the occurrence of phonemes.
+\section{Acknowledgements}
+For the word2vec models, I used the implementations provided by the Gensim\footnote{http://radimrehurek.com/gensim} library for Python. For the implementation of the PLM, I used Keras\footnote{http://keras.io}. For the detailed overview on the different word2vec models, I made use of the blog posts of my former IBM co-internee Sebastian Ruder\footnote{http://sebastianruder.com}.
 \bibliographystyle{apa}
 \bibliography{references} 
 \section{Appendix}

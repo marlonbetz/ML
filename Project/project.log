@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.29)  2 AUG 2016 17:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.29)  2 AUG 2016 17:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1204,7 +1204,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 251--253
 
  []
 
-<polyglotLM.png, id=53, 567.11874pt x 510.90875pt>
+[10] <polyglotLM.png, id=56, 567.11874pt x 510.90875pt>
 File: polyglotLM.png Graphic file (type png)
  <use polyglotLM.png>
 Package pdftex.def Info: polyglotLM.png used on input line 257.
@@ -1474,14 +1474,13 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[10] [11 <./polyglotLM.png>]
+[11 <./polyglotLM.png>]
 Overfull \hbox (12.32724pt too wide) in paragraph at lines 301--302
 []\OT1/cmr/m/n/10.95 Accordingly, the loss func-tion here is a cat-e-gor-i-cal 
 cross-entropy $\OML/cmm/m/it/10.95 H\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^^
 ; []\OT1/cmr/m/n/10.95 )$ over all phonemes: 
  []
 
-[12]
 ./project.tex:312: Undefined control sequence.
 \b@wichmann2010asjp ->\astroncite 
                                   {Wichmann et\nobreakspace {}al.}{2010}
@@ -1504,7 +1503,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<word2vec_all.png, id=64, 941.6781pt x 683.6742pt>
+[12] <word2vec_all.png, id=64, 941.6781pt x 683.6742pt>
 File: word2vec_all.png Graphic file (type png)
  <use word2vec_all.png>
 Package pdftex.def Info: word2vec_all.png used on input line 318.
@@ -1686,7 +1685,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[15 <./plm_all.png>] [16 <./4models_comparison_meanAccLossTopn1.png>]
+[15 <./plm_all.png>]
 ./project.tex:428: Undefined control sequence.
 \b@tsvetkov2016polyglot ->\astroncite 
                                       {Tsvetkov et\nobreakspace {}al.}{2016}
@@ -1753,9 +1752,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[17 <./4models_comparison_topn1_heatmap.png>] [18 <./acc_k_neg_vs_windowSize.pn
-g>] [19 <./detailed_evaluation_topn1.png>] (./project.bbl [20 <./detailed_evalu
-ation_topn20.png> <./detailed_evaluation_topn1_poooled.png>]
+[16 <./4models_comparison_meanAccLossTopn1.png>] [17 <./4models_comparison_topn
+1_heatmap.png>] [18 <./acc_k_neg_vs_windowSize.png>] [19 <./detailed_evaluation
+_topn1.png>] (./project.bbl [20 <./detailed_evaluation_topn20.png> <./detailed_
+evaluation_topn1_poooled.png>]
 ./project.bbl:4: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Bengio and Courville}{2016}
@@ -1800,7 +1800,6 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[21 <./freq_acc_correlation_logspace_topn1.png>]
 ./project.bbl:25: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Chen et~al.}{2015a}
@@ -1812,6 +1811,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+[21 <./freq_acc_correlation_logspace_topn1.png>]
 ./project.bbl:30: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Chen et~al.}{2015b}
@@ -1944,7 +1944,6 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[22]
 ./project.bbl:99: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Kondrak}{2000}
@@ -1956,6 +1955,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+[22]
 ./project.bbl:106: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Landauer et~al.}{2013}
@@ -2099,7 +2099,6 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[23]
 ./project.bbl:179: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Vaswani et~al.}{2013}
@@ -2111,6 +2110,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+[23]
 ./project.bbl:185: Undefined control sequence.
 <argument> \protect \astroncite 
                                 {Wichmann et~al.}{2010}
@@ -2158,10 +2158,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Missing character: There is no â in font cmti10!
 Missing character: There is no ˆ in font cmti10!
 Missing character: There is no ¼ in font cmti10!
-./project.tex:653: Undefined control sequence.
+./project.tex:655: Undefined control sequence.
 \b@jager2014phylogenetic ->\astroncite 
                                        {J{\"a}ger}{2014}
-l.653 ...es follow  \cite{jager2014phylogenetic}.}
+l.655 ...es follow  \cite{jager2014phylogenetic}.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2169,10 +2169,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:653: Undefined control sequence.
+./project.tex:655: Undefined control sequence.
 \b@jager2014phylogenetic ->\astroncite 
                                        {J{\"a}ger}{2014}
-l.653 ...es follow  \cite{jager2014phylogenetic}.}
+l.655 ...es follow  \cite{jager2014phylogenetic}.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2183,10 +2183,10 @@ and I'll forget about whatever was undefined.
 Missing character: There is no â in font cmti10!
 Missing character: There is no ˆ in font cmti10!
 Missing character: There is no ¼ in font cmti10!
-./project.tex:653: Undefined control sequence.
+./project.tex:655: Undefined control sequence.
 \b@jager2014phylogenetic ->\astroncite 
                                        {J{\"a}ger}{2014}
-l.653 ...es follow  \cite{jager2014phylogenetic}.}
+l.655 ...es follow  \cite{jager2014phylogenetic}.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2194,10 +2194,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./project.tex:653: Undefined control sequence.
+./project.tex:655: Undefined control sequence.
 \b@jager2014phylogenetic ->\astroncite 
                                        {J{\"a}ger}{2014}
-l.653 ...es follow  \cite{jager2014phylogenetic}.}
+l.655 ...es follow  \cite{jager2014phylogenetic}.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2206,7 +2206,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (0.98665pt too wide) in paragraph at lines 654--691
+Overfull \hbox (0.98665pt too wide) in paragraph at lines 656--693
  [][] 
  []
 
@@ -2214,7 +2214,7 @@ Overfull \hbox (0.98665pt too wide) in paragraph at lines 654--691
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (34.1712pt too wide) in paragraph at lines 696--706
+Overfull \hbox (34.1712pt too wide) in paragraph at lines 698--708
  [][] 
  []
 
@@ -2227,11 +2227,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4663 strings out of 493089
- 68669 string characters out of 6134842
+ 4673 strings out of 493089
+ 68765 string characters out of 6134842
  161496 words of memory out of 5000000
- 8073 multiletter control sequences out of 15000+600000
- 14457 words of font info for 53 fonts, out of 8000000 for 9000
+ 8079 multiletter control sequences out of 15000+600000
+ 16002 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,12n,40p,1708b,337s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
@@ -2246,17 +2246,18 @@ cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
 l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/
 texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/tex
 live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2
-015/texmf-dist/fonts/type1/public/tipa/tipa10.pfb>
-Output written on project.pdf (29 pages, 991349 bytes).
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/tipa/tipa10.pfb>
+Output written on project.pdf (29 pages, 1005887 bytes).
 PDF statistics:
- 199 PDF objects out of 1000 (max. 8388607)
- 123 compressed objects within 2 object streams
+ 203 PDF objects out of 1000 (max. 8388607)
+ 126 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
