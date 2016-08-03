@@ -1,9 +1,0 @@
-import codecs 
-
-for line in codecs.open("phoneme_embeddings_plm.csv","r"):
-    line = line.split(",")
-    key= line[0][1:-1]
-    emb = line[1:]
-    emb[-1] = emb[-1][:-1]
-    emb = [float(e) for e in emb]
-    print(key,emb)

@@ -2,22 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="isRegEx"/>
-		<item value="mean_acc" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="mean_"/>
+			<item value="info"/>
 			<item value="mean_acc"/>
 			<item value="tags"/>
 			<item value="cons"/>
 			<item value="complex"/>
 			<item value="comples"/>
 			<item value="compl"/>
-			<item value="&quot;voice&quot;"/>
-			<item value="voice"/>
 		</list>
 		<list key="replacehistory">
+			<item value="info_bagOfPhonemes"/>
 			<item value="consonant"/>
 			<item value="&quot;apply_voice&quot;"/>
 			<item value="complex"/>
@@ -25,7 +26,6 @@
 			<item value="apply_nasal"/>
 			<item value="labialized"/>
 			<item value="palatalized"/>
-			<item value="voice"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

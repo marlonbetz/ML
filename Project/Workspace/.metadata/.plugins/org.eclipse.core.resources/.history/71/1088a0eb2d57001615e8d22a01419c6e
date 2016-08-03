@@ -1,7 +1,0 @@
-import numpy as np 
-from keras.models import Model
-from keras.layers import LSTM,Dense,Embedding,Input
-
-length = 10
-input = Input((1,))
-embedded = 
